@@ -1,66 +1,91 @@
-import Link from "next/link"
-import { ArrowRightIcon } from "lucide-react"
+import { ArrowUpRightIcon } from "lucide-react"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/base/ui/button"
-import { PostItem } from "@/features/blog/components/post-item"
-import { getBlogPosts } from "@/features/doc/data/documents"
+import { GitHubIcon, XIcon } from "@/components/icons"
 import {
   Panel,
+  PanelContent,
   PanelHeader,
   PanelTitle,
   PanelTitleSup,
 } from "@/features/portfolio/components/panel"
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
+import { SOCIAL } from "@/features/portfolio/data/social-links"
 
 const ID = "blog"
 
 export function Blog() {
-  const allPosts = getBlogPosts()
-
   return (
     <Panel id={ID}>
       <PanelHeader>
         <PanelTitle>
           <a href={`#${ID}`}>Blog</a>
-          <PanelTitleSup>({allPosts.length})</PanelTitleSup>
+          <PanelTitleSup>(Coming soon)</PanelTitleSup>
           <PanelTitleCopy id={ID} />
         </PanelTitle>
       </PanelHeader>
 
-      <div className="relative py-4">
-        <div className="pointer-events-none absolute inset-0 -z-1 grid grid-cols-1 gap-4 max-sm:hidden sm:grid-cols-2">
-          <div className="border-r border-line"></div>
-          <div className="border-l border-line"></div>
+      <PanelContent className="space-y-4">
+        <div className="rounded-lg border border-dashed border-line bg-muted/20 p-5 sm:p-6">
+          <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
+            <span className="flex size-2 animate-pulse rounded-full bg-amber-500" />
+            <span className="font-semibold tracking-wider text-foreground/90 uppercase">
+              Writing & Architecture Notes
+            </span>
+          </div>
+
+          <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground sm:text-lg">
+            Technical essays and build breakdowns are in progress.
+          </h3>
+
+          <p className="mt-1.5 max-w-xl text-sm/relaxed text-pretty text-muted-foreground">
+            Deep dives on autonomous AI agents, hackathon postmortems,
+            full-stack architecture, and engineering experiments will be
+            published here. In the meantime, I share ongoing progress and build
+            logs in real time.
+          </p>
+
+          <div className="mt-4 flex flex-wrap items-center gap-2.5">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-8 gap-1.5 px-3 text-xs font-medium"
+              nativeButton={false}
+              render={
+                <a
+                  href={SOCIAL.x.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Pradnyesh on X"
+                >
+                  <XIcon className="size-3.5" />
+                  <span>Follow on X</span>
+                  <ArrowUpRightIcon className="size-3 text-muted-foreground" />
+                </a>
+              }
+            />
+
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-8 gap-1.5 px-3 text-xs font-medium"
+              nativeButton={false}
+              render={
+                <a
+                  href={SOCIAL.github.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Pradnyesh on GitHub"
+                >
+                  <GitHubIcon className="size-3.5" />
+                  <span>GitHub Repos</span>
+                  <ArrowUpRightIcon className="size-3 text-muted-foreground" />
+                </a>
+              }
+            />
+          </div>
         </div>
-
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {allPosts.slice(0, 6).map((post) => (
-            <li
-              key={post.slug}
-              className={cn(
-                "max-sm:screen-line-top max-sm:screen-line-bottom",
-                "sm:nth-[2n+1]:screen-line-top sm:nth-[2n+1]:screen-line-bottom"
-              )}
-            >
-              <PostItem post={post} headingAs="h3" imageLoading="lazy" />
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="screen-line-top flex justify-center py-4">
-        <Button
-          className="gap-2 pr-2.5 pl-3 shadow-[inset_0_0_1px] shadow-foreground/20"
-          variant="secondary"
-          size="sm"
-          nativeButton={false}
-          render={<Link href="/blog" />}
-        >
-          All posts
-          <ArrowRightIcon />
-        </Button>
-      </div>
+      </PanelContent>
     </Panel>
   )
 }

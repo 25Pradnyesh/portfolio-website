@@ -6,40 +6,43 @@ import type { SocialProfile } from "@/features/portfolio/types/social-links"
  * so adding a profile here forces the icon map to stay in sync at compile time.
  */
 export const SOCIAL = {
-  x: {
-    title: "X",
-    handle: "@iamncdai",
-    href: "https://x.com/iamncdai",
-    sameAs: true,
-  },
   github: {
     title: "GitHub",
-    handle: "ncdai",
-    href: "https://github.com/ncdai",
+    handle: "25Pradnyesh",
+    href: "https://github.com/25Pradnyesh",
     sameAs: true,
   },
   linkedin: {
     title: "LinkedIn",
-    handle: "ncdai",
-    href: "https://linkedin.com/in/ncdai",
+    handle: "pradnyesh-s",
+    href: "https://www.linkedin.com/in/pradnyesh-s/",
     sameAs: true,
   },
-  dailydotdev: {
-    title: "daily.dev",
-    handle: "@ncdai",
-    href: "https://app.daily.dev/ncdai",
+  x: {
+    title: "X",
+    handle: "Pradnyesh_25",
+    href: "https://x.com/Pradnyesh_25",
     sameAs: true,
   },
   discord: {
     title: "Discord",
-    handle: "ncdai",
-    href: "https://discord.com/users/1186630645443739651",
+    handle: "Pradnyesh",
+    href: "https://discord.com/users/1397630514554212554",
   },
-  youtube: {
-    title: "YouTube",
-    handle: "@ncdai",
-    href: "https://www.youtube.com/@ncdai",
-    sameAs: true,
+  cal: {
+    title: "Cal.com",
+    handle: "pradnyesh",
+    href: "https://cal.com/pradnyesh",
+  },
+  telegram: {
+    title: "Telegram",
+    handle: "Pradnyesh_25",
+    href: "https://t.me/Pradnyesh_25",
+  },
+  email: {
+    title: "Email",
+    handle: "workspace.pradnyesh@gmail.com",
+    href: "mailto:workspace.pradnyesh@gmail.com",
   },
 } satisfies Record<string, SocialProfile>
 
@@ -49,4 +52,6 @@ export type SocialLink = SocialProfile & { name: SocialName }
 
 export const SOCIAL_LINKS: SocialLink[] = (
   Object.entries(SOCIAL) as [SocialName, SocialProfile][]
-).map(([name, profile]) => ({ name, ...profile }))
+)
+  .filter(([, profile]) => Boolean(profile.href))
+  .map(([name, profile]) => ({ name, ...profile }))

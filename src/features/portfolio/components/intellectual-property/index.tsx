@@ -12,6 +12,10 @@ import { INTELLECTUAL_PROPERTY } from "@/features/portfolio/data/intellectual-pr
 const ID = "ip"
 
 export function IntellectualProperty() {
+  if (INTELLECTUAL_PROPERTY.length === 0) {
+    return null
+  }
+
   return (
     <Panel id={ID}>
       <PanelHeader>

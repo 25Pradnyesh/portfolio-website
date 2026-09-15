@@ -50,7 +50,7 @@ export function NavItem({
   return (
     <Link
       className={cn(
-        "text-sm font-medium tracking-wide text-muted-foreground transition-[color] hover:text-foreground aria-[current=page]:text-foreground",
+        "rounded-md px-1 py-0.5 text-sm font-medium tracking-wide text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none aria-[current=page]:font-semibold aria-[current=page]:text-foreground",
         className
       )}
       {...props}

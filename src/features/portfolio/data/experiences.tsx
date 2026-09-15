@@ -1,269 +1,155 @@
 import {
-  BriefcaseBusinessIcon,
-  CodeXmlIcon,
-  DraftingCompassIcon,
-  LightbulbIcon,
+  BrainIcon,
+  Code2Icon,
+  LayersIcon,
+  PaletteIcon,
+  TrophyIcon,
 } from "lucide-react"
 
 import type { Experience } from "@/features/portfolio/types/experiences"
 
 export const EXPERIENCES: Experience[] = [
   {
-    id: "shadcncraft",
-    companyName: "shadcncraft",
-    companyLogo: "https://assets.chanhdai.com/images/companies/shadcncraft.svg",
-    companyWebsite: "https://shadcncraft.com?atp=ncdai",
-    location: "Melbourne, Australia",
+    id: "independent-builder",
+    companyName: "Independent Builder & Product Development",
+    location: "Mumbai & Pune, India",
     locationType: "Remote",
+    isCurrentEmployer: true,
     positions: [
       {
-        id: "1",
-        title: "Design Engineer",
+        id: "builder-1",
+        title: "Independent Builder & Software Developer",
         employmentPeriod: {
-          start: "01.2026",
+          start: "2024",
         },
-        employmentType: "Full-time",
-        icon: <CodeXmlIcon />,
-        description: `- Design and build Pro components/blocks, from Figma to production-ready React.
-- Build and maintain the @shadcncraft registry.
-- Build and enhance features for the marketing website.
-- Build and maintain Storybook documentation.
-- Design and build the Upgrade Bundle feature.`,
+        employmentType: "~1–1.5 Years Hands-On",
+        icon: <Code2Icon />,
+        description: `- Architecting and shipping end-to-end applications from zero to working product.
+- Experimenting aggressively with modern web frameworks, autonomous agent workflows, and developer tools.
+- Maintaining a relentless build-and-ship cadence across personal builds, open-source tools, and hackathons.`,
         skills: [
-          "TypeScript",
-          "Next.js",
-          "Tailwind CSS",
-          "shadcn/registry",
-          "Figma",
-          "Polar",
-          "Storybook",
-          "Design",
+          "Product Engineering",
+          "Rapid Prototyping",
+          "Full-Stack Development",
+          "System Architecture",
         ],
         isExpanded: true,
       },
     ],
-    isCurrentEmployer: true,
   },
   {
-    id: "quaric",
-    companyName: "Quaric",
-    companyLogo: "https://assets.chanhdai.com/images/companies/quaric.svg",
-    companyWebsite: "https://quaric.com",
-    location: "Can Tho, Viet Nam",
+    id: "ai-genai",
+    companyName: "AI / GenAI Engineering",
+    location: "Mumbai & Pune, India",
     locationType: "Remote",
     positions: [
       {
-        id: "2",
-        title: "Design Engineer",
+        id: "ai-1",
+        title: "AI & GenAI Developer",
         employmentPeriod: {
-          start: "03.2024",
+          start: "2024",
         },
-        employmentType: "Part-time",
-        icon: <CodeXmlIcon />,
-        description: `- Created Quaric Brand Identity.
-- Created the Quaric Design System to standardize design practices and accelerate development.
-
-In-house Project: [Quaric Website](https://quaric.com)
-- Designed the UI/UX for Quaric Website, delivering a seamless experience.
-- Developed online ordering to streamline purchases.
-- Integrated VNPAY-QR for secure transactions.
-- Registered the e-commerce site with [online.gov.vn](http://online.gov.vn/website/chi-tiet-115855) for compliance.
-
-In-house Project: [ZaDark](https://zadark.com)
-- Build and maintain ZaDark.com with Docusaurus, integrating AdSense.
-- Develop and maintain the ZaDark extension for Zalo Web on Chrome, Safari, Edge, and Firefox — with 20k+ active users via Chrome Web Store (as of Sep 2025).`,
+        employmentType: "~1 Year Practical Experience",
+        icon: <BrainIcon />,
+        description: `- Building intelligent systems using Cerebras API, Llama models, and OpenAI endpoints.
+- Implementing computer vision and OCR pipelines for unstructured multimodal content extraction from social media.
+- Engineering autonomous agent coordination workflows and real-time contextual voice synthesis.`,
         skills: [
-          "Next.js",
-          "Strapi",
-          "Auth0",
-          "VNPAY-QR",
-          "Docker",
-          "NGINX",
-          "Google Cloud",
-          "Docusaurus",
-          "Extension",
-          "UI/UX Design",
-          "UX Writing",
-          "Design System",
-          "Brand Design",
-          "Figma",
+          "Generative AI",
+          "LLMs",
+          "AI Agents",
+          "Computer Vision",
+          "Python",
+          "FastAPI",
         ],
-      },
-      {
-        id: "1",
-        title: "Founder",
-        employmentPeriod: {
-          start: "03.2024",
-        },
-        employmentType: "Part-time",
-        icon: <LightbulbIcon />,
-        skills: ["Business Ownership", "Business Law", "Business Tax"],
+        isExpanded: true,
       },
     ],
-    isCurrentEmployer: true,
   },
   {
-    id: "simplamo",
-    companyName: "Simplamo",
-    companyLogo: "https://assets.chanhdai.com/images/companies/simplamo.webp",
-    location: "Ho Chi Minh City, Viet Nam",
-    locationType: "On-site",
+    id: "web-development",
+    companyName: "Full-Stack Web Development",
+    location: "Mumbai & Pune, India",
+    locationType: "Remote",
     positions: [
       {
-        id: "2",
-        title: "Senior Frontend Developer",
+        id: "web-1",
+        title: "Full-Stack Web Developer",
         employmentPeriod: {
-          start: "10.2022",
-          end: "01.2026",
+          start: "2024",
         },
-        employmentType: "Full-time",
-        icon: <CodeXmlIcon />,
-        description: `- Built Tree & Gantt views features to improve goal organization, visibility, and progress tracking.
-- Developed [AI Chat](https://help.simplamo.com/features/simplamo-ai/ai-chat/guide_simplamo_ai_chat?ref=IN-926722) and [AI Assistant](https://help.simplamo.com/features/simplamo-ai/ai-expert/aiexpert-rockdiscribe?ref=IN-926722) features.
-- Developed [Whiteboards](https://help.simplamo.com/features/whiteboard/overview?ref=IN-926722) with real-time collaboration.
-- Built and maintained the [Zalo Mini App](https://zalo.me/s/1736112917405511258/) for Simplamo with seamless integration.
-- Developed interactive chart and analytics widgets for the [Dashboard](https://help.simplamo.com/features/dashboard/overview) to enhance data visualization.
-- Developed and maintained core features to enhance functionality and user experience.
-- Ensured UI/UX consistency and adherence to standards.
-- Implemented robust frontend solutions for web and mobile platforms.
-- Analyzed technical capabilities and provided optimal solutions.`,
+        employmentType: "~1–1.5 Years Experience",
+        icon: <LayersIcon />,
+        description: `- Developing responsive, accessible, and performant web applications with Next.js, React, Node.js, and TypeScript.
+- Designing clean server-client architectures, RESTful API routes, and database schemas with Supabase, PostgreSQL, and MongoDB.
+- Crafting modern component systems with Tailwind CSS and Radix UI primitives.`,
         skills: [
-          "TypeScript",
           "Next.js",
-          "React Native",
-          "MobX",
-          "MobX-State-Tree",
+          "React",
+          "TypeScript",
           "Tailwind CSS",
-          "Dify",
-          "Zalo Mini App",
-          "Agile",
+          "Node.js",
+          "Supabase",
+          "PostgreSQL",
+          "MongoDB",
         ],
-      },
-      {
-        id: "1",
-        title: "UI Lead",
-        employmentPeriod: {
-          start: "10.2022",
-          end: "01.2026",
-        },
-        employmentType: "Full-time",
-        icon: <DraftingCompassIcon />,
-        description: `- Ensured UI/UX consistency and high-quality standards.
-- Designed intuitive, user-focused interfaces aligned with business goals.
-- Defined and established a cohesive UI style for Simplamo.`,
-        skills: ["Creativity", "UI/UX Design", "Figma"],
+        isExpanded: true,
       },
     ],
   },
   {
-    id: "tungtung",
-    companyName: "Tung Tung",
-    companyLogo: "https://assets.chanhdai.com/images/companies/tungtung.webp",
-    location: "Ho Chi Minh City, Viet Nam",
+    id: "hackathons",
+    companyName: "Hackathons & Web3 Protocols",
+    location: "Pune, India",
     locationType: "Hybrid",
     positions: [
       {
-        id: "3",
-        title: "Web Developer",
+        id: "hack-1",
+        title: "Hackathon Builder & Protocol Prototyper",
         employmentPeriod: {
-          start: "2020",
-          end: "2022",
+          start: "2024",
         },
-        employmentType: "Full-time",
-        description: `- Built a scalable design system for consistency and efficiency.
-- Built a complex rich-text editor based on ProseMirror and Slate for customizable content creation.
-- Integrated APIs with the Backend Team to enhance functionality.`,
-        icon: <CodeXmlIcon />,
-        skills: ["React", "Redux", "Storybook", "Lerna", "Agile"],
-      },
-      {
-        id: "2",
-        title: "Mobile Developer",
-        employmentPeriod: {
-          start: "2019",
-          end: "2020",
-        },
-        employmentType: "Full-time",
-        description: `- Rebuilt the app with React Native for better UX and performance.
-- Integrated MoMo and in-app purchases for seamless payments.
-- Optimized deployment for staging and production.
-- Published on App Store and Google Play, ensuring compliance.`,
-        icon: <CodeXmlIcon />,
+        employmentType: "~6–12 Months Experience",
+        icon: <TrophyIcon />,
+        description: `- 1st Place Winner at Monad Blitz Pune: Architected frontend and syndicate coordination logic for Penguin Protocol in under 8 hours.
+- Built and shipped Reclaim at WeMakeDevs FutureStack GenAI Hackathon in 6 days.
+- Shipped VoiceAds prototype in under 24 hours at AIBoomi Startup Weekend Pune.
+- Participated in Starknet Outpost Demo Day showcasing decentralized protocol concepts.`,
         skills: [
-          "React Native",
-          "Redux",
-          "MoMo Payment API",
-          "App Store",
-          "Google Play Store",
-          "App Center",
-          "Agile",
+          "Rapid Prototyping",
+          "Team Coordination",
+          "Hackathon Sprints",
+          "Web3 Protocols",
         ],
-      },
-      {
-        id: "1",
-        title: "UI/UX Designer",
-        employmentPeriod: {
-          start: "2018",
-          end: "2019",
-        },
-        employmentType: "Full-time",
-        description: `- Designed a Landing Page for enterprise clients.
-- Redesigned the Online Quiz Platform for a modern look on web and mobile.
-- Redesigned the Pricing interface for individual customers.
-- Enhanced UX by improving usability, navigation, and user flow.`,
-        icon: <DraftingCompassIcon />,
-        skills: ["UI/UX Design", "Sketch"],
+        isExpanded: true,
       },
     ],
   },
   {
-    id: "freelance",
-    companyName: "Freelance",
-    companyIcon: <BriefcaseBusinessIcon strokeWidth={1.8} />,
+    id: "ui-ux-content",
+    companyName: "UI/UX & Video Post-Production",
+    location: "Mumbai & Pune, India",
+    locationType: "Remote",
     positions: [
       {
-        id: "2",
-        title: "Full-stack Developer",
+        id: "content-1",
+        title: "UI/UX Designer & Content Creator",
         employmentPeriod: {
-          start: "2018",
-          end: "2020",
+          start: "2023",
         },
-        employmentType: "Part-time",
-        description: `- Built an order management website with real-time delivery tracking.
-- Developed an e-commerce site for bird’s nest products.
-- Created a map to display monitoring station data.
-- Designed a customizable WordPress landing page.`,
-        icon: <CodeXmlIcon />,
+        employmentType: "~1+ Year Practical Work",
+        icon: <PaletteIcon />,
+        description: `- Designing clean user interfaces, typography systems, and interaction flows in Figma.
+- Producing and editing high-retention video content for digital platforms and client projects.
+- End-to-end post-production: pacing, sound design, visual assets, and color grading.`,
         skills: [
-          "Laravel",
-          "React",
-          "Express.js",
-          "Socket.IO",
-          "MongoDB",
-          "Firebase",
-          "WordPress",
-          "Docker",
-          "NGINX",
-        ],
-      },
-      {
-        id: "1",
-        title: "Graphic & UI/UX Designer",
-        employmentPeriod: {
-          start: "2018",
-          end: "2019",
-        },
-        employmentType: "Part-time",
-        description: "Designed logos, posters, ads, and UI.",
-        icon: <DraftingCompassIcon />,
-        skills: [
-          "Creativity",
+          "Figma",
           "UI/UX Design",
-          "Graphic Design",
-          "Sketch",
-          "Adobe Photoshop",
-          "Adobe Illustrator",
+          "Adobe Premiere Pro",
+          "DaVinci Resolve",
+          "Visual Storytelling",
         ],
+        isExpanded: false,
       },
     ],
   },

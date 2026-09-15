@@ -28,21 +28,50 @@ export function AwardItem({
 }) {
   const canExpand = !!award.description
 
+  const isWinner = award.id === "monad-blitz-pune"
+
   return (
     <Collapsible className={className} disabled={!canExpand}>
-      <CollapsibleTrigger className="flex w-full items-center text-left hover:bg-accent-muted">
-        <IconTile className="mx-4">{award.icon ?? <Crown />}</IconTile>
+      <CollapsibleTrigger
+        className={`flex w-full items-center text-left transition-colors hover:bg-accent-muted ${
+          isWinner ? "bg-amber-500/5 dark:bg-amber-500/10" : ""
+        }`}
+      >
+        <IconTile
+          className={`mx-4 ${
+            isWinner
+              ? "border-amber-500/50 bg-amber-500/20 text-amber-500 dark:text-amber-400"
+              : ""
+          }`}
+        >
+          {award.icon ?? <Crown />}
+        </IconTile>
 
         <div className="flex flex-1 items-center gap-2 border-l border-dashed border-line p-4 pr-2">
           <div className="flex-1">
-            <h3 className="mb-1 leading-snug font-medium text-balance">
-              {award.title}
-            </h3>
+            <div className="mb-1 flex flex-wrap items-center gap-2">
+              <h3 className="leading-snug font-medium text-balance text-foreground">
+                {award.title}
+              </h3>
+              {isWinner && (
+                <span className="inline-flex items-center gap-1 rounded-sm border border-amber-500/40 bg-amber-500/20 px-1.5 py-0.25 font-mono text-[10px] font-bold text-amber-600 dark:text-amber-400">
+                  1ST PLACE WINNER
+                </span>
+              )}
+            </div>
 
             <dl className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
               <div>
                 <dt className="sr-only">Prize</dt>
-                <dd>{award.prize}</dd>
+                <dd
+                  className={
+                    isWinner
+                      ? "font-semibold text-amber-600 dark:text-amber-400"
+                      : ""
+                  }
+                >
+                  {award.prize}
+                </dd>
               </div>
 
               <Separator

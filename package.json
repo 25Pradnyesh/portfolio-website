@@ -1,21 +1,14 @@
 {
-  "name": "chanhdai.com",
+  "name": "pradnyesh-portfolio",
   "version": "0.1.0",
-  "description": "A pixel-perfect dev portfolio and shadcn registry.",
-  "homepage": "https://chanhdai.com",
+  "description": "Pradnyesh Shejwal - Personal portfolio, engineering projects, and AI systems.",
+  "homepage": "https://github.com/25Pradnyesh",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "Pradnyesh Shejwal",
+    "email": "pradnyesh.shejwal@gmail.com",
+    "url": "https://github.com/25Pradnyesh"
   },
-  "contributors": [
-    {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ncdai/chanhdai.com.git"

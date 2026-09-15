@@ -1,247 +1,117 @@
-import { ChanhDaiMark } from "@/components/chanhdai-mark"
 import {
-  QuaricIcon,
-  ReactWheelPickerIcon,
-  ZaDarkIcon,
-} from "@/components/icons"
+  BrainIcon,
+  CompassIcon,
+  FolderCodeIcon,
+  MicIcon,
+  TrophyIcon,
+} from "lucide-react"
 
 import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
-    id: "react-wheel-picker",
-    title: "React Wheel Picker",
+    id: "travel-ai",
+    title: "Travel AI",
     period: {
-      start: "05.2025",
+      start: "2024",
     },
-    link: "https://react-wheel-picker.chanhdai.com",
+    link: "https://github.com/25Pradnyesh",
     skills: [
-      "Open Source",
-      "React",
-      "TypeScript",
-      "Monorepo",
-      "Turborepo",
-      "pnpm-workspace",
-      "Package Publishing",
-      "NPM Registry",
-      "GitHub Actions",
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "Computer Vision",
+      "NLP",
+      "Google Maps API",
     ],
-    description: `iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. / Backed by [▲ Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker)
-- Natural touch scrolling with smooth inertia, mouse drag and scroll for desktop
-- Infinite loop scrolling
-- Unstyled core for complete style customization
-- Full keyboard navigation and type-ahead search
-`,
-    icon: <ReactWheelPickerIcon />,
+    description: `An AI-powered system that extracts travel locations from Instagram content and organizes them into structured travel data and actionable maps.
+- **Problem**: High-value travel tips and hidden spots shared across Instagram reels and posts get lost in saved collections and are cumbersome to plan into actual itineraries.
+- **What I Built**: An automated extraction pipeline combining computer vision and NLP to extract destination names, landmarks, and geographic context from social media reels and captions.
+- **Implementation**: Built with Next.js, Python, FastAPI, automated content extraction, and Google Maps API integration to cluster spots and plot interactive routes.`,
+    icon: <CompassIcon />,
     isExpanded: true,
   },
   {
-    id: "chanhdaidotcom",
-    title: "chanhdai.com",
+    id: "penguin-protocol",
+    title: "Penguin Protocol",
     period: {
-      start: "01.2025",
+      start: "2024",
     },
-    link: "https://github.com/ncdai/chanhdai.com",
+    link: "https://github.com/25Pradnyesh",
     skills: [
-      "Open Source",
-      "Next.js 16",
-      "Tailwind CSS v4",
-      "Radix UI",
-      "Base UI",
-      "Motion",
-      "shadcn/ui",
-      "shadcn registry",
-      "Vercel",
+      "TypeScript",
+      "Next.js",
+      "Decentralized Protocols",
+      "AI Syndicates",
+      "Rapid Prototyping",
     ],
-    description: "A pixel-perfect dev portfolio and shadcn registry.",
-    icon: <ChanhDaiMark />,
+    description: `**🥇 WINNER — Monad Blitz Pune** · Decentralized AI Investment Syndicate built in under 8 hours.
+- **Concept**: A decentralized protocol enabling autonomous multi-agent investment syndicates with transparent on-chain verification and collaborative coordination.
+- **My Role**: Engineered the frontend interface and core product logic under tight 8-hour hackathon constraints.
+- **Achievement**: Awarded 1st Place Winner at Monad Blitz Pune for technical execution, speed of implementation, and product feasibility.`,
+    icon: <TrophyIcon className="text-amber-500" />,
+    isExpanded: true,
   },
   {
-    id: "quaricdotcom",
-    title: "quaric.com",
+    id: "reclaim",
+    title: "Reclaim",
     period: {
-      start: "03.2024",
+      start: "2024",
     },
-    link: "https://quaric.com",
+    link: "https://github.com/25Pradnyesh",
     skills: [
-      "Company Project",
-      "Next.js 15",
-      "Tailwind CSS v3",
-      "shadcn/ui",
-      "Strapi 5",
-      "VNPAY-QR",
-      "Docker",
-      "Docker Compose",
-      "NGINX",
+      "Generative AI",
+      "Next.js",
+      "Tailwind CSS",
+      "Supabase",
+      "Cerebras API",
+      "Llama",
     ],
-    icon: <QuaricIcon />,
+    description: `AI-powered phone addiction management and digital wellbeing application built during the **WeMakeDevs FutureStack GenAI Hackathon** in 6 days.
+- **Problem**: Frictionless application loops and compulsive phone-checking degrade deep work and student productivity.
+- **What I Built**: Proactive AI system that analyzes usage patterns and introduces contextual friction to break automatic habit loops.
+- **Stack**: Built with Next.js, Tailwind CSS, Supabase backend, Cerebras ultra-low-latency API, and Llama models for real-time conversational interventions.`,
+    icon: <BrainIcon />,
+    isExpanded: true,
   },
   {
-    id: "zadark",
-    title: "ZaDark",
+    id: "voice-ads",
+    title: "VoiceAds",
     period: {
-      start: "01.2022",
+      start: "2024",
     },
-    link: "https://zadark.com",
+    link: "https://github.com/25Pradnyesh",
     skills: [
-      "Pet Project",
-      "Open Source",
-      "Browser Extension",
-      "CLI",
-      "Docusaurus 3",
+      "Generative AI",
+      "Text-to-Speech (TTS)",
+      "Python",
+      "FastAPI",
+      "Web Audio",
     ],
-    description: `ZaDark adds Dark Mode, anti-peeking, customizable fonts, backgrounds, and more to Zalo Web and PC.
-- Earned 10M+ VND in net sales from a paid Safari Extension*
-- 80k+ downloads on SourceForge* (awarded Community Leader badge by SourceForge)
-- 30k+ active users via Chrome Web Store*
-- Bronze Medal — 10th Design, Manufacturing, and Application Award 2022
-
-<p class="text-muted-foreground">* Peak metrics.</p>
-`,
-    icon: <ZaDarkIcon />,
+    description: `AI voice advertising MVP built and shipped at **AIBoomi Startup Weekend — Pune** in under 24 hours.
+- **Concept**: Context-aware audio advertisement generation platform powered by generative voice synthesis.
+- **What I Built**: End-to-end working prototype generating tailored conversational audio ad creatives that dynamically adapt to real-time listener context.`,
+    icon: <MicIcon />,
+    isExpanded: true,
   },
   {
-    id: "qabox",
-    title: "QABox",
+    id: "design-resource-vault",
+    title: "Design Resource Vault",
     period: {
-      start: "07.2023",
-      end: "07.2023",
+      start: "2023",
     },
-    link: "https://github.com/ncdai/qabox",
+    link: "https://github.com/25Pradnyesh",
     skills: [
-      "University Project",
-      "PHP",
-      "MySQL",
-      "MVC",
-      "Docker",
-      "Docker Compose",
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "UI/UX Design",
+      "Full-Stack",
     ],
-    description:
-      "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/ncdai/qabox",
-  },
-  {
-    id: "taskbox",
-    title: "TaskBox",
-    period: {
-      start: "07.2023",
-      end: "07.2023",
-    },
-    link: "https://github.com/ncdai/taskbox",
-    skills: [
-      "University Project",
-      "PHP",
-      "MySQL",
-      "MVC",
-      "Docker",
-      "Docker Compose",
-    ],
-    description:
-      "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/ncdai/taskbox",
-  },
-  {
-    id: "daichat-app",
-    title: "DaiChat App",
-    period: {
-      start: "07.2020",
-      end: "07.2020",
-    },
-    link: "https://www.youtube.com/watch?v=H5U3J_W1low",
-    skills: ["University Project", "Java", "Java Swing", "Java Networking"],
-    description: `- Course: Java Application Programming — FIT@HCMUS
-- Requirement: Developed a real-time chat application using Java technologies
-- Project Score: 10/10
-- Source Code:
-  - Server: https://github.com/ncdai/ltudjava-summer2020-chatapp_server
-  - Client: https://github.com/ncdai/ltudjava-summer2020-chatapp_client`,
-  },
-  {
-    id: "qlsv-app",
-    title: "QLSV App",
-    period: {
-      start: "06.2020",
-      end: "06.2020",
-    },
-    link: "https://www.youtube.com/watch?v=tG9SZEBrwog",
-    skills: ["University Project", "Java", "Java Swing", "Hibernate", "MySQL"],
-    description: `- Course: Java Application Programming — FIT@HCMUS
-- Requirement: Built a student management system with role-based functionalities using Java technologies
-- Project Score: 10/10
-- Source Code: https://github.com/ncdai/ltudjava-summer2020-hibernate`,
-  },
-  {
-    id: "penphy",
-    title: "Penphy",
-    period: {
-      start: "01.2019",
-      end: "08.2019",
-    },
-    link: "https://www.youtube.com/watch?v=EdU7rUO-UA4",
-    skills: ["Startup Project", "JavaScript", "React Native"],
-    description: "2nd Prize — Business Startup Competition 2019",
-  },
-  {
-    id: "unlimitedstudy",
-    title: "UnlimitedStudy",
-    period: {
-      start: "01.2017",
-      end: "08.2018",
-    },
-    link: "https://muctim.tuoitre.vn/cong-cu-ho-tro-viec-day-va-hoc-55107.htm",
-    skills: [
-      "National Competition",
-      "Creative Software",
-      "PHP",
-      "Laravel 4",
-      "MySQL",
-      "jQuery",
-      "Bootstrap 3",
-    ],
-    description: `UnlimitedStudy is a website that provides teaching and learning support tools for teachers and students.
-- 3rd Prize — National Science and Engineering Fair 2018 (ViSEF)
-- 1st Prize — Can Tho City Science and Engineering Fair 2018
-- 3rd Prize — National Young Informatics Contest 2018
-- 2nd Prize — Can Tho City Youth and Children’s Creativity Contest 2018
-- 3rd Prize — Can Tho City Young Informatics Contest 2018
-- Reached 7k+ users, mainly high school students in Can Tho City
-- Pilot implemented in high schools across Can Tho City with English quizzes, supervised by English subject specialists from the Can Tho City Department of Education and Training`,
-  },
-  {
-    id: "dmessage",
-    title: "DMessage",
-    period: {
-      start: "05.2017",
-      end: "05.2017",
-    },
-    link: "https://github.com/ncdai/DMessage",
-    skills: [
-      "Self-learning Project",
-      "Pet Project",
-      "Express.js",
-      "Socket.io",
-      "MongoDB",
-      "Mongoose ODM",
-    ],
-    description:
-      "A Messenger clone built to practice real-time communication using Socket.IO. This project showcases my self-learning journey in implementing WebSockets for instant messaging.",
-  },
-  {
-    id: "study-english",
-    title: "Study English",
-    period: {
-      start: "11.2016",
-      end: "12.2017",
-    },
-    link: "https://www.youtube.com/watch?v=OYgugvjqU4A",
-    skills: [
-      "National Competition",
-      "Creative Software",
-      "PHP",
-      "Laravel 4",
-      "MySQL",
-    ],
-    description: `Study English is a free, mobile-friendly website for high school English learning, offering vocabulary, quizzes, listening practice, and more.
-- Consolation Prize — National Youth and Children’s Creativity Contest 2016
-- 1st Prize — Can Tho City Youth and Children’s Creativity Contest 2016
-- Consolation Prize — Can Tho City Young Informatics Contest 2016`,
+    description: `Curated design resource platform built with modern Next.js and Tailwind CSS architecture.
+- **Problem**: Developers and designers spend hours searching disparate sources for production-ready design tokens, component patterns, and UI tools.
+- **What I Built**: A structured, centralized directory organizing verified frontend tools, color systems, and components with fast client-side filtering and dark-mode previews.`,
+    icon: <FolderCodeIcon />,
+    isExpanded: false,
   },
 ]

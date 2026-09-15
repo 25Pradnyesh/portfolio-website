@@ -704,6 +704,50 @@ export function ZaDarkIcon(props: React.SVGProps<SVGSVGElement>) {
   )
 }
 
+export function SupabaseIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden {...props}>
+      <path
+        d="M21.362 9.354H12V.312a.312.312 0 0 0-.542-.208L.246 13.06a.625.625 0 0 0 .47 1.034H12v9.592a.312.312 0 0 0 .542.208l11.212-12.956a.625.625 0 0 0-.47-1.034z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function MongoDbIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden {...props}>
+      <path
+        d="M17.193 9.555c-1.264-4.89-4.278-7.918-4.709-8.344a.679.679 0 0 0-.968 0C11.085 1.637 8.07 4.665 6.807 9.555 5.27 15.49 8.214 20.67 11.516 23.832c.13.125.3.188.484.188.183 0 .354-.063.484-.188 3.302-3.162 6.246-8.342 4.709-14.277zm-5.193 12.016v-8.87a.494.494 0 0 0-.988 0v8.87c-2.482-2.378-4.706-6.425-3.513-11.045 1.056-4.088 3.515-6.72 4.007-7.227.492.507 2.951 3.139 4.007 7.227 1.193 4.62-1.031 8.667-3.513 11.045z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function TelegramIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden {...props}>
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function CalIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden {...props}>
+      <path
+        d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm2 4h10v2H7v-2zm0 4h7v2H7v-2z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 export function getIconForLanguageExtension(language: string) {
   switch (language) {
     case "json":

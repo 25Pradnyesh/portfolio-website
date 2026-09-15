@@ -1,9 +1,8 @@
 import dynamic from "next/dynamic"
 import Link from "next/link"
 
-import { MAIN_NAV } from "@/config/site"
+import { HEADER_NAV } from "@/config/site"
 import { Separator } from "@/components/base/ui/separator"
-import { ChanhDaiMark } from "@/components/chanhdai-mark"
 import { NavDesktop } from "@/components/nav-desktop"
 import { NavItemGitHub } from "@/components/nav-item-github"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -13,10 +12,6 @@ import { sortBookmarksNewestFirst } from "@/features/bookmark/lib/sort"
 import type { BookmarkPreview } from "@/features/bookmark/types"
 import { getAllDocs } from "@/features/doc/data/documents"
 import type { DocPreview } from "@/features/doc/types/document"
-
-const BrandContextMenu = dynamic(
-  () => import("@/components/brand-context-menu")
-)
 
 const CommandMenu = dynamic(() => import("@/components/command-menu"))
 
@@ -40,15 +35,22 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 max-w-screen overflow-x-clip bg-background px-2">
       <div className="screen-line-top screen-line-bottom mx-auto flex h-(--header-height) items-center gap-2 border-x screen-line-bottom-border screen-line-top-border pr-2 pl-4 group-has-data-[slot=layout-wide]/layout:container after:z-1 sm:gap-4 md:max-w-3xl">
-        <BrandContextMenu>
-          <Link href="/" aria-label="Home">
-            <ChanhDaiMark className="h-6 shrink-0" />
-          </Link>
-        </BrandContextMenu>
+        <Link
+          href="/"
+          aria-label="Pradnyesh - Home"
+          className="group flex items-center gap-2.5 outline-none"
+        >
+          <span className="flex size-7 items-center justify-center rounded-md border border-line bg-muted/40 font-mono text-xs font-bold text-foreground transition-colors group-hover:border-foreground/40 group-hover:bg-accent-muted">
+            P
+          </span>
+          <span className="font-mono text-xs font-medium tracking-tight text-foreground/80 transition-colors group-hover:text-foreground">
+            pradnyesh
+          </span>
+        </Link>
 
         <div className="flex-1" />
 
-        <NavDesktop items={MAIN_NAV} />
+        <NavDesktop items={HEADER_NAV} />
 
         <div className="flex items-center max-sm:*:data-[slot=command-menu-trigger]:hidden">
           <Separator

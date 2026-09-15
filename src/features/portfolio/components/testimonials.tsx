@@ -61,6 +61,10 @@ export function Testimonials() {
   const isDesktop = useMediaQuery("(min-width: 40rem)") // sm breakpoint
   const play = isPageInView && isInView && isDesktop
 
+  if (TESTIMONIALS.length === 0) {
+    return null
+  }
+
   return (
     <Panel ref={ref} id={ID}>
       <div className="h-px" />

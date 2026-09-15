@@ -32,7 +32,7 @@ const OPENPANEL_URL =
 
 // Not derived from `SITE_INFO.url`: that follows `NEXT_PUBLIC_APP_URL` and
 // would read `ncdai.localhost` in dev.
-const SITE_TITLE = "chanhdai.com"
+const SITE_TITLE = "Pradnyesh"
 
 const SITE_SUBTITLE = packageJson.description
 
@@ -64,11 +64,11 @@ export function SiteFooterCad() {
             <Field label="Crafted by">
               <a
                 className="link-underline"
-                href={xLink.href}
+                href={githubLink.href || "https://github.com/25Pradnyesh"}
                 target="_blank"
                 rel="noopener"
               >
-                {xLink.handle}
+                Pradnyesh
               </a>
             </Field>
 
@@ -172,45 +172,53 @@ export function SiteFooterCad() {
             <ChanhDaiMark className="h-4" />
           </Link>
 
-          <a
-            className="flex items-center transition-[color] hover:text-foreground"
-            href={xLink.href}
-            target="_blank"
-            rel="noopener"
-            aria-label="X Profile"
-          >
-            <XIcon className="size-4" />
-          </a>
+          {xLink.href && (
+            <>
+              <a
+                className="flex items-center transition-[color] hover:text-foreground"
+                href={xLink.href}
+                target="_blank"
+                rel="noopener"
+                aria-label="X Profile"
+              >
+                <XIcon className="size-4" />
+              </a>
+              <Separator
+                orientation="vertical"
+                className="data-vertical:h-4 data-vertical:self-center"
+              />
+            </>
+          )}
 
-          <Separator
-            orientation="vertical"
-            className="data-vertical:h-4 data-vertical:self-center"
-          />
+          {githubLink.href && (
+            <a
+              className="flex items-center transition-[color] hover:text-foreground"
+              href={githubLink.href}
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub Profile"
+            >
+              <GitHubIcon className="size-4" />
+            </a>
+          )}
 
-          <a
-            className="flex items-center transition-[color] hover:text-foreground"
-            href={githubLink.href}
-            target="_blank"
-            rel="noopener"
-            aria-label="GitHub Profile"
-          >
-            <GitHubIcon className="size-4" />
-          </a>
-
-          <Separator
-            orientation="vertical"
-            className="data-vertical:h-4 data-vertical:self-center"
-          />
-
-          <a
-            className="flex items-center transition-[color] hover:text-foreground"
-            href={linkedinLink.href}
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn Profile"
-          >
-            <LinkedInIcon className="size-4" />
-          </a>
+          {linkedinLink.href && (
+            <>
+              <Separator
+                orientation="vertical"
+                className="data-vertical:h-4 data-vertical:self-center"
+              />
+              <a
+                className="flex items-center transition-[color] hover:text-foreground"
+                href={linkedinLink.href}
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn Profile"
+              >
+                <LinkedInIcon className="size-4" />
+              </a>
+            </>
+          )}
 
           <Separator
             orientation="vertical"

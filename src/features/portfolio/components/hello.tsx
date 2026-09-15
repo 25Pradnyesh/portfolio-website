@@ -1,20 +1,23 @@
 import { Markdown } from "@/components/markdown"
-import { HelloTitle } from "@/features/portfolio/components/hello-title"
 import {
   Panel,
   PanelContent,
   PanelHeader,
+  PanelTitle,
 } from "@/features/portfolio/components/panel"
+import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
 import { USER } from "@/features/portfolio/data/user"
 
-const ID = "hello"
+const ID = "about"
 
 export function Hello() {
   return (
-    <Panel id={ID} className="screen-line-bottom-none">
+    <Panel id={ID}>
       <PanelHeader>
-        <h2 className="sr-only">About</h2>
-        <HelloTitle />
+        <PanelTitle>
+          <a href={`#${ID}`}>About</a>
+          <PanelTitleCopy id={ID} />
+        </PanelTitle>
       </PanelHeader>
 
       <PanelContent>
@@ -22,10 +25,6 @@ export function Hello() {
           <Markdown>{USER.about}</Markdown>
         </div>
       </PanelContent>
-
-      <div className="screen-line-bottom h-px" />
-      <div className="h-4" />
-      <div className="screen-line-bottom h-px screen-line-bottom-border" />
     </Panel>
   )
 }
