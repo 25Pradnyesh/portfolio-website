@@ -1,10 +1,11 @@
+import { CalendarIcon, FileTextIcon, MailIcon } from "lucide-react"
+
 import {
-  DailyDotDevIcon,
   DiscordIcon,
   GitHubIcon,
   LinkedInIcon,
+  TelegramIcon,
   XIcon,
-  YouTubeIcon,
 } from "@/components/icons"
 import type { SocialName } from "@/features/portfolio/data/social-links"
 
@@ -14,10 +15,12 @@ import type { SocialName } from "@/features/portfolio/data/social-links"
  * exhaustive with the registry.
  */
 export const SOCIAL_ICONS: Record<SocialName, React.JSX.Element> = {
-  x: <XIcon />,
   github: <GitHubIcon />,
   linkedin: <LinkedInIcon />,
-  dailydotdev: <DailyDotDevIcon />,
+  x: <XIcon />,
   discord: <DiscordIcon />,
-  youtube: <YouTubeIcon />,
+  cal: <CalendarIcon />,
+  telegram: <TelegramIcon />,
+  email: <MailIcon />,
+  resume: <FileTextIcon />,
 }

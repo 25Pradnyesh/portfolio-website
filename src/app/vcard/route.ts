@@ -14,10 +14,13 @@ export async function GET() {
 
   card
     .addName(USER.lastName, USER.firstName)
-    .addPhoneNumber(decodePhoneNumber(USER.phoneNumberB64))
     .addAddress(USER.address)
     .addEmail(decodeEmail(USER.emailB64))
     .addURL(USER.website)
+
+  if (USER.phoneNumberB64) {
+    card.addPhoneNumber(decodePhoneNumber(USER.phoneNumberB64))
+  }
 
   const photo = await getVCardPhoto(USER.avatar)
   if (photo) {
@@ -40,19 +43,25 @@ export async function GET() {
 
 async function getVCardPhoto(url: string) {
   try {
-    const res = await fetch(url)
-
-    if (!res.ok) {
-      return null
+    let buffer: Buffer
+    if (url.startsWith("http")) {
+      const res = await fetch(url)
+      if (!res.ok) {
+        return null
+      }
+      buffer = Buffer.from(await res.arrayBuffer())
+    } else {
+      const fs = await import("node:fs/promises")
+      const path = await import("node:path")
+      const filePath = path.join(
+        process.cwd(),
+        "public",
+        url.replace(/^\//, "")
+      )
+      buffer = await fs.readFile(filePath)
     }
 
-    const buffer = Buffer.from(await res.arrayBuffer())
     if (buffer.length === 0) {
-      return null
-    }
-
-    const contentType = res.headers.get("Content-Type") || ""
-    if (!contentType.startsWith("image/")) {
       return null
     }
 

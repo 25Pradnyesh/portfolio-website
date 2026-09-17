@@ -1,34 +1,29 @@
 "use client"
 
 import React, { useCallback, useEffect, useMemo, useState } from "react"
-import { copyToClipboardWithEvent } from "@/utils/copy"
 import { useRouter } from "@bprogress/next/app"
-import { useTiks } from "@rexa-developer/tiks/react"
 import {
   BookmarkIcon,
   BoxIcon,
   BriefcaseBusinessIcon,
-  CircleCheckBigIcon,
   CornerDownLeftIcon,
   CrownIcon,
   DownloadIcon,
   FileTextIcon,
   GraduationCapIcon,
+  HomeIcon,
   LayersIcon,
   LineChartIcon,
+  MailIcon,
   MonitorIcon,
   MoonStarIcon,
   QuoteIcon,
   RssIcon,
-  ScaleIcon,
-  SquareDashedIcon,
   SunMediumIcon,
   TextInitialIcon,
-  TypeIcon,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useHotkeys } from "react-hotkeys-hook"
-import { toast } from "sonner"
 
 import { trackEvent } from "@/lib/events"
 import { useClickSound } from "@/hooks/soundcn/use-click-sound"
@@ -50,8 +45,6 @@ import type { DocPreview } from "@/features/doc/types/document"
 import { SOCIAL_ICONS } from "@/features/portfolio/components/social-link-icons"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
-import { getWordmarkSVG } from "./chanhdai-wordmark"
 import {
   FavouriteIcon,
   GridViewIcon,
@@ -92,7 +85,7 @@ const MENU_LINKS: CommandLinkItem[] = [
     title: "Home",
     href: "/",
     kind: "page",
-    icon: <ChanhDaiMark />,
+    icon: <HomeIcon />,
     shortcut: "GH",
   },
   {
@@ -148,16 +141,16 @@ const MENU_LINKS: CommandLinkItem[] = [
 
 const PORTFOLIO_LINKS: CommandLinkItem[] = [
   {
-    title: "Hello",
-    href: "/#hello",
+    title: "About",
+    href: "/#about",
     kind: "page",
     icon: <TextInitialIcon />,
   },
   {
-    title: "Stack",
-    href: "/#stack",
+    title: "Work",
+    href: "/#work",
     kind: "page",
-    icon: <LayersIcon />,
+    icon: <BoxIcon />,
   },
   {
     title: "Experience",
@@ -166,16 +159,16 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     icon: <BriefcaseBusinessIcon />,
   },
   {
+    title: "Tech Stack",
+    href: "/#tech-stack",
+    kind: "page",
+    icon: <LayersIcon />,
+  },
+  {
     title: "Education",
     href: "/#education",
     kind: "page",
     icon: <GraduationCapIcon />,
-  },
-  {
-    title: "Projects",
-    href: "/#projects",
-    kind: "page",
-    icon: <BoxIcon />,
   },
   {
     title: "Awards",
@@ -184,16 +177,10 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     icon: <CrownIcon />,
   },
   {
-    title: "Certifications",
-    href: "/#certs",
+    title: "Contact",
+    href: "/#contact",
     kind: "page",
-    icon: <CircleCheckBigIcon />,
-  },
-  {
-    title: "Intellectual property",
-    href: "/#ip",
-    kind: "page",
-    icon: <ScaleIcon />,
+    icon: <MailIcon />,
   },
 ]
 
@@ -250,8 +237,6 @@ export function CommandMenu({
 
   const [click] = useClickSound()
 
-  const { success: tiksSuccess } = useTiks()
-
   useHotkeys(
     "mod+k, slash",
     (e) => {
@@ -293,22 +278,6 @@ export function CommandMenu({
       }
     },
     [router]
-  )
-
-  const handleCopyText = useCallback(
-    (text: string, message: string) => {
-      setOpen(false)
-      copyToClipboardWithEvent(text, {
-        name: "command_menu_action",
-        properties: {
-          action: "copy",
-          text: text,
-        },
-      })
-      toast.success(message)
-      tiksSuccess()
-    },
-    [tiksSuccess]
   )
 
   const createThemeHandler = useCallback(
@@ -510,48 +479,6 @@ export function CommandMenu({
               onLinkSelect={handleOpenLink}
             />
 
-            <CommandGroup heading="Brand Assets">
-              <CommandMenuItem
-                onHighlight={handleCommandHighlight}
-                onSelect={() => {
-                  handleCopyText(getMarkSVG(), "Mark as SVG copied")
-                }}
-              >
-                <ChanhDaiMark />
-                Copy Mark as SVG
-              </CommandMenuItem>
-
-              <CommandMenuItem
-                onHighlight={handleCommandHighlight}
-                onSelect={() => {
-                  handleCopyText(getWordmarkSVG(), "Logotype as SVG copied")
-                }}
-              >
-                <TypeIcon />
-                Copy Logotype as SVG
-              </CommandMenuItem>
-
-              <CommandMenuItem
-                onHighlight={() => {
-                  setSelectedCommandKind("link")
-                }}
-                onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-              >
-                <SquareDashedIcon />
-                Brand Guidelines
-              </CommandMenuItem>
-
-              <CommandMenuItem onHighlight={handleCommandHighlight} asChild>
-                <a
-                  href="https://assets.chanhdai.com/chanhdai-brand.zip"
-                  download
-                >
-                  <DownloadIcon />
-                  Download Brand Assets
-                </a>
-              </CommandMenuItem>
-            </CommandGroup>
-
             <CommandGroup heading="Theme">
               <CommandMenuItem
                 keywords={["theme"]}
@@ -748,7 +675,9 @@ function CommandMenuFooter({
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 rounded-b-2xl px-4 text-xs font-medium">
-        <ChanhDaiMark className="size-6 text-muted-foreground" />
+        <span className="flex size-5 items-center justify-center rounded border border-line bg-muted/40 font-mono text-[10px] font-bold text-foreground">
+          P
+        </span>
 
         <div className="flex items-center gap-2 max-sm:hidden">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind ?? "page"]}</span>

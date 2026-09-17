@@ -14,7 +14,6 @@ import { SOCIAL } from "@/features/portfolio/data/social-links"
 import packageJson from "../../package.json"
 // Precomputed by `pnpm registry:build`, so the count costs no registry import.
 import registryStats from "../../registry-stats.json"
-import { ChanhDaiMark } from "./chanhdai-mark"
 
 const INSPIRED_BY = [
   "Tailwind CSS",
@@ -27,12 +26,9 @@ const INSPIRED_BY = [
   "shadcncraft",
 ]
 
-const OPENPANEL_URL =
-  "https://openpanel.dev?utm_source=chanhdai.com&utm_medium=referral&utm_campaign=footer"
+const OPENPANEL_URL = "https://openpanel.dev"
 
-// Not derived from `SITE_INFO.url`: that follows `NEXT_PUBLIC_APP_URL` and
-// would read `ncdai.localhost` in dev.
-const SITE_TITLE = "chanhdai.com"
+const SITE_TITLE = "Pradnyesh S."
 
 const SITE_SUBTITLE = packageJson.description
 
@@ -46,10 +42,10 @@ export function SiteFooterCad() {
   const stack = getStack()
 
   return (
-    <footer className="max-w-screen overflow-x-clip px-2">
+    <footer className="max-w-screen overflow-x-clip px-4 sm:px-6">
       <div className="mx-auto border-x group-has-data-[slot=layout-wide]/layout:container md:max-w-3xl">
-        <div className="screen-line-top screen-line-bottom screen-line-top-border before:z-1">
-          <div className="stripe-divider h-12" />
+        <div className="screen-line-top screen-line-top-border before:z-1">
+          <div className="h-8" />
         </div>
 
         <div className="relative">
@@ -166,10 +162,12 @@ export function SiteFooterCad() {
         <div className="screen-line-top screen-line-bottom flex items-center gap-3 screen-line-bottom-border px-4 py-3 text-muted-foreground">
           <Link
             href="/"
-            className="mr-auto text-muted-foreground transition-[color] hover:text-foreground"
+            className="mr-auto flex items-center gap-2 text-muted-foreground transition-[color] hover:text-foreground"
             aria-label="Home"
           >
-            <ChanhDaiMark className="h-4" />
+            <span className="flex size-5 items-center justify-center rounded border border-line font-mono text-[10px] font-bold">
+              P
+            </span>
           </Link>
 
           <a

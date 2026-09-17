@@ -27,13 +27,13 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
             />
           ) : (
             (experience.companyIcon ?? (
-              <span className="flex size-2 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+              <span className="flex size-2 rounded-full bg-muted-foreground/40" />
             ))
           )}
         </div>
 
         <div className="flex min-w-0 flex-1 flex-col gap-x-3 gap-y-1 pr-1 sm:flex-row sm:items-baseline sm:justify-between">
-          <h3 className="text-xl/6 font-medium">
+          <h3 className="text-lg/snug font-medium text-balance sm:text-xl/snug">
             {experience.companyWebsite ? (
               <a
                 className="link"

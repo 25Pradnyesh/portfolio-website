@@ -1,64 +1,56 @@
 import type { User } from "@/features/portfolio/types/user"
 
 export const USER: User = {
-  firstName: "Chánh Đại",
-  lastName: "Nguyễn",
-  displayName: "Chánh Đại",
-  username: "ncdai",
+  firstName: "Pradnyesh",
+  lastName: "S.",
+  displayName: "Pradnyesh",
+  username: "25Pradnyesh",
   gender: "male",
   pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
+  bio: "AI Engineer & Full-Stack Developer building intelligent products, AI systems and polished digital experiences.",
   flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer.",
-    "Open source contributor.",
-    "I own a vintage iPhone.",
+    "AI Engineer",
+    "Full-Stack Developer",
+    "AI Systems Builder",
+    "Generative AI Builder",
+    "Independent Builder",
   ],
-  address: "Ho Chi Minh City, Viet Nam",
-  phoneNumberB64: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  emailB64: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
-  jobTitle: "Design Engineer",
+  address: "MUMBAI · PUNE, INDIA",
+  phoneNumberB64: "",
+  emailB64: "d29ya3NwYWNlLnByYWRueWVzaEBnbWFpbC5jb20=", // base64 encoded workspace.pradnyesh@gmail.com
+  website: "https://github.com/25Pradnyesh",
+  jobTitle: "AI Systems Builder",
   jobs: [
     {
-      title: "Design Engineer",
-      company: "shadcncraft",
-      website: "https://shadcncraft.com?atp=ncdai",
-      experienceId: "shadcncraft",
-    },
-    {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
-      experienceId: "quaric",
+      title: "AI Engineer & Full-Stack Developer",
+      company: "Independent Builder",
+      website: "https://github.com/25Pradnyesh",
     },
   ],
-  about: `- I’m Chánh Đại (call me Dai) — a Design Engineer with 5+ years of experience, known for pixel-perfect execution and an obsessive attention to detail.
-- Passionate about exploring new technologies and turning ideas into reality through polished, thoughtfully crafted projects.
-- Creator of [chanhdai.com](https://github.com/ncdai/chanhdai.com) (2.2k stars), [React Wheel Picker](https://react-wheel-picker.chanhdai.com) (50k+ weekly downloads, ▲ Vercel OSS Program), and [ZaDark](https://zadark.com) (80k+ downloads, 30k+ users) — peak metrics.
+  about: `- AI Engineer & Full-Stack Developer based in Mumbai & Pune, India.
+- Focused on building intelligent systems, autonomous agents, and high-performance digital products from concept to deployment.
+- Primary projects include [Travel AI](https://github.com/25Pradnyesh) (location extraction pipeline from social content), [VertiFarm](https://github.com/25Pradnyesh) (automated monitoring for vertical farming), and [Design Resource Vault](https://design-resource-vault.vercel.app/) (curated directory for frontend developers).
 `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
+  avatar: "/images/profile.jpg",
   avatarVariants: {
-    lightOff: "https://assets.chanhdai.com/images/avatar-light-off.webp",
-    lightOn: "https://assets.chanhdai.com/images/avatar-light-on.webp",
-    darkOff: "https://assets.chanhdai.com/images/avatar-dark-off.webp",
-    darkOn: "https://assets.chanhdai.com/images/avatar-dark-on.webp",
+    lightOff: "/images/profile.jpg",
+    lightOn: "/images/profile.jpg",
+    darkOff: "/images/profile.jpg",
+    darkOn: "/images/profile.jpg",
   },
-  ogImage:
-    "https://assets.chanhdai.com/images/screenshot-og-image-dark.png?t=1778602757",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
-  timeZone: "Asia/Ho_Chi_Minh",
+  ogImage: "/images/profile.jpg",
+  namePronunciationUrl: "",
+  timeZone: "Asia/Kolkata",
   keywords: [
-    "ncdai",
-    "nguyenchanhdai",
-    "nguyen chanh dai",
-    "chanhdai",
-    "chanh dai",
-    "iamncdai",
-    "quaric",
-    "zadark",
-    "nguyễn chánh đại",
-    "chánh đại",
+    "pradnyesh",
+    "pradnyesh s",
+    "25pradnyesh",
+    "ai engineer",
+    "full-stack developer",
+    "machine learning",
+    "generative ai",
+    "pune",
+    "mumbai",
   ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  dateCreated: "2024-01-01", // YYYY-MM-DD
 }

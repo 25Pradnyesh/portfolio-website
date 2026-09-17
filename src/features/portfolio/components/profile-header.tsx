@@ -1,57 +1,46 @@
+import { MapPinIcon } from "lucide-react"
+
 import { AvatarLights } from "@/features/portfolio/components/avatar-lights"
 import { USER } from "@/features/portfolio/data/user"
 
 import { AvatarLightsToggle } from "./avatar-lights-toggle"
-import { ChanhDaiMarkIsometric } from "./chanhdai-mark-isometric"
-import { FlipSentences } from "./flip-sentences"
-import { HandwrittenArrow, HandwrittenNote } from "./handwritten-note"
+import { PortfolioIsometricMark } from "./portfolio-isometric-mark"
 import { PronounceMyName } from "./pronounce-my-name"
 import { VerifiedIcon } from "./verified-icon"
 
 export function ProfileHeader() {
   return (
-    <div className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x screen-line-bottom-border after:z-1">
-      <figure className="relative col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4">
-        <ChanhDaiMarkIsometric />
+    <div className="screen-line-bottom overflow-y-clip border-x screen-line-bottom-border after:z-1">
+      {/* Zone 1 — CAD isometric mark: Compact environmental visual */}
+      <figure className="relative flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2">
+        <PortfolioIsometricMark className="h-20 w-full sm:h-24 md:h-28" />
 
-        {/* w-36 needs ~1088px before the gutter can hold it without clipping,
-            and the mark ignores coarse pointers, so nothing to annotate there. */}
-        <HandwrittenNote
-          className="bottom-20 left-full hidden w-36 flex-col items-start pointer-fine:xl:flex"
-          aria-hidden
-        >
-          <HandwrittenArrow className="-scale-y-100 -rotate-6" />
-          <span className="ml-1 -rotate-6">
-            follows your cursor
-            <span className="block" />
-            click for a sound
-          </span>
-        </HandwrittenNote>
-
-        <figcaption className="pointer-events-none absolute right-2 bottom-2 text-sm leading-none tracking-wide text-[color-mix(in_oklab,var(--muted-foreground)_60%,var(--background))] tabular-nums select-none sm:right-4 sm:bottom-4">
+        {/* Technical caption label */}
+        <figcaption className="pointer-events-none absolute right-2.5 bottom-1 font-mono text-[10px] leading-none tracking-widest text-muted-foreground/60 uppercase tabular-nums select-none sm:right-3 sm:bottom-1.5">
           Fig. 1.
         </figcaption>
       </figure>
 
-      <div className="flex flex-col sm:row-span-2 sm:row-start-1">
-        <div className="screen-line-top mt-auto shrink-0 border-r border-line">
-          <AvatarLightsToggle className="group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none">
-            <AvatarLights
-              className="ring-border ring-offset-background group-focus-visible/avatar-lights-toggle:ring-1 group-focus-visible/avatar-lights-toggle:ring-offset-2"
-              variants={USER.avatarVariants}
-            />
-          </AvatarLightsToggle>
-        </div>
-      </div>
+      {/* Zone 2 — Unified Identity Lockup: Avatar on left, Name, Role & Location on right */}
+      <div className="flex items-center gap-3.5 border-t border-line px-4 py-3 sm:gap-4.5 sm:px-5 sm:py-3.5">
+        <AvatarLightsToggle className="group/avatar-lights-toggle shrink-0 outline-none">
+          <AvatarLights
+            className="size-14 rounded-full ring-1 ring-border/60 ring-offset-2 ring-offset-background transition-shadow group-focus-visible/avatar-lights-toggle:ring-2 group-focus-visible/avatar-lights-toggle:ring-ring sm:size-16"
+            variants={USER.avatarVariants}
+          />
+        </AvatarLightsToggle>
 
-      <div className="flex flex-col">
-        <div className="z-1 mt-auto border-t border-line">
-          <div className="flex items-center gap-2 pl-4">
-            <h1 className="-translate-y-px text-[2rem]/none font-medium tracking-tight">
+        <div className="flex min-w-0 flex-col justify-center">
+          {/* Primary Identity: Name + Verified Checkmark */}
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-[1.75rem] sm:leading-none">
               {USER.displayName}
             </h1>
 
-            <VerifiedIcon className="size-4.5 select-none" aria-hidden />
+            <VerifiedIcon
+              className="size-4.5 shrink-0 text-foreground/70 select-none sm:size-5"
+              aria-hidden
+            />
 
             {USER.namePronunciationUrl && (
               <PronounceMyName
@@ -60,9 +49,19 @@ export function ProfileHeader() {
             )}
           </div>
 
-          <FlipSentences className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
-            {USER.flipSentences}
-          </FlipSentences>
+          {/* Role: Concise secondary positioning label subordinate to Name */}
+          <p className="mt-1 font-mono text-xs font-medium text-muted-foreground sm:mt-1.5 sm:text-sm">
+            AI Systems Builder
+          </p>
+
+          {/* Location: Tertiary metadata in uppercase monospace styling */}
+          <div className="mt-0.75 flex items-center gap-1 font-mono text-[10px] tracking-wider text-muted-foreground/60 uppercase sm:mt-1 sm:text-[11px]">
+            <MapPinIcon
+              className="size-3 shrink-0 text-muted-foreground/50"
+              aria-hidden
+            />
+            <span>MUMBAI · PUNE, INDIA</span>
+          </div>
         </div>
       </div>
     </div>

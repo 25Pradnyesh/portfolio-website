@@ -198,7 +198,7 @@ export const BOOKMARKS: Bookmark[] = [
   },
   {
     title: "React Bits Pro",
-    url: "https://pro.reactbits.dev?atp=ncdai",
+    url: "https://pro.reactbits.dev",
     icon: (
       <svg viewBox="0 0 24 24" fill="none">
         <path
@@ -212,7 +212,7 @@ export const BOOKMARKS: Bookmark[] = [
   },
   {
     title: "shadcncraft",
-    url: "https://shadcncraft.com?atp=ncdai",
+    url: "https://shadcncraft.com",
     icon: (
       <svg viewBox="0 0 24 24" fill="none">
         <path

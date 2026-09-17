@@ -10,14 +10,18 @@ import { PROJECTS } from "@/features/portfolio/data/projects"
 
 import { ProjectItem } from "./project-item"
 
-const ID = "projects"
+const ID = "work"
 
 export function Projects() {
   return (
-    <Panel id={ID}>
+    <Panel id={ID} className="screen-line-top-none">
+      <div
+        id="projects"
+        className="scroll-mt-[calc(var(--header-height)+var(--separator-height))]"
+      />
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Projects</a>
+          <a href={`#${ID}`}>Work</a>
           <PanelTitleSup>({PROJECTS.length})</PanelTitleSup>
           <PanelTitleCopy id={ID} />
         </PanelTitle>

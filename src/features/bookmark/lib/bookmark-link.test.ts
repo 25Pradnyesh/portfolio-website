@@ -1,21 +1,23 @@
 import { describe, expect, it } from "vitest"
 
+import { UTM_PARAMS } from "@/config/site"
+
 import { getBookmarkExternalHref } from "./bookmark-link"
 
 describe("getBookmarkExternalHref", () => {
   it("appends utm_source", () => {
     expect(getBookmarkExternalHref("https://example.com/page")).toBe(
-      "https://example.com/page?utm_source=chanhdai.com"
+      `https://example.com/page?utm_source=${UTM_PARAMS.utm_source}`
     )
   })
 
   it("preserves params already on the url", () => {
-    const href = getBookmarkExternalHref("https://example.com?atp=ncdai")
+    const href = getBookmarkExternalHref("https://example.com?atp=test")
 
-    expect(href).toContain("atp=ncdai")
-    expect(href).toContain("utm_source=chanhdai.com")
-    expect(href.indexOf("atp=ncdai")).toBeLessThan(
-      href.indexOf("utm_source=chanhdai.com")
+    expect(href).toContain("atp=test")
+    expect(href).toContain(`utm_source=${UTM_PARAMS.utm_source}`)
+    expect(href.indexOf("atp=test")).toBeLessThan(
+      href.indexOf(`utm_source=${UTM_PARAMS.utm_source}`)
     )
   })
 
@@ -25,7 +27,7 @@ describe("getBookmarkExternalHref", () => {
 
   it("normalizes bare origins with a trailing slash", () => {
     expect(getBookmarkExternalHref("https://animations.dev")).toBe(
-      "https://animations.dev/?utm_source=chanhdai.com"
+      `https://animations.dev/?utm_source=${UTM_PARAMS.utm_source}`
     )
   })
 })

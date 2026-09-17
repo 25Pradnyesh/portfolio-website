@@ -1,31 +1,30 @@
 import { Markdown } from "@/components/markdown"
-import { HelloTitle } from "@/features/portfolio/components/hello-title"
 import {
   Panel,
   PanelContent,
   PanelHeader,
+  PanelTitle,
 } from "@/features/portfolio/components/panel"
+import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
 import { USER } from "@/features/portfolio/data/user"
 
-const ID = "hello"
+const ID = "about"
 
 export function Hello() {
   return (
-    <Panel id={ID} className="screen-line-bottom-none">
-      <PanelHeader>
-        <h2 className="sr-only">About</h2>
-        <HelloTitle />
+    <Panel id={ID} className="screen-line-bottom-none screen-line-top-none">
+      <PanelHeader className="border-b-0 px-4 pt-4 pb-0 screen-line-bottom-none sm:px-5 sm:pt-5">
+        <PanelTitle>
+          About
+          <PanelTitleCopy id={ID} />
+        </PanelTitle>
       </PanelHeader>
 
-      <PanelContent>
+      <PanelContent className="px-4 pt-3 pb-4 sm:px-5 sm:pt-3.5 sm:pb-5">
         <div className="typeset typeset-description [&_li]:ps-0.5 [&_ul]:ps-3.5">
           <Markdown>{USER.about}</Markdown>
         </div>
       </PanelContent>
-
-      <div className="screen-line-bottom h-px" />
-      <div className="h-4" />
-      <div className="screen-line-bottom h-px screen-line-bottom-border" />
     </Panel>
   )
 }

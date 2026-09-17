@@ -399,7 +399,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "ps",
     title: "Photoshop",
-    href: "https://www.adobe.com/vn_en/products/photoshop.html",
+    href: "https://www.adobe.com/products/photoshop.html",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden>
         <path

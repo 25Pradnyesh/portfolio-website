@@ -19,7 +19,7 @@ export function HelloTitle() {
 
   return (
     <>
-      <PanelTitle asChild className="font-handwritten leading-none">
+      <PanelTitle asChild>
         <div id={`${ID}-greeting`} aria-hidden suppressHydrationWarning>
           {greeting}
         </div>
