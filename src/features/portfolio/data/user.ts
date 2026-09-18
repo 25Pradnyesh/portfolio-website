@@ -9,10 +9,11 @@ export const USER: User = {
   pronouns: "he/him",
   bio: "AI Engineer & Full-Stack Developer building intelligent products, AI systems and polished digital experiences.",
   flipSentences: [
-    "AI Engineer",
+    "ML Engineer",
     "Full-Stack Developer",
     "AI Systems Builder",
-    "Generative AI Builder",
+    "I build things that make the world a little more valuable than I found it.",
+    "I'm interested in problems where creating value is the objective, not capturing it.",
     "Independent Builder",
   ],
   address: "MUMBAI · PUNE, INDIA",
@@ -22,7 +23,7 @@ export const USER: User = {
   jobTitle: "AI Systems Builder",
   jobs: [
     {
-      title: "AI Engineer & Full-Stack Developer",
+      title: "ML Engineer & Full-Stack Developer",
       company: "Independent Builder",
       website: "https://github.com/25Pradnyesh",
     },

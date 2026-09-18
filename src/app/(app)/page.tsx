@@ -47,16 +47,16 @@ export default function HomePage() {
           <GitHubContributions />
           <SectionDivider />
 
-          <Projects />
+          <TechStack />
           <SectionDivider />
 
           <Experiences />
           <SectionDivider />
 
-          <Education />
+          <Projects />
           <SectionDivider />
 
-          <TechStack />
+          <Education />
           <SectionDivider />
 
           <Awards />

@@ -27,7 +27,7 @@ export function Overview() {
     <Panel className="screen-line-bottom-none">
       <h2 className="sr-only">Overview</h2>
 
-      <PanelContent className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
+      <PanelContent className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
         {USER.jobs.map((job, index) => (
           <JobItem
             key={index}
@@ -81,8 +81,6 @@ export function Overview() {
           </IntroItemContent>
         </IntroItem>
       </PanelContent>
-
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-1 w-px -translate-x-2.25 border-r border-dashed border-line max-sm:hidden" />
     </Panel>
   )
 }

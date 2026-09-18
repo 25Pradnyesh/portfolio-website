@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic"
 
+import { HeroMediaBanner } from "@/components/hero-media-banner"
 import { SiteBottomNav } from "@/components/site-bottom-nav"
 import { SiteFooterCad } from "@/components/site-footer-cad"
 import { SiteHeader } from "@/components/site-header"
@@ -15,6 +16,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     // - https://base-ui.com/react/overview/quick-start#ios-26-safari
     <div className="group/layout relative isolate">
       <SiteHeader />
+      <HeroMediaBanner />
       <main className="max-w-screen overflow-x-clip px-4 sm:px-6">
         {children}
       </main>

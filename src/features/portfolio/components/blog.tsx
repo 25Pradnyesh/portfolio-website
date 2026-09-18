@@ -24,13 +24,14 @@ export function Blog() {
         </PanelTitle>
       </PanelHeader>
 
-      <div className="relative flex min-h-[220px] flex-col items-center justify-center gap-5 py-16 sm:min-h-[260px] sm:py-20">
+      {/* Editorial Content Area with Technical Blueprint Guidelines */}
+      <div className="screen-line-top relative flex min-h-[140px] flex-col items-center justify-center gap-4 py-8 sm:min-h-[160px] sm:py-10">
         {/* Subtle technical background grid lines matching Swiss editorial aesthetic */}
         <div
           className="pointer-events-none absolute inset-0 -z-1 flex justify-center"
           aria-hidden
         >
-          <div className="h-full w-full max-w-xs border-x border-line/50 sm:max-w-sm" />
+          <div className="h-full w-full max-w-xs border-x border-line/40 sm:max-w-sm" />
         </div>
         <div
           className="pointer-events-none absolute inset-x-0 top-1/2 -z-1 h-px -translate-y-1/2 bg-line/30"
