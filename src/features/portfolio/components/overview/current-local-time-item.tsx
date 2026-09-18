@@ -1,10 +1,54 @@
 "use client"
 
 import { useEffect, useId, useState } from "react"
+import { ClockIcon } from "lucide-react"
 
 import { InlineScript } from "@/components/inline-script"
 
 import { IntroItem, IntroItemContent, IntroItemIcon } from "./intro-item"
+
+export function CurrentLocalTimeField({ timeZone }: CurrentLocalTimeItemProps) {
+  const uid = useId()
+  const ids = {
+    time: `lt-time-${uid}`,
+    diff: `lt-diff-${uid}`,
+    hands: `lt-hands-${uid}`,
+  }
+
+  const [timeString, setTimeString] = useState<string>("")
+  const [diffText, setDiffText] = useState<string>("")
+
+  useEffect(() => {
+    const updateTime = () => {
+      const { time, diff } = computeClock(timeZone)
+      setTimeString(time)
+      setDiffText(diff)
+    }
+
+    updateTime()
+    const interval = setInterval(updateTime, 60000)
+
+    return () => clearInterval(interval)
+  }, [timeZone])
+
+  return (
+    <div className="flex items-center gap-2.5 font-mono text-[13px] text-white/60 sm:text-sm">
+      <ClockIcon className="size-4 shrink-0 text-white/40" aria-hidden />
+      <span id={ids.time} suppressHydrationWarning>
+        {timeString}
+      </span>
+      <span
+        id={ids.diff}
+        className="text-white/40"
+        aria-hidden
+        suppressHydrationWarning
+      >
+        {diffText}
+      </span>
+      <InlineScript html={getInlineScript(timeZone, ids)} />
+    </div>
+  )
+}
 
 export function CurrentLocalTimeItem({ timeZone }: CurrentLocalTimeItemProps) {
   const uid = useId()

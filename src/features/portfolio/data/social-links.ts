@@ -25,7 +25,7 @@ export const SOCIAL = {
     sameAs: true,
   },
   discord: {
-    title: "Pradnyesh",
+    title: "Discord",
     handle: "Pradnyesh",
     href: "https://discord.com/users/1397630514554212554",
     sameAs: true,

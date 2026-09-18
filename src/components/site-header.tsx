@@ -54,9 +54,9 @@ export function SiteHeader() {
         <div className="flex-1" />
 
         <div className="flex items-center gap-4 max-sm:hidden">
+          <NavItem href="/#about">About</NavItem>
           <NavItem href="/#work">Work</NavItem>
           <NavItem href="/#experience">Experience</NavItem>
-          <NavItem href="/#about">About</NavItem>
         </div>
 
         <div className="flex items-center max-sm:*:data-[slot=command-menu-trigger]:hidden">

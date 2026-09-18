@@ -16,14 +16,14 @@ export const TECH_STACK: TechStack[] = [
     title: "TypeScript",
     href: "https://www.typescriptlang.org",
     icon: <TsIcon />,
-    categories: ["Language"],
+    categories: ["Languages"],
   },
   {
     key: "js",
     title: "JavaScript",
     href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     icon: <JsIcon />,
-    categories: ["Language"],
+    categories: ["Languages"],
   },
   {
     key: "python",
@@ -37,7 +37,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Language"],
+    categories: ["Languages"],
   },
   {
     key: "react",
@@ -261,7 +261,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["AI / ML"],
   },
   {
     key: "cursor",
@@ -275,7 +275,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["AI / ML"],
   },
   {
     key: "gemini",
@@ -289,14 +289,14 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["AI / ML"],
   },
   {
     key: "chatgpt",
     title: "ChatGPT",
     href: "https://chatgpt.com",
     icon: <OpenAIIcon />,
-    categories: ["Workflow & AI"],
+    categories: ["AI / ML"],
   },
   {
     key: "git",
@@ -310,14 +310,14 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["Infrastructure & Tools"],
   },
   {
     key: "github",
     title: "GitHub",
     href: "https://github.com",
     icon: <GitHubIcon />,
-    categories: ["Workflow & AI"],
+    categories: ["Infrastructure & Tools"],
   },
   {
     key: "docker",
@@ -331,14 +331,14 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Workflow & AI"],
+    categories: ["Infrastructure & Tools"],
   },
   {
     key: "vercel",
     title: "Vercel",
     href: "https://vercel.com",
     icon: <VercelIcon />,
-    categories: ["Workflow & AI"],
+    categories: ["Infrastructure & Tools"],
   },
   {
     key: "openpanel",
@@ -352,7 +352,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Analytics"],
+    categories: ["Analytics & Design"],
   },
   {
     key: "posthog",
@@ -366,7 +366,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Analytics"],
+    categories: ["Analytics & Design"],
   },
   {
     key: "figma",
@@ -380,7 +380,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Design"],
+    categories: ["Analytics & Design"],
   },
   {
     key: "paper",
@@ -394,7 +394,7 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Design"],
+    categories: ["Analytics & Design"],
   },
   {
     key: "ps",
@@ -408,6 +408,6 @@ export const TECH_STACK: TechStack[] = [
         />
       </svg>
     ),
-    categories: ["Design"],
+    categories: ["Analytics & Design"],
   },
 ]

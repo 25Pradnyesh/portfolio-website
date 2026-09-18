@@ -2,37 +2,32 @@ import { addQueryParams } from "@/utils/url"
 import { ArrowUpRightIcon } from "lucide-react"
 
 import { UTM_PARAMS } from "@/config/site"
-import { cn } from "@/lib/utils"
-import { Panel } from "@/features/portfolio/components/panel"
 import { SOCIAL_ICONS } from "@/features/portfolio/components/social-link-icons"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
-const SOCIAL_ICON_COLORS: Record<string, string> = {
-  github: "text-[#24292f] dark:text-white",
-  linkedin: "text-[#0A66C2]",
-  x: "text-black dark:text-white",
-  discord: "text-[#5865F2]",
-  cal: "text-foreground",
-  telegram: "text-[#24A1DE]",
-  email: "text-[#EA4335]",
-  resume: "text-[#EF4444]",
+const BRAND_COLORS: Record<string, string> = {
+  github: "#ffffff",
+  linkedin: "#0A66C2",
+  x: "#ffffff",
+  discord: "#5865F2",
+  cal: "#ffffff",
+  telegram: "#24A1DE",
+  email: "#EA4335",
+  resume: "#38BDF8",
 }
 
 export function SocialLinks() {
   return (
-    <Panel className="screen-line-top-none">
+    <div className="border-y border-white/[0.08]">
       <h2 className="sr-only">Social links</h2>
 
-      <div className="grid grid-cols-2 border-t border-line sm:grid-cols-4">
-        {SOCIAL_LINKS.map((item, index) => {
-          const isRightEdgeMobile = index % 2 === 1
-          const isRightEdgeDesktop = (index + 1) % 4 === 0
-          const isLastRowMobile = index >= 6
-          const isLastRowDesktop = index >= 4
+      <div className="grid grid-cols-1 gap-px bg-white/[0.08] md:grid-cols-3">
+        {SOCIAL_LINKS.map((item) => {
           const isExternal = item.href.startsWith("http")
           const href = isExternal
             ? addQueryParams(item.href, UTM_PARAMS)
             : item.href
+          const brandColor = BRAND_COLORS[item.name]
 
           return (
             <a
@@ -40,48 +35,37 @@ export function SocialLinks() {
               href={href}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
-              className={cn(
-                "group relative flex items-center justify-between gap-2.5 px-3.5 py-3 sm:px-4 sm:py-3.5 md:py-4",
-                "font-mono text-xs text-muted-foreground transition-colors hover:bg-muted/25 hover:text-foreground",
-                "outline-none focus-visible:bg-muted/30 focus-visible:ring-1 focus-visible:ring-ring",
-                !isRightEdgeMobile && "border-r border-line",
-                isRightEdgeDesktop
-                  ? "sm:border-r-0"
-                  : "sm:border-r sm:border-line",
-                !isLastRowMobile && "border-b border-line",
-                isLastRowDesktop
-                  ? "sm:border-b-0"
-                  : "sm:border-b sm:border-line"
-              )}
+              className="group flex min-h-[64px] items-center justify-between gap-3 bg-[#09090b] px-4 py-3.5 transition-colors duration-150 outline-none hover:bg-white/[0.03] focus-visible:bg-white/[0.05]"
             >
-              <span className="flex min-w-0 items-center gap-2.5 truncate sm:gap-3">
-                <span
-                  className={cn(
-                    "shrink-0 transition-opacity group-hover:opacity-90 [&_svg]:size-4 sm:[&_svg]:size-4.5",
-                    SOCIAL_ICON_COLORS[item.name]
-                  )}
+              <div className="flex min-w-0 items-center gap-3 truncate">
+                {/* 36px x 36px container with 20px x 20px icon */}
+                <div
+                  className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.05] transition-colors group-hover:border-white/[0.12] [&>svg]:size-5 [&>svg]:h-5 [&>svg]:w-5"
+                  style={brandColor ? { color: brandColor } : undefined}
                 >
                   {SOCIAL_ICONS[item.name]}
-                </span>
-                <span className="truncate font-mono text-xs font-medium text-foreground/85 transition-colors group-hover:text-foreground sm:text-[13px]">
+                </div>
+
+                <span className="truncate font-mono text-[13px] font-medium text-zinc-200 transition-colors group-hover:text-white sm:text-sm">
                   {item.title}
                 </span>
-              </span>
+              </div>
 
-              {isExternal ? (
-                <ArrowUpRightIcon
-                  className="size-3.5 shrink-0 text-muted-foreground/35 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground/80 sm:size-4"
-                  aria-hidden
-                />
-              ) : (
-                <span className="font-mono text-[10px] text-muted-foreground/40 transition-colors select-none group-hover:text-muted-foreground/70 sm:text-[11px]">
-                  {item.name === "resume" ? "REQ" : "DIRECT"}
-                </span>
-              )}
+              {/* Uniform diagonal 12px external link arrow on EVERY card */}
+              <ArrowUpRightIcon
+                className="size-3 shrink-0 text-white/40 transition-all duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white/90"
+                aria-hidden
+              />
             </a>
           )
         })}
+
+        {/* Seamless 9th cell filler for 3x3 desktop grid */}
+        <div
+          className="hidden min-h-[64px] bg-[#09090b] md:block"
+          aria-hidden
+        />
       </div>
-    </Panel>
+    </div>
   )
 }

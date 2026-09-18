@@ -394,59 +394,59 @@
 }
 
 .dark {
+  /* zinc-950 near-black */
+  --background: #09090b;
+
+  /* zinc-50 */
+  --foreground: #fafafa;
+
+  /* zinc-50 */
+  --primary: #fafafa;
+
   /* zinc-950 */
-  --background: oklch(0.141 0.005 285.823);
-
-  /* zinc-50 */
-  --foreground: oklch(0.985 0 0);
-
-  /* zinc-50 */
-  --primary: oklch(0.985 0 0);
-
-  /* zinc-950 */
-  --primary-foreground: oklch(0.141 0.005 285.823);
-
-  /* zinc-800 */
-  --secondary: oklch(0.274 0.006 286.033);
-
-  /* zinc-50 */
-  --secondary-foreground: oklch(0.985 0 0);
-
-  /* zinc-800 */
-  --muted: oklch(0.274 0.006 286.033);
-
-  /* zinc-400 */
-  --muted-foreground: oklch(0.705 0.015 286.067);
+  --primary-foreground: #09090b;
 
   /* zinc-900 */
-  --card: oklch(0.21 0.006 285.885);
+  --secondary: #18181b;
 
   /* zinc-50 */
-  --card-foreground: oklch(0.985 0 0);
+  --secondary-foreground: #fafafa;
 
-  /* zinc-900 */
-  --popover: oklch(0.21 0.006 285.885);
+  /* subtle surface */
+  --muted: rgba(255, 255, 255, 0.04);
 
-  /* zinc-50 */
-  --popover-foreground: oklch(0.985 0 0);
+  /* muted text */
+  --muted-foreground: rgba(255, 255, 255, 0.5);
 
-  /* zinc-800 */
-  --accent: oklch(0.274 0.006 286.033);
-
-  --accent-muted: color-mix(in oklab, var(--accent) 20%, transparent);
+  /* zinc-950 card */
+  --card: #09090b;
 
   /* zinc-50 */
-  --accent-foreground: oklch(0.985 0 0);
+  --card-foreground: #fafafa;
 
-  /* zinc-750 / crisp technical line */
-  --border: oklch(0.32 0.006 286.033);
+  /* zinc-950 popover */
+  --popover: #09090b;
 
-  --line: color-mix(in oklab, var(--border) 85%, var(--background));
+  /* zinc-50 */
+  --popover-foreground: #fafafa;
 
-  --input: lab(100% 0 0 / 0.15);
+  /* subtle surface hover */
+  --accent: rgba(255, 255, 255, 0.05);
+
+  --accent-muted: rgba(255, 255, 255, 0.03);
+
+  /* zinc-50 */
+  --accent-foreground: #fafafa;
+
+  /* 8% white borders */
+  --border: rgba(255, 255, 255, 0.08);
+
+  --line: rgba(255, 255, 255, 0.08);
+
+  --input: rgba(255, 255, 255, 0.08);
 
   /* zinc-500 */
-  --ring: oklch(0.552 0.016 285.938);
+  --ring: rgba(255, 255, 255, 0.2);
 
   /* green-500 */
   --success: oklch(0.723 0.219 149.579);

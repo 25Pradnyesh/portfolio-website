@@ -3,7 +3,8 @@ import type { ProfilePage, WithContext } from "schema-dts"
 
 import { JSON_LD_ID } from "@/config/json-ld"
 import { JsonLdScript } from "@/lib/json-ld"
-import { absoluteUrl, cn } from "@/lib/utils"
+import { absoluteUrl } from "@/lib/utils"
+import { SectionDivider } from "@/components/section-divider"
 import { Awards } from "@/features/portfolio/components/awards"
 import { Contact } from "@/features/portfolio/components/contact"
 import { Education } from "@/features/portfolio/components/education"
@@ -28,30 +29,37 @@ export default function HomePage() {
     <>
       <JsonLdScript data={getProfilePageJsonLd()} />
 
-      <div className="[--separator-height:--spacing(8)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
+      <div className="[--separator-height:--spacing(6)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
         <div className="mx-auto md:max-w-3xl">
           <ProfileHeader />
+          <SectionDivider />
 
           <Overview />
-          <SocialLinks />
+          <SectionDivider />
 
           <Hello />
+          <SectionDivider />
+
+          <SocialLinks />
+          <SectionDivider />
+
           <GitHubContributions />
+          <SectionDivider />
 
           <Projects />
-          <Separator />
+          <SectionDivider />
 
           <Experiences />
-          <Separator />
-
-          <TechStack />
-          <Separator />
+          <SectionDivider />
 
           <Education />
-          <Separator />
+          <SectionDivider />
+
+          <TechStack />
+          <SectionDivider />
 
           <Awards />
-          <Separator />
+          <SectionDivider />
 
           <Contact />
         </div>
@@ -71,15 +79,4 @@ function getProfilePageJsonLd(): WithContext<ProfilePage> {
     // the root layout) so both blocks resolve to the same entity.
     mainEntity: { "@id": JSON_LD_ID.person },
   }
-}
-
-function Separator({ className }: { className?: string }) {
-  return (
-    <div
-      className={cn(
-        "screen-line-top screen-line-bottom h-(--separator-height) w-full border-x bg-muted/15 screen-line-bottom-border screen-line-top-border",
-        className
-      )}
-    />
-  )
 }

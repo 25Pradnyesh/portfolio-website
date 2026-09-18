@@ -16,10 +16,13 @@ export function AvatarLights({
 }) {
   return (
     <div
-      className={cn("pointer-events-none relative rounded-full", className)}
+      className={cn(
+        "pointer-events-none relative overflow-hidden rounded-full border border-white/[0.08]",
+        className
+      )}
       {...props}
     >
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 size-full">
         <AvatarImage
           src={variants.lightOff}
           alt="Avatar with lights off in light mode"
@@ -50,11 +53,6 @@ export function AvatarLights({
           fetchPriority="high"
         />
       </AvatarLayer>
-
-      <div
-        className="pointer-events-none absolute inset-0 rounded-full inset-ring-1 inset-ring-foreground/10"
-        aria-hidden
-      />
     </div>
   )
 }
@@ -86,7 +84,7 @@ function AvatarImage({
   return (
     <img
       className={cn(
-        "size-full rounded-full object-cover select-none",
+        "size-full h-full w-full rounded-full object-cover object-center select-none",
         className
       )}
       src={src}
