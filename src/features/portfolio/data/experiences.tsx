@@ -1,4 +1,4 @@
-import { BrainIcon, Code2Icon, LayersIcon } from "lucide-react"
+import { BrainIcon, Code2Icon } from "lucide-react"
 
 import type { Experience } from "@/features/portfolio/types/experiences"
 
@@ -6,15 +6,13 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "independent-builder",
     companyName: "Independent Builder & Product Development",
-    location: "Mumbai & Pune, India",
-    locationType: "Remote",
     isCurrentEmployer: true,
     positions: [
       {
         id: "builder-1",
-        title: "AI Engineer & Full-Stack Developer",
+        title: "Full-Stack Developer",
         employmentPeriod: {
-          start: "2024",
+          start: "03.2025",
         },
         employmentType: "Independent",
         icon: <Code2Icon />,
@@ -34,14 +32,12 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "ai-genai",
     companyName: "AI & Machine Learning Engineering",
-    location: "Mumbai & Pune, India",
-    locationType: "Remote",
     positions: [
       {
         id: "ai-1",
         title: "AI / ML Developer",
         employmentPeriod: {
-          start: "2024",
+          start: "04.2025",
         },
         employmentType: "Projects & Research",
         icon: <BrainIcon />,
@@ -61,29 +57,28 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
   {
-    id: "web-development",
-    companyName: "Full-Stack Web Engineering",
-    location: "Mumbai & Pune, India",
-    locationType: "Remote",
+    id: "design-engineering",
+    companyName: "Design Engineering",
     positions: [
       {
-        id: "web-1",
-        title: "Full-Stack Developer",
+        id: "design-1",
+        title: "Design Engineer",
         employmentPeriod: {
-          start: "2023",
+          start: "07.2025",
         },
-        employmentType: "Full-Stack",
-        icon: <LayersIcon />,
-        description: `- Developing responsive, accessible, and performant web applications with Next.js, React, Node.js, and TypeScript.
-- Designing clean server-client architectures, RESTful API routes, and database schemas with PostgreSQL and Supabase.
-- Crafting modern component systems with Tailwind CSS.`,
+        employmentType: "Projects & Product Development",
+        icon: <Code2Icon />,
+        description: `- Architecting production-grade interfaces and design systems for responsive web applications, translating product requirements into scalable UI architectures.
+- Building component-driven design systems, interaction patterns, and visual language across product surfaces.
+- Bridging design and frontend engineering through high-fidelity implementation, responsive architecture, accessibility, and reusable component primitives.
+- Applying interaction design, motion systems, information architecture, and visual hierarchy to improve product usability and interface quality.`,
         skills: [
-          "Next.js",
-          "React",
-          "TypeScript",
-          "Tailwind CSS",
-          "Node.js",
-          "PostgreSQL",
+          "UI/UX Design",
+          "Design Systems",
+          "Figma",
+          "Interaction Design",
+          "Motion Design",
+          "Frontend Engineering",
         ],
         isExpanded: true,
       },
