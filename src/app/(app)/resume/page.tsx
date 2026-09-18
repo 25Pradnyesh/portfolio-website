@@ -13,43 +13,75 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <div className="mx-auto my-6 max-w-3xl overflow-hidden rounded-xl border border-border/80 bg-card text-card-foreground shadow-sm sm:my-10 print:my-0 print:max-w-none print:border-none print:bg-white print:p-0 print:text-black print:shadow-none">
+    <div className="mx-auto my-6 max-w-3xl overflow-hidden rounded-xl border border-border/80 bg-card text-card-foreground shadow-sm sm:my-10 print:my-0 print:max-w-none print:overflow-visible print:rounded-none print:border-none print:bg-white print:p-0 print:text-black print:shadow-none">
       <style>{`
         @media print {
           @page {
-            margin: 0.28in 0.38in;
-            size: letter portrait;
+            size: A4 portrait;
+            margin: 12mm 15mm 12mm 15mm;
           }
-          header, footer, nav, aside, [role="navigation"] {
-            display: none !important;
-          }
-          body {
+          html, body {
             background: white !important;
             color: black !important;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
           }
+          /* Hide all website chrome, layout wrappers, and navigation */
+          body > div > *:not(main) {
+            display: none !important;
+          }
+          header:not(.resume-header),
+          footer,
+          nav,
+          aside,
+          [role="navigation"],
+          .site-header,
+          .site-footer,
+          .print\\:hidden {
+            display: none !important;
+          }
           main {
             padding: 0 !important;
             margin: 0 !important;
             max-width: 100% !important;
+            overflow: visible !important;
+          }
+          /* Clean link styling without browser link decoration */
+          a {
+            text-decoration: none !important;
+            color: inherit !important;
+          }
+          /* Prevent awkward page breaks inside individual entries */
+          .print-break-inside-avoid {
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
+          }
+          /* Prevent orphaned section headings */
+          h1, h2, h3 {
+            break-after: avoid !important;
+            page-break-after: avoid !important;
+          }
+          /* Distinct clean page break between Page 1 and Page 2 */
+          .print-page-break-before {
+            break-before: page !important;
+            page-break-before: always !important;
           }
         }
       `}</style>
       <ResumeActions />
 
       {/* Resume Document Canvas */}
-      <article className="px-6 py-8 sm:px-10 sm:py-9 print:p-0 print:text-[9px] print:leading-[1.18]">
+      <article className="px-6 py-8 sm:px-10 sm:py-9 print:p-0 print:text-[10px] print:leading-[1.35]">
         {/* HEADER */}
-        <header className="border-b border-border/70 pb-3 text-center sm:pb-3.5 print:border-black print:pb-1">
-          <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl print:text-base print:text-black">
+        <header className="resume-header border-b border-border/70 pb-3 text-center sm:pb-3.5 print:border-black print:pb-2">
+          <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl print:text-2xl print:text-black">
             PRADNYESH
           </h1>
-          <p className="mt-0.5 font-mono text-xs font-medium text-foreground/85 sm:text-sm print:text-[10px] print:text-black">
+          <p className="mt-0.5 font-mono text-xs font-medium text-foreground/85 sm:text-sm print:text-[11px] print:text-black">
             ML Engineer &amp; Full-Stack Developer · Mumbai · Pune, India
           </p>
 
-          <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-xs text-muted-foreground sm:gap-x-3.5 print:text-[8px] print:text-black">
+          <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-xs text-muted-foreground sm:gap-x-3.5 print:mt-1 print:text-[9.5px] print:text-black">
             <a
               href="mailto:workspace.pradnyesh@gmail.com"
               className="transition-colors hover:text-foreground print:text-black"
@@ -103,101 +135,97 @@ export default function ResumePage() {
           </div>
         </header>
 
-        <div className="mt-3.5 space-y-3.5 print:mt-1 print:space-y-1">
+        <div className="mt-4 space-y-4 print:mt-3 print:space-y-3">
           {/* EDUCATION */}
-          <section>
-            <h2 className="border-b border-border/70 pb-0.5 font-heading text-xs font-bold tracking-wider text-foreground uppercase sm:text-sm print:border-black print:pb-0.5 print:text-[9.5px] print:text-black">
+          <section className="print-break-inside-avoid">
+            <h2 className="border-b border-border/70 pb-0.5 font-heading text-xs font-bold tracking-wider text-foreground uppercase sm:text-sm print:border-black print:pb-1 print:text-[11px] print:text-black">
               Education
             </h2>
 
-            <div className="mt-1.5 space-y-1.5 print:mt-0.5 print:space-y-0.5">
+            <div className="mt-2 space-y-2.5 print:mt-1.5 print:space-y-1.5">
               {/* SPPU */}
-              <div>
+              <div className="print-break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h3 className="font-semibold text-foreground print:text-black">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
                     Savitribai Phule Pune University (SPPU)
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
-                    2023 — 2027
+                  <span className="font-mono text-xs text-muted-foreground print:text-[9.5px] print:text-black">
+                    Pune, India
                   </span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[8.5px] print:text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
                   <p className="italic">
                     Bachelor of Engineering (B.E.) in Electronics &amp; Computer
                     Engineering
                   </p>
-                  <span className="font-mono text-xs text-muted-foreground print:text-[8px] print:text-black">
-                    Pune, India
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
+                    2023 — 2027
                   </span>
                 </div>
-                <p className="text-xs text-muted-foreground print:text-[8px] print:text-black">
-                  Undergraduate engineering student in Electronics &amp;
-                  Computer Engineering with{" "}
-                  <strong className="font-medium text-foreground/90 print:text-black">
-                    HONORS in Artificial Intelligence and Machine Learning
-                  </strong>
-                  .
+                <p className="mt-0.5 text-xs text-muted-foreground print:mt-0 print:text-[9.5px] print:text-black">
+                  <span className="font-medium text-foreground/90 print:text-black">
+                    Honors:
+                  </span>{" "}
+                  Artificial Intelligence and Machine Learning
                 </p>
               </div>
 
-              {/* Secondary education */}
-              <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 print:grid-cols-2">
-                <div>
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs print:text-[8px]">
-                    <span className="font-medium text-foreground/95 print:text-black">
-                      B.K. Birla College of Arts, Science &amp; Commerce
-                    </span>
-                    <span className="font-mono text-muted-foreground tabular-nums print:text-black">
-                      2022 — 2023
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-muted-foreground italic print:text-[7.5px] print:text-black">
-                    12th Grade · Science (Completed 12th grade in science
-                    stream)
-                  </p>
+              {/* B.K. Birla College */}
+              <div className="print-break-inside-avoid">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
+                    B.K. Birla College of Arts, Science &amp; Commerce
+                  </h3>
                 </div>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
+                  <p className="italic">12th Grade · Science Stream</p>
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
+                    2022 — 2023
+                  </span>
+                </div>
+              </div>
 
-                <div>
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs print:text-[8px]">
-                    <span className="font-medium text-foreground/95 print:text-black">
-                      Smt. Kantaben Chandulal Gandhi English School
-                    </span>
-                    <span className="font-mono text-muted-foreground tabular-nums print:text-black">
-                      2020 — 2021
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-muted-foreground italic print:text-[7.5px] print:text-black">
-                    10th Grade (Completed 10th grade)
-                  </p>
+              {/* Smt. Kantaben Chandulal Gandhi English School */}
+              <div className="print-break-inside-avoid">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
+                    Smt. Kantaben Chandulal Gandhi English School
+                  </h3>
+                </div>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
+                  <p className="italic">10th Grade</p>
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
+                    2020 — 2021
+                  </span>
                 </div>
               </div>
             </div>
           </section>
 
           {/* PROFESSIONAL EXPERIENCE */}
-          <section>
-            <h2 className="border-b border-border/70 pb-0.5 font-heading text-xs font-bold tracking-wider text-foreground uppercase sm:text-sm print:border-black print:pb-0.5 print:text-[9.5px] print:text-black">
+          <section className="print-break-inside-avoid">
+            <h2 className="border-b border-border/70 pb-0.5 font-heading text-xs font-bold tracking-wider text-foreground uppercase sm:text-sm print:border-black print:pb-1 print:text-[11px] print:text-black">
               Professional Experience
             </h2>
 
-            <div className="mt-1.5 space-y-2 print:mt-0.5 print:space-y-0.5">
+            <div className="mt-2 space-y-2.5 print:mt-1.5 print:space-y-2">
               {/* Independent Builder & Product Development */}
-              <div>
+              <div className="print-break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h3 className="font-semibold text-foreground print:text-black">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
                     Independent Builder &amp; Product Development
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground print:text-[9.5px] print:text-black">
                     Independent
                   </span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[8.5px] print:text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
                   <p className="italic">Full-Stack Developer</p>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
                     03.2025 — Present
                   </span>
                 </div>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0 print:space-y-0 print:text-[8px] print:text-black">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0.5 print:space-y-0.5 print:text-[10px] print:text-black">
                   <li>
                     Architecting and shipping end-to-end applications from zero
                     to working product.
@@ -211,7 +239,7 @@ export default function ResumePage() {
                     engineering.
                   </li>
                 </ul>
-                <p className="mt-0.5 font-mono text-[11px] text-muted-foreground print:mt-0 print:text-[7.5px] print:text-black">
+                <p className="mt-1 font-mono text-[11px] text-muted-foreground print:mt-0.5 print:text-[9px] print:text-black">
                   <span className="font-medium text-foreground/90 print:text-black">
                     Skills:
                   </span>{" "}
@@ -221,22 +249,22 @@ export default function ResumePage() {
               </div>
 
               {/* AI & Machine Learning Engineering */}
-              <div>
+              <div className="print-break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h3 className="font-semibold text-foreground print:text-black">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
                     AI &amp; Machine Learning Engineering
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground print:text-[9.5px] print:text-black">
                     Projects &amp; Research
                   </span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[8.5px] print:text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
                   <p className="italic">AI / ML Developer</p>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
                     04.2025 — Present
                   </span>
                 </div>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0 print:space-y-0 print:text-[8px] print:text-black">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0.5 print:space-y-0.5 print:text-[10px] print:text-black">
                   <li>
                     Building intelligent systems using LLMs, computer vision,
                     and NLP extraction pipelines.
@@ -249,7 +277,7 @@ export default function ResumePage() {
                     Designing prompt engineering and autonomous agent workflows.
                   </li>
                 </ul>
-                <p className="mt-0.5 font-mono text-[11px] text-muted-foreground print:mt-0 print:text-[7.5px] print:text-black">
+                <p className="mt-1 font-mono text-[11px] text-muted-foreground print:mt-0.5 print:text-[9px] print:text-black">
                   <span className="font-medium text-foreground/90 print:text-black">
                     Skills:
                   </span>{" "}
@@ -259,22 +287,22 @@ export default function ResumePage() {
               </div>
 
               {/* Design Engineering */}
-              <div>
+              <div className="print-break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h3 className="font-semibold text-foreground print:text-black">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
                     Design Engineering
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground print:text-[9.5px] print:text-black">
                     Projects &amp; Product Development
                   </span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[8.5px] print:text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
                   <p className="italic">Design Engineer</p>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
                     07.2025 — Present
                   </span>
                 </div>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0 print:space-y-0 print:text-[8px] print:text-black">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0.5 print:space-y-0.5 print:text-[10px] print:text-black">
                   <li>
                     Architecting production-grade interfaces and design systems
                     for responsive web applications, translating product
@@ -295,7 +323,7 @@ export default function ResumePage() {
                     usability and interface quality.
                   </li>
                 </ul>
-                <p className="mt-0.5 font-mono text-[11px] text-muted-foreground print:mt-0 print:text-[7.5px] print:text-black">
+                <p className="mt-1 font-mono text-[11px] text-muted-foreground print:mt-0.5 print:text-[9px] print:text-black">
                   <span className="font-medium text-foreground/90 print:text-black">
                     Skills:
                   </span>{" "}
@@ -306,34 +334,34 @@ export default function ResumePage() {
             </div>
           </section>
 
-          {/* FEATURED PROJECTS */}
-          <section>
-            <h2 className="border-b border-border/70 pb-0.5 font-heading text-xs font-bold tracking-wider text-foreground uppercase sm:text-sm print:border-black print:pb-0.5 print:text-[9.5px] print:text-black">
+          {/* FEATURED PROJECTS — Begins cleanly on Page 2 in Print */}
+          <section className="print-page-break-before">
+            <h2 className="border-b border-border/70 pb-0.5 font-heading text-xs font-bold tracking-wider text-foreground uppercase sm:text-sm print:border-black print:pb-1 print:text-[11px] print:text-black">
               Featured Projects
             </h2>
 
-            <div className="mt-1.5 space-y-2 print:mt-0.5 print:space-y-0.5">
+            <div className="mt-2 space-y-2.5 print:mt-1.5 print:space-y-2">
               {/* Travel AI */}
-              <div>
+              <div className="print-break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h3 className="font-semibold text-foreground print:text-black">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
                     Travel AI
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
                     06.2026 — Present
                   </span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[8.5px] print:text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
                   <p className="italic">
                     AI Engineer &amp; Full-Stack Developer · Independent Project
                   </p>
                 </div>
-                <p className="mt-0.5 text-xs text-muted-foreground print:text-[8px] print:text-black">
+                <p className="mt-0.5 text-xs text-muted-foreground print:mt-0.5 print:text-[10px] print:text-black">
                   AI-powered travel intelligence system for extracting,
                   structuring, and mapping geographic information from social
                   media content.
                 </p>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0 print:space-y-0 print:text-[8px] print:text-black">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0.5 print:space-y-0.5 print:text-[10px] print:text-black">
                   <li>
                     Architecting a multimodal information-extraction pipeline
                     combining computer vision, NLP, and contextual language
@@ -353,7 +381,7 @@ export default function ResumePage() {
                     representations.
                   </li>
                 </ul>
-                <p className="mt-0.5 font-mono text-[11px] text-muted-foreground print:mt-0 print:text-[7.5px] print:text-black">
+                <p className="mt-1 font-mono text-[11px] text-muted-foreground print:mt-0.5 print:text-[9px] print:text-black">
                   <span className="font-medium text-foreground/90 print:text-black">
                     Skills:
                   </span>{" "}
@@ -364,16 +392,16 @@ export default function ResumePage() {
               </div>
 
               {/* Penguin Protocol */}
-              <div>
+              <div className="print-break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h3 className="font-semibold text-foreground print:text-black">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
                     Penguin Protocol
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
                     07.2026
                   </span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[8.5px] print:text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
                   <p className="italic">
                     Collaborative Project · Monad Blitz Pune Hackathon
                   </p>
@@ -381,19 +409,19 @@ export default function ResumePage() {
                     href="https://github.com/Shrysxs/monad-blitz-pune"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-xs text-muted-foreground underline hover:text-foreground print:text-[8px] print:text-black"
+                    className="font-mono text-xs text-muted-foreground underline hover:text-foreground print:text-[9.5px] print:text-black"
                   >
                     github.com/Shrysxs/monad-blitz-pune
                   </a>
                 </div>
-                <p className="mt-0.5 text-xs text-muted-foreground print:text-[8px] print:text-black">
+                <p className="mt-0.5 text-xs text-muted-foreground print:mt-0.5 print:text-[10px] print:text-black">
                   <strong className="font-medium text-foreground print:text-black">
                     Winner — Monad Blitz Pune.
                   </strong>{" "}
                   Decentralized AI investment syndicate integrating AI-assisted
                   decision workflows with blockchain infrastructure.
                 </p>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0 print:space-y-0 print:text-[8px] print:text-black">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0.5 print:space-y-0.5 print:text-[10px] print:text-black">
                   <li>
                     Engineered the frontend architecture and core product logic,
                     translating the investment-syndicate concept into a
@@ -410,7 +438,7 @@ export default function ResumePage() {
                     prototype in under 8 hours.
                   </li>
                 </ul>
-                <p className="mt-0.5 font-mono text-[11px] text-muted-foreground print:mt-0 print:text-[7.5px] print:text-black">
+                <p className="mt-1 font-mono text-[11px] text-muted-foreground print:mt-0.5 print:text-[9px] print:text-black">
                   <span className="font-medium text-foreground/90 print:text-black">
                     Skills:
                   </span>{" "}
@@ -421,16 +449,16 @@ export default function ResumePage() {
               </div>
 
               {/* VoiceAds */}
-              <div>
+              <div className="print-break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h3 className="font-semibold text-foreground print:text-black">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
                     VoiceAds
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
                     02.2026
                   </span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[8.5px] print:text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
                   <p className="italic">
                     Collaborative Project · AIBoomi Startup Weekend, Pune
                   </p>
@@ -438,17 +466,17 @@ export default function ResumePage() {
                     href="https://voiceads.vercel.app/?utm_source=portfolio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-xs text-muted-foreground underline hover:text-foreground print:text-[8px] print:text-black"
+                    className="font-mono text-xs text-muted-foreground underline hover:text-foreground print:text-[9.5px] print:text-black"
                   >
                     voiceads.vercel.app
                   </a>
                 </div>
-                <p className="mt-0.5 text-xs text-muted-foreground print:text-[8px] print:text-black">
+                <p className="mt-0.5 text-xs text-muted-foreground print:mt-0.5 print:text-[10px] print:text-black">
                   LLM-powered MarTech platform that transforms authentic
                   customer feedback into structured advertising intelligence and
                   high-trust marketing content.
                 </p>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0 print:space-y-0 print:text-[8px] print:text-black">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0.5 print:space-y-0.5 print:text-[10px] print:text-black">
                   <li>
                     Contributed to the development of an LLM-driven semantic
                     analysis pipeline for extracting customer sentiment,
@@ -466,7 +494,7 @@ export default function ResumePage() {
                     24 hours.
                   </li>
                 </ul>
-                <p className="mt-0.5 font-mono text-[11px] text-muted-foreground print:mt-0 print:text-[7.5px] print:text-black">
+                <p className="mt-1 font-mono text-[11px] text-muted-foreground print:mt-0.5 print:text-[9px] print:text-black">
                   <span className="font-medium text-foreground/90 print:text-black">
                     Skills:
                   </span>{" "}
@@ -477,16 +505,16 @@ export default function ResumePage() {
               </div>
 
               {/* Design Resource Vault */}
-              <div>
+              <div className="print-break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h3 className="font-semibold text-foreground print:text-black">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
                     Design Resource Vault
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
                     08.2026
                   </span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[8.5px] print:text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
                   <p className="italic">
                     Frontend Developer &amp; Designer · Independent Project
                   </p>
@@ -494,24 +522,24 @@ export default function ResumePage() {
                     href="https://design-resource-vault.vercel.app/?utm_source=portfolio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-xs text-muted-foreground underline hover:text-foreground print:text-[8px] print:text-black"
+                    className="font-mono text-xs text-muted-foreground underline hover:text-foreground print:text-[9.5px] print:text-black"
                   >
                     design-resource-vault.vercel.app
                   </a>
                 </div>
-                <p className="mt-0.5 text-xs text-muted-foreground print:text-[8px] print:text-black">
+                <p className="mt-0.5 text-xs text-muted-foreground print:mt-0.5 print:text-[10px] print:text-black">
                   Design intelligence platform for developers and designers,
                   focused on structured discovery of production-ready design
                   resources.
                 </p>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0 print:space-y-0 print:text-[8px] print:text-black">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0.5 print:space-y-0.5 print:text-[10px] print:text-black">
                   <li>
                     Architected a centralized resource platform covering design
                     systems, component patterns, design tokens, typography
                     systems, UI tooling, and interaction references.
                   </li>
                   <li>
-                    Implemented a structured content taxonomy and discovery
+                    Implemented structured content taxonomy and discovery
                     architecture with category indexing, client-side filtering,
                     and efficient resource retrieval.
                   </li>
@@ -521,7 +549,7 @@ export default function ResumePage() {
                     interaction design, and frontend performance.
                   </li>
                 </ul>
-                <p className="mt-0.5 font-mono text-[11px] text-muted-foreground print:mt-0 print:text-[7.5px] print:text-black">
+                <p className="mt-1 font-mono text-[11px] text-muted-foreground print:mt-0.5 print:text-[9px] print:text-black">
                   <span className="font-medium text-foreground/90 print:text-black">
                     Skills:
                   </span>{" "}
@@ -532,16 +560,16 @@ export default function ResumePage() {
               </div>
 
               {/* Reclaim */}
-              <div>
+              <div className="print-break-inside-avoid">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h3 className="font-semibold text-foreground print:text-black">
+                  <h3 className="font-semibold text-foreground print:text-[10.5px] print:text-black">
                     Reclaim
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
                     10.2025
                   </span>
                 </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[8.5px] print:text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 text-xs text-foreground/80 sm:text-sm print:text-[10px] print:text-black">
                   <p className="italic">
                     Collaborative Project · WeMakeDevs FutureStack GenAI
                     Hackathon
@@ -550,17 +578,17 @@ export default function ResumePage() {
                     href="https://github.com/Shrysxs/wemakedevs"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-xs text-muted-foreground underline hover:text-foreground print:text-[8px] print:text-black"
+                    className="font-mono text-xs text-muted-foreground underline hover:text-foreground print:text-[9.5px] print:text-black"
                   >
                     github.com/Shrysxs/wemakedevs
                   </a>
                 </div>
-                <p className="mt-0.5 text-xs text-muted-foreground print:text-[8px] print:text-black">
+                <p className="mt-0.5 text-xs text-muted-foreground print:mt-0.5 print:text-[10px] print:text-black">
                   AI-powered digital wellbeing platform that transforms
                   smartphone usage data into contextual behavioral insights and
                   personalized interventions.
                 </p>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0 print:space-y-0 print:text-[8px] print:text-black">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-xs/relaxed text-muted-foreground print:mt-0.5 print:space-y-0.5 print:text-[10px] print:text-black">
                   <li>
                     Contributed to the architecture and development of a
                     full-stack AI application integrating Llama-based models
@@ -579,7 +607,7 @@ export default function ResumePage() {
                     prototype within 6 days.
                   </li>
                 </ul>
-                <p className="mt-0.5 font-mono text-[11px] text-muted-foreground print:mt-0 print:text-[7.5px] print:text-black">
+                <p className="mt-1 font-mono text-[11px] text-muted-foreground print:mt-0.5 print:text-[9px] print:text-black">
                   <span className="font-medium text-foreground/90 print:text-black">
                     Skills:
                   </span>{" "}
@@ -592,12 +620,12 @@ export default function ResumePage() {
           </section>
 
           {/* AWARDS / ACHIEVEMENTS */}
-          <section>
-            <h2 className="border-b border-border/70 pb-0.5 font-heading text-xs font-bold tracking-wider text-foreground uppercase sm:text-sm print:border-black print:pb-0.5 print:text-[9.5px] print:text-black">
+          <section className="print-break-inside-avoid">
+            <h2 className="border-b border-border/70 pb-0.5 font-heading text-xs font-bold tracking-wider text-foreground uppercase sm:text-sm print:border-black print:pb-1 print:text-[11px] print:text-black">
               Awards / Achievements
             </h2>
 
-            <div className="mt-1.5 space-y-1 text-xs/relaxed sm:text-sm/relaxed print:mt-0.5 print:space-y-0 print:text-[8px]">
+            <div className="mt-2 space-y-1 text-xs/relaxed sm:text-sm/relaxed print:mt-1.5 print:space-y-0 print:text-[10px]">
               <div className="flex flex-wrap items-baseline justify-between gap-x-2">
                 <p>
                   <strong className="font-semibold text-foreground print:text-black">
@@ -607,7 +635,7 @@ export default function ResumePage() {
                     · Winner
                   </span>
                 </p>
-                <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[8px] print:text-black">
+                <span className="font-mono text-xs text-muted-foreground tabular-nums print:text-[9.5px] print:text-black">
                   07.2026
                 </span>
               </div>
