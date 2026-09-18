@@ -18,6 +18,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "python",
     title: "Python",
+    accentColor: "#3776AB",
     href: "https://www.python.org",
     icon: (
       <svg viewBox="0 0 128 128" aria-hidden className="size-full">
@@ -60,6 +61,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "javascript",
     title: "JavaScript",
+    accentColor: "#F7DF1E",
     href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full">
@@ -75,6 +77,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "typescript",
     title: "TypeScript",
+    accentColor: "#3178C6",
     href: "https://www.typescriptlang.org",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full">
@@ -90,6 +93,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "cpp",
     title: "C++",
+    accentColor: "#00599C",
     href: "https://isocpp.org",
     icon: (
       <svg viewBox="0 0 128 128" aria-hidden className="size-full">
@@ -112,6 +116,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "java",
     title: "Java",
+    accentColor: "#EA2D2E",
     href: "https://www.java.com",
     icon: (
       <svg viewBox="0 0 128 128" aria-hidden className="size-full">
@@ -142,6 +147,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "react",
     title: "React",
+    accentColor: "#61DAFB",
     href: "https://react.dev",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full text-[#61DAFB]">
@@ -156,6 +162,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "nextjs",
     title: "Next.js",
+    accentColor: "#FFFFFF",
     href: "https://nextjs.org",
     icon: (
       <svg viewBox="0 0 128 128" aria-hidden className="size-full">
@@ -198,6 +205,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "tailwindcss",
     title: "Tailwind CSS",
+    accentColor: "#06B6D4",
     href: "https://tailwindcss.com",
     icon: (
       <span className="flex size-full scale-110 items-center justify-center">
@@ -218,6 +226,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "nodejs",
     title: "Node.js",
+    accentColor: "#5FA04E",
     href: "https://nodejs.org",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full text-[#5FA04E]">
@@ -232,6 +241,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "fastapi",
     title: "FastAPI",
+    accentColor: "#059669",
     href: "https://fastapi.tiangolo.com",
     icon: (
       <svg viewBox="0 0 128 128" aria-hidden className="size-full">
@@ -249,6 +259,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "mysql",
     title: "MySQL",
+    accentColor: "#00618A",
     href: "https://www.mysql.com",
     icon: (
       <span className="flex size-full scale-[1.3] items-center justify-center">
@@ -273,6 +284,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "supabase",
     title: "Supabase",
+    accentColor: "#3ECF8E",
     href: "https://supabase.com",
     icon: (
       <svg viewBox="0 0 128 128" aria-hidden className="size-full">
@@ -306,6 +318,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "git",
     title: "Git",
+    accentColor: "#F05032",
     href: "https://git-scm.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full text-[#F05032]">
@@ -320,6 +333,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "github",
     title: "GitHub",
+    accentColor: "#FFFFFF",
     href: "https://github.com",
     icon: (
       <span className="flex size-full items-center justify-center text-white">
@@ -331,6 +345,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "vscode",
     title: "VS Code",
+    accentColor: "#007ACC",
     href: "https://code.visualstudio.com",
     icon: (
       <svg viewBox="0 0 128 128" aria-hidden className="size-full">
@@ -353,6 +368,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "docker",
     title: "Docker",
+    accentColor: "#2496ED",
     href: "https://www.docker.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full text-[#2496ED]">
@@ -367,6 +383,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "figma",
     title: "Figma",
+    accentColor: "#F24E1E",
     href: "https://www.figma.com",
     icon: (
       <svg viewBox="3 0 128 129" aria-hidden className="size-full">
@@ -397,6 +414,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "openai",
     title: "OpenAI",
+    accentColor: "#10A37F",
     href: "https://openai.com",
     icon: (
       <span className="flex size-full items-center justify-center text-[#10A37F]">
@@ -408,6 +426,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "claude",
     title: "Claude",
+    accentColor: "#D97757",
     href: "https://claude.ai",
     icon: (
       <span className="flex size-full items-center justify-center text-[#D97757]">
@@ -419,6 +438,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "gemini",
     title: "Gemini",
+    accentColor: "#4E88FF",
     href: "https://gemini.google.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full">
@@ -441,6 +461,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "perplexity",
     title: "Perplexity",
+    accentColor: "#20808D",
     href: "https://www.perplexity.ai",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full">
@@ -456,6 +477,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "huggingface",
     title: "Hugging Face",
+    accentColor: "#FFD21E",
     href: "https://huggingface.co",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full">
@@ -486,6 +508,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "grok",
     title: "Grok",
+    accentColor: "#FFFFFF",
     href: "https://x.ai",
     icon: (
       <span className="flex size-full items-center justify-center text-white">
@@ -497,6 +520,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "nvidia",
     title: "NVIDIA",
+    accentColor: "#76B900",
     href: "https://www.nvidia.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full">
@@ -511,6 +535,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "cursor",
     title: "Cursor",
+    accentColor: "#FFFFFF",
     href: "https://cursor.com",
     icon: (
       <span className="flex size-full items-center justify-center text-white">
@@ -523,6 +548,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "framer-motion",
     title: "Framer Motion",
+    accentColor: "#FF0055",
     href: "https://motion.dev",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full text-[#0055FF]">
@@ -534,6 +560,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "radixui",
     title: "Radix UI",
+    accentColor: "#FFFFFF",
     href: "https://www.radix-ui.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full text-white">
@@ -548,6 +575,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "base-ui",
     title: "Base UI",
+    accentColor: "#007FFF",
     href: "https://base-ui.com",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden className="size-full text-white">
@@ -562,6 +590,7 @@ export const TECH_STACK: TechStack[] = [
   {
     key: "shadcn-ui",
     title: "shadcn/ui",
+    accentColor: "#FFFFFF",
     href: "https://ui.shadcn.com",
     icon: (
       <span className="flex size-full items-center justify-center text-white">

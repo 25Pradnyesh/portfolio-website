@@ -31,20 +31,18 @@ export function TechStack() {
         {/* Dynamic active status label */}
         <div className="flex items-center font-mono text-[10px] tracking-wider uppercase transition-colors select-none sm:text-[11px]">
           <span className="text-muted-foreground/60">INSPECT:&nbsp;</span>
-          <span
-            className="font-medium transition-colors duration-150"
-            style={{
-              color: activeItem?.accentColor || undefined,
-            }}
-          >
-            {activeItem ? (
-              <span className="font-semibold tracking-wider text-foreground">
-                {activeItem.title}
-              </span>
-            ) : (
-              <span className="text-muted-foreground/50">HOVER TO REVEAL</span>
-            )}
-          </span>
+          {activeItem ? (
+            <span
+              className="font-semibold tracking-wider transition-colors duration-150"
+              style={{ color: activeItem.accentColor }}
+            >
+              {activeItem.title}
+            </span>
+          ) : (
+            <span className="font-medium text-muted-foreground/50 transition-colors duration-150">
+              HOVER TO REVEAL
+            </span>
+          )}
         </div>
       </PanelHeader>
 
@@ -64,7 +62,9 @@ export function TechStack() {
                 onMouseLeave={() => setActiveItem(null)}
                 onFocus={() => setActiveItem(item)}
                 onBlur={() => setActiveItem(null)}
-                className="flex size-8.5 cursor-pointer items-center justify-center rounded transition-all duration-150 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none sm:size-9 md:size-9.5"
+                className={`flex size-8.5 cursor-pointer items-center justify-center rounded transition-all duration-150 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none sm:size-9 md:size-9.5 ${
+                  isHovered ? "bg-muted/50" : "hover:bg-muted/50"
+                }`}
               >
                 <div
                   className={`flex size-5 items-center justify-center transition-all duration-150 sm:size-5.5 md:size-6 [&_span]:size-full [&_svg]:size-full [&_svg]:max-h-full [&_svg]:max-w-full ${
