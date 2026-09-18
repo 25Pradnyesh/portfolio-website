@@ -1,65 +1,53 @@
 import Link from "next/link"
 import { ArrowRightIcon } from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/base/ui/button"
-import { PostItem } from "@/features/blog/components/post-item"
-import { getBlogPosts } from "@/features/doc/data/documents"
 import {
   Panel,
   PanelHeader,
   PanelTitle,
-  PanelTitleSup,
 } from "@/features/portfolio/components/panel"
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
 
 const ID = "blog"
 
 export function Blog() {
-  const allPosts = getBlogPosts()
-
   return (
     <Panel id={ID}>
+      <div
+        id="blog"
+        className="scroll-mt-[calc(var(--header-height)+var(--separator-height))]"
+      />
       <PanelHeader>
         <PanelTitle>
           <a href={`#${ID}`}>Blog</a>
-          <PanelTitleSup>({allPosts.length})</PanelTitleSup>
           <PanelTitleCopy id={ID} />
         </PanelTitle>
       </PanelHeader>
 
-      <div className="relative py-4">
-        <div className="pointer-events-none absolute inset-0 -z-1 grid grid-cols-1 gap-4 max-sm:hidden sm:grid-cols-2">
-          <div className="border-r border-line"></div>
-          <div className="border-l border-line"></div>
-        </div>
-
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {allPosts.slice(0, 6).map((post) => (
-            <li
-              key={post.slug}
-              className={cn(
-                "max-sm:screen-line-top max-sm:screen-line-bottom",
-                "sm:nth-[2n+1]:screen-line-top sm:nth-[2n+1]:screen-line-bottom"
-              )}
-            >
-              <PostItem post={post} headingAs="h3" imageLoading="lazy" />
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="screen-line-top flex justify-center py-4">
-        <Button
-          className="gap-2 pr-2.5 pl-3 shadow-[inset_0_0_1px] shadow-foreground/20"
-          variant="secondary"
-          size="sm"
-          nativeButton={false}
-          render={<Link href="/blog" />}
+      <div className="relative flex min-h-[220px] flex-col items-center justify-center gap-5 py-16 sm:min-h-[260px] sm:py-20">
+        {/* Subtle technical background grid lines matching Swiss editorial aesthetic */}
+        <div
+          className="pointer-events-none absolute inset-0 -z-1 flex justify-center"
+          aria-hidden
         >
-          All posts
-          <ArrowRightIcon />
-        </Button>
+          <div className="h-full w-full max-w-xs border-x border-line/50 sm:max-w-sm" />
+        </div>
+        <div
+          className="pointer-events-none absolute inset-x-0 top-1/2 -z-1 h-px -translate-y-1/2 bg-line/30"
+          aria-hidden
+        />
+
+        <p className="font-mono text-sm tracking-tight text-muted-foreground select-none sm:text-base">
+          Coming soon.
+        </p>
+
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-white px-4 py-2 text-xs font-medium text-zinc-950 shadow-sm transition-colors hover:bg-zinc-100 sm:text-sm dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
+        >
+          <span>All Posts</span>
+          <ArrowRightIcon className="size-3.5" />
+        </Link>
       </div>
     </Panel>
   )

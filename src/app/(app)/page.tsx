@@ -6,6 +6,7 @@ import { JsonLdScript } from "@/lib/json-ld"
 import { absoluteUrl } from "@/lib/utils"
 import { SectionDivider } from "@/components/section-divider"
 import { Awards } from "@/features/portfolio/components/awards"
+import { Blog } from "@/features/portfolio/components/blog"
 import { Contact } from "@/features/portfolio/components/contact"
 import { Education } from "@/features/portfolio/components/education"
 import { Experiences } from "@/features/portfolio/components/experiences"
@@ -62,6 +63,9 @@ export default function HomePage() {
           <SectionDivider />
 
           <Contact />
+          <SectionDivider />
+
+          <Blog />
         </div>
       </div>
     </>
