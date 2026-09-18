@@ -30,6 +30,7 @@ export type TextFlipProps = {
    * */
   as?: MotionElement
   className?: string
+  style?: React.CSSProperties | ((index: number) => React.CSSProperties)
   /** Array of children to cycle through. */
   children: React.ReactNode[]
 
@@ -56,6 +57,7 @@ export type TextFlipProps = {
 export function TextFlip({
   as: Component = motion.p,
   className,
+  style,
   children,
 
   interval = 2,
@@ -75,19 +77,25 @@ export function TextFlip({
     const timer = setInterval(() => {
       setCurrentIndex((prev) => {
         const next = (prev + 1) % items.length
-        onIndexChange?.(next)
         return next
       })
     }, interval * 1000)
 
     return () => clearInterval(timer)
-  }, [play, interval, items.length, onIndexChange])
+  }, [play, interval, items.length])
+
+  useEffect(() => {
+    onIndexChange?.(currentIndex)
+  }, [currentIndex, onIndexChange])
+
+  const currentStyle = typeof style === "function" ? style(currentIndex) : style
 
   return (
     <AnimatePresence mode="wait" initial={false}>
       <Component
         key={currentIndex}
         className={cn("inline-block", className)}
+        style={currentStyle}
         initial="initial"
         animate="animate"
         exit="exit"
