@@ -1,25 +1,31 @@
-import { unstable_cache } from "next/cache"
-
 import type { Activity } from "@/registry/transformed/components/contribution-graph"
 
 type GitHubContributionsResponse = {
   contributions: Activity[]
 }
 
-export const getCachedContributions = unstable_cache(
-  async (username: string) => {
-    const apiUrl = process.env.NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL
-    if (!apiUrl) {
-      throw new Error("NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL is not set")
-    }
+// Fetch contributions fresh on every request (revalidate: 0) so the graph
+// always reflects current GitHub activity rather than stale build-time data.
+// Returns an empty array on any network or API failure — the Suspense boundary
+// and GitHubContributionFallback handle the loading/empty state gracefully.
+export async function getCachedContributions(
+  username: string
+): Promise<Activity[]> {
+  const apiUrl = process.env.NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL
+  if (!apiUrl) {
+    return []
+  }
 
-    const res = await fetch(`${apiUrl}/${username}?y=last`)
+  try {
+    const res = await fetch(`${apiUrl}/${username}?y=last`, {
+      next: { revalidate: 0 },
+    })
     if (!res.ok) {
       return []
     }
     const data = (await res.json()) as GitHubContributionsResponse
     return data.contributions ?? []
-  },
-  ["github-contributions"],
-  { revalidate: 86400 } // Cache for 1 day (86400 seconds)
-)
+  } catch {
+    return []
+  }
+}

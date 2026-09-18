@@ -18,15 +18,17 @@ const BRAND_COLORS: Record<string, string> = {
 
 export function SocialLinks() {
   return (
-    <div className="border-y border-white/[0.08]">
+    <section className="border-y border-white/[0.12]">
       <h2 className="sr-only">Social links</h2>
 
-      <div className="grid grid-cols-1 gap-px bg-white/[0.08] md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-px bg-white/[0.12] sm:grid-cols-2 lg:grid-cols-4">
         {SOCIAL_LINKS.map((item) => {
           const isExternal = item.href.startsWith("http")
+
           const href = isExternal
             ? addQueryParams(item.href, UTM_PARAMS)
             : item.href
+
           const brandColor = BRAND_COLORS[item.name]
 
           return (
@@ -35,37 +37,62 @@ export function SocialLinks() {
               href={href}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
-              className="group flex min-h-[64px] items-center justify-between gap-3 bg-[#09090b] px-4 py-3.5 transition-colors duration-150 outline-none hover:bg-white/[0.03] focus-visible:bg-white/[0.05]"
+              className="group relative flex min-h-[88px] items-center justify-between gap-4 bg-[#09090b] px-5 py-5 transition-colors duration-200 outline-none hover:bg-white/[0.035] focus-visible:bg-white/[0.055]"
             >
-              <div className="flex min-w-0 items-center gap-3 truncate">
-                {/* 36px x 36px container with 20px x 20px icon */}
+              {/* Brand + label */}
+              <div className="flex min-w-0 items-center gap-4">
                 <div
-                  className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.05] transition-colors group-hover:border-white/[0.12] [&>svg]:size-5 [&>svg]:h-5 [&>svg]:w-5"
-                  style={brandColor ? { color: brandColor } : undefined}
+                  className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-white/[0.12] bg-white/[0.045] transition-all duration-200 group-hover:border-white/[0.2] group-hover:bg-white/[0.07]"
+                  style={
+                    brandColor
+                      ? {
+                          color: brandColor,
+                        }
+                      : undefined
+                  }
                 >
-                  {SOCIAL_ICONS[item.name]}
+                  <span className="[&>svg]:size-6 [&>svg]:shrink-0">
+                    {SOCIAL_ICONS[item.name]}
+                  </span>
                 </div>
 
-                <span className="truncate font-mono text-[13px] font-medium text-zinc-200 transition-colors group-hover:text-white sm:text-sm">
-                  {item.title}
+                <span className="truncate font-mono text-sm font-medium tracking-tight text-foreground sm:text-base">
+                  {item.name === "discord"
+                    ? "Pradnyesh"
+                    : item.name === "x"
+                      ? "X"
+                      : item.name === "cal"
+                        ? "Cal.com"
+                        : item.name === "email"
+                          ? "Email"
+                          : item.name === "resume"
+                            ? "Resume"
+                            : item.name.charAt(0).toUpperCase() +
+                              item.name.slice(1)}
                 </span>
               </div>
 
-              {/* Uniform diagonal 12px external link arrow on EVERY card */}
-              <ArrowUpRightIcon
-                className="size-3 shrink-0 text-white/40 transition-all duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white/90"
-                aria-hidden
+              {/* Action indicator */}
+              {isExternal ? (
+                <ArrowUpRightIcon
+                  className="size-4 shrink-0 text-muted-foreground/50 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground"
+                  aria-hidden="true"
+                />
+              ) : (
+                <span className="shrink-0 font-mono text-[10px] tracking-wider text-muted-foreground/45 uppercase transition-colors duration-200 group-hover:text-muted-foreground/80">
+                  {item.name === "resume" ? "REQ" : "DIRECT"}
+                </span>
+              )}
+
+              {/* Subtle hover edge */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-white/0 transition-colors duration-200 group-hover:bg-white/[0.12]"
               />
             </a>
           )
         })}
-
-        {/* Seamless 9th cell filler for 3x3 desktop grid */}
-        <div
-          className="hidden min-h-[64px] bg-[#09090b] md:block"
-          aria-hidden
-        />
       </div>
-    </div>
+    </section>
   )
 }

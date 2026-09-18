@@ -1,99 +1,99 @@
+import { urlToName } from "@/utils/url"
 import {
-  BriefcaseIcon,
-  CalendarIcon,
-  Code2Icon,
-  GlobeIcon,
-  MailIcon,
+  LinkIcon,
   MapPinIcon,
-  UserIcon,
+  MarsIcon,
+  NonBinaryIcon,
+  VenusIcon,
 } from "lucide-react"
 
 import { USER } from "@/features/portfolio/data/user"
+import type { User } from "@/features/portfolio/types/user"
 
-import { CurrentLocalTimeField } from "./current-local-time-item"
+import { Panel, PanelContent } from "../panel"
+import { CurrentLocalTimeItem } from "./current-local-time-item"
+import { EmailItem } from "./email-item"
+import {
+  IntroItem,
+  IntroItemContent,
+  IntroItemIcon,
+  IntroItemLink,
+} from "./intro-item"
+import { JobItem } from "./job-item"
+import { PhoneItem } from "./phone-item"
 
 export function Overview() {
   return (
-    <div className="border-y border-white/[0.08] px-5 py-6 sm:px-6 sm:py-8">
+    <Panel className="screen-line-bottom-none">
       <h2 className="sr-only">Overview</h2>
 
-      <div className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
-        {/* Column 1 */}
-        <div className="flex flex-col gap-4">
-          {/* 1. Primary Role */}
-          <div className="flex items-center gap-2.5 font-mono text-[13px] text-white/60 sm:text-sm">
-            <BriefcaseIcon
-              className="size-4 shrink-0 text-white/40"
-              aria-hidden
-            />
-            <span className="truncate text-white/80">{USER.jobTitle}</span>
-          </div>
+      <PanelContent className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
+        {USER.jobs.map((job, index) => (
+          <JobItem
+            key={index}
+            title={job.title}
+            company={job.company}
+            website={job.website}
+            experienceId={job.experienceId}
+          />
+        ))}
 
-          {/* 2. Secondary Role */}
-          <div className="flex items-center gap-2.5 font-mono text-[13px] text-white/60 sm:text-sm">
-            <Code2Icon className="size-4 shrink-0 text-white/40" aria-hidden />
-            <span className="truncate">Full-Stack Developer</span>
-          </div>
-
-          {/* 3. Location */}
-          <div className="flex items-center gap-2.5 font-mono text-[13px] text-white/60 sm:text-sm">
-            <MapPinIcon className="size-4 shrink-0 text-white/40" aria-hidden />
-            <span className="truncate">Mumbai · Pune, India</span>
-          </div>
-
-          {/* 4. Booking / Calendar link */}
-          <div className="flex items-center gap-2.5 font-mono text-[13px] text-white/60 sm:text-sm">
-            <CalendarIcon
-              className="size-4 shrink-0 text-white/40"
-              aria-hidden
-            />
-            <a
-              href="https://cal.com/pradnyesh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="truncate text-white/70 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white hover:decoration-white/60"
+        <IntroItem>
+          <IntroItemIcon>
+            <MapPinIcon />
+          </IntroItemIcon>
+          <IntroItemContent>
+            <IntroItemLink
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(USER.address)}`}
+              aria-label={`Location: ${USER.address}`}
             >
-              cal.com/pradnyesh
-            </a>
-          </div>
-        </div>
+              {USER.address}
+            </IntroItemLink>
+          </IntroItemContent>
+        </IntroItem>
 
-        {/* Column 2 */}
-        <div className="flex flex-col gap-4">
-          {/* 1. Local Time (Live) */}
-          <CurrentLocalTimeField timeZone={USER.timeZone} />
+        <CurrentLocalTimeItem timeZone={USER.timeZone} />
 
-          {/* 2. Email */}
-          <div className="flex items-center gap-2.5 font-mono text-[13px] text-white/60 sm:text-sm">
-            <MailIcon className="size-4 shrink-0 text-white/40" aria-hidden />
-            <a
-              href="mailto:workspace.pradnyesh@gmail.com"
-              className="truncate text-white/70 transition-colors hover:text-white"
-            >
-              workspace.pradnyesh@gmail.com
-            </a>
-          </div>
+        {USER.phoneNumberB64 && (
+          <PhoneItem phoneNumberB64={USER.phoneNumberB64} />
+        )}
 
-          {/* 3. Website / Portfolio URL */}
-          <div className="flex items-center gap-2.5 font-mono text-[13px] text-white/60 sm:text-sm">
-            <GlobeIcon className="size-4 shrink-0 text-white/40" aria-hidden />
-            <a
+        <EmailItem emailB64={USER.emailB64} />
+
+        <IntroItem>
+          <IntroItemIcon>
+            <LinkIcon />
+          </IntroItemIcon>
+          <IntroItemContent>
+            <IntroItemLink
               href={USER.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="truncate text-white/70 transition-colors hover:text-white"
+              aria-label={`Personal website: ${urlToName(USER.website)}`}
             >
-              github.com/25Pradnyesh
-            </a>
-          </div>
+              {urlToName(USER.website)}
+            </IntroItemLink>
+          </IntroItemContent>
+        </IntroItem>
 
-          {/* 4. Pronouns */}
-          <div className="flex items-center gap-2.5 font-mono text-[13px] text-white/60 sm:text-sm">
-            <UserIcon className="size-4 shrink-0 text-white/40" aria-hidden />
-            <span>{USER.pronouns}</span>
-          </div>
-        </div>
-      </div>
-    </div>
+        <IntroItem>
+          <IntroItemIcon>{getGenderIcon(USER.gender)}</IntroItemIcon>
+          <IntroItemContent aria-label={`Pronouns: ${USER.pronouns}`}>
+            {USER.pronouns}
+          </IntroItemContent>
+        </IntroItem>
+      </PanelContent>
+
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-1 w-px -translate-x-2.25 border-r border-dashed border-line max-sm:hidden" />
+    </Panel>
   )
+}
+
+function getGenderIcon(gender: User["gender"]) {
+  switch (gender) {
+    case "male":
+      return <MarsIcon />
+    case "female":
+      return <VenusIcon />
+    case "non-binary":
+      return <NonBinaryIcon />
+  }
 }

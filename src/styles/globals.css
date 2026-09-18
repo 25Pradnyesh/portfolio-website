@@ -193,14 +193,6 @@
   }
 }
 
-@utility section-divider {
-  @apply relative my-4 h-px w-full;
-  &:before {
-    content: "";
-    @apply absolute top-0 left-[-100vw] -z-1 h-px w-[200vw] bg-line;
-  }
-}
-
 @utility step {
   counter-increment: step;
   @apply max-md:pl-10;
