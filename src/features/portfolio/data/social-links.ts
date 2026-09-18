@@ -50,8 +50,8 @@ export const SOCIAL = {
   },
   resume: {
     title: "Resume",
-    handle: "Available on request",
-    href: "mailto:workspace.pradnyesh@gmail.com?subject=Resume%20Request%20-%20Pradnyesh%20S.",
+    handle: "Resume",
+    href: "/resume",
     sameAs: false,
   },
 } satisfies Record<string, SocialProfile>

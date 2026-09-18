@@ -20,7 +20,10 @@ export function EducationItem({ item }: { item: Education }) {
   const isOngoing = !end
 
   return (
-    <div className="group/education-item relative before:absolute before:left-3 before:h-full before:w-px before:bg-border">
+    <div
+      id={`education-${item.id}`}
+      className="group/education-item relative scroll-mt-14"
+    >
       <div
         className="pointer-events-none absolute bottom-0 left-3 hidden size-4 bg-background group-last/education-item:flex"
         aria-hidden
@@ -38,7 +41,7 @@ export function EducationItem({ item }: { item: Education }) {
           )}
         >
           <div className="relative z-1 mb-1 flex items-start gap-3 text-base">
-            <IconTile>
+            <IconTile className="bg-background">
               <GraduationCapIcon />
             </IconTile>
 

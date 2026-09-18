@@ -37,10 +37,10 @@ export default function HomePage() {
           <Overview />
           <SectionDivider />
 
-          <Hello />
+          <SocialLinks />
           <SectionDivider />
 
-          <SocialLinks />
+          <Hello />
           <SectionDivider />
 
           <GitHubContributions />

@@ -21,15 +21,13 @@ export function Education() {
         </PanelTitle>
       </PanelHeader>
 
-      {EDUCATION.map((item) => (
-        <div
-          key={item.id}
-          id={`education-${item.id}`}
-          className="screen-line-bottom scroll-mt-14 p-4 pr-2"
-        >
-          <EducationItem key={item.id} item={item} />
+      <div className="p-4 pr-2 sm:p-5 sm:pr-3">
+        <div className="relative space-y-6 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
+          {EDUCATION.map((item) => (
+            <EducationItem key={item.id} item={item} />
+          ))}
         </div>
-      ))}
+      </div>
     </Panel>
   )
 }

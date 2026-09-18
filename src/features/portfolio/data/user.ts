@@ -27,10 +27,10 @@ export const USER: User = {
       website: "https://github.com/25Pradnyesh",
     },
   ],
-  about: `- AI Engineer & Full-Stack Developer based in Mumbai & Pune, India.
-- Focused on building intelligent systems, autonomous agents, and high-performance digital products from concept to deployment.
-- Primary projects include [Travel AI](https://github.com/25Pradnyesh) (location extraction pipeline from social content), [VertiFarm](https://github.com/25Pradnyesh) (automated monitoring for vertical farming), and [Design Resource Vault](https://design-resource-vault.vercel.app/) (curated directory for frontend developers).
-`,
+  about: `**ML Engineer & Full-Stack Developer** building intelligent, user-centric products across **Machine Learning, AI, and modern web technologies**, with hands-on experience in **Python, Next.js, React, TypeScript, FastAPI, Node.js, and Supabase**.
+
+- **Creator of Travel AI**, an AI-powered system that extracts locations from Instagram travel content and automatically organizes them into **Google Maps**, combining machine intelligence with practical product engineering.
+- Deepening my expertise in **Machine Learning, Generative AI, AI Agents, LLMs, and Deep Learning**, with a focus on turning complex ideas into **practical, reliable, and useful products**.`,
   avatar: "/images/profile.jpg",
   avatarVariants: {
     lightOff: "/images/profile.jpg",

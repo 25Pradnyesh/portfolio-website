@@ -1,45 +1,15 @@
-import { TECH_STACK } from "../data/tech-stack"
-import type { TechStack as TechStackType } from "../types/tech-stack"
+"use client"
+
+import * as React from "react"
+
+import { TECH_STACK, type TechItem } from "../data/tech-stack"
 import { Panel, PanelHeader, PanelTitle } from "./panel"
 import { PanelTitleCopy } from "./panel-title-copy"
 
 const ID = "stack"
 
-const CATEGORY_ORDER = [
-  "AI / ML",
-  "Languages",
-  "Frontend",
-  "Backend & Database",
-  "Infrastructure & Tools",
-  "Analytics & Design",
-] as const
-
-const TECH_BRAND_COLORS: Record<string, string> = {
-  typescript: "#3178C6",
-  js: "#F7DF1E",
-  python: "#3776AB",
-  react: "#61DAFB",
-  tailwindcss: "#06B6D4",
-  motion: "#FF0055",
-  tanstack: "#FF4154",
-  "mobx-state-tree": "#FF6600",
-  nodejs: "#5FA04E",
-  postgresql: "#4169E1",
-  mongodb: "#47A248",
-  redis: "#DC382D",
-  nginx: "#009639",
-  claude: "#D97757",
-  gemini: "#4E88FF",
-  chatgpt: "#10A37F",
-  git: "#F05032",
-  docker: "#2496ED",
-  posthog: "#F54E00",
-  figma: "#F24E1E",
-  ps: "#31A8FF",
-}
-
 export function TechStack() {
-  const grouped = groupByCategory(TECH_STACK)
+  const [activeItem, setActiveItem] = React.useState<TechItem | null>(null)
 
   return (
     <Panel id={ID}>
@@ -47,88 +17,71 @@ export function TechStack() {
         id="tech-stack"
         className="scroll-mt-[calc(var(--header-height)+var(--separator-height))]"
       />
-      <PanelHeader>
-        <PanelTitle>
-          <a href={`#${ID}`}>Stack</a>
-          <PanelTitleCopy id={ID} />
-        </PanelTitle>
+      <PanelHeader className="flex h-10 items-center justify-between px-4 sm:h-11 sm:px-5">
+        <div className="flex items-baseline gap-2">
+          <PanelTitle className="font-heading text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+            <a href={`#${ID}`}>Stack</a>
+            <PanelTitleCopy id={ID} />
+          </PanelTitle>
+          <span className="font-mono text-[10px] tracking-wider text-muted-foreground select-none sm:text-[11px]">
+            ({TECH_STACK.length} TECHNOLOGIES)
+          </span>
+        </div>
+
+        {/* Dynamic active status label */}
+        <div className="flex items-center font-mono text-[10px] tracking-wider uppercase transition-colors select-none sm:text-[11px]">
+          <span className="text-muted-foreground/60">INSPECT:&nbsp;</span>
+          <span
+            className="font-medium transition-colors duration-150"
+            style={{
+              color: activeItem?.accentColor || undefined,
+            }}
+          >
+            {activeItem ? (
+              <span className="font-semibold tracking-wider text-foreground">
+                {activeItem.title}
+              </span>
+            ) : (
+              <span className="text-muted-foreground/50">HOVER TO REVEAL</span>
+            )}
+          </span>
+        </div>
       </PanelHeader>
 
-      <div className="relative [--col-left-width:--spacing(48)]">
-        <div
-          className="pointer-events-none absolute inset-y-0 left-(--col-left-width) -z-1 w-px border-r border-dashed border-line max-sm:hidden"
-          aria-hidden
-        />
+      <div className="p-4 sm:p-5 md:p-6">
+        <div className="grid grid-cols-5 justify-items-center gap-x-2 gap-y-5 sm:grid-cols-10 sm:gap-x-2 sm:gap-y-6 md:grid-cols-[repeat(15,minmax(0,1fr))] md:gap-x-1.5 md:gap-y-6">
+          {TECH_STACK.map((item) => {
+            const isHovered = activeItem?.key === item.key
 
-        {CATEGORY_ORDER.map((category, index) => {
-          const items = grouped[category]
-          if (!items || items.length === 0) return null
-
-          const categoryId = `${ID}-${category
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/(^-|-$)/g, "")}`
-
-          return (
-            <div
-              key={category}
-              className="grid items-start gap-y-2.5 border-b border-line py-3.5 last:border-none sm:grid-cols-[var(--col-left-width)_1fr]"
-            >
-              <div
-                id={categoryId}
-                className="pl-4 text-sm leading-7 font-medium text-foreground/90 sm:pl-5"
+            return (
+              <a
+                key={item.key}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.title}
+                onMouseEnter={() => setActiveItem(item)}
+                onMouseLeave={() => setActiveItem(null)}
+                onFocus={() => setActiveItem(item)}
+                onBlur={() => setActiveItem(null)}
+                className="flex size-8.5 cursor-pointer items-center justify-center rounded transition-all duration-150 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none sm:size-9 md:size-9.5"
               >
-                <span
-                  className="mr-2 font-mono text-xs text-muted-foreground/60 select-none"
-                  aria-hidden
+                <div
+                  className={`flex size-5 items-center justify-center transition-all duration-150 sm:size-5.5 md:size-6 [&_span]:size-full [&_svg]:size-full [&_svg]:max-h-full [&_svg]:max-w-full ${
+                    isHovered
+                      ? "scale-115 opacity-100"
+                      : activeItem
+                        ? "opacity-40"
+                        : "opacity-80 hover:opacity-100"
+                  }`}
                 >
-                  {(index + 1).toString().padStart(2, "0")}
-                </span>
-                {category}
-              </div>
-
-              <ul
-                aria-labelledby={categoryId}
-                className="flex flex-wrap gap-1.5 px-4 sm:px-5"
-              >
-                {items.map((item) => {
-                  const brandColor = TECH_BRAND_COLORS[item.key]
-
-                  return (
-                    <li key={item.key} className="flex">
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener"
-                        className="group flex h-7 items-center justify-center gap-1.5 rounded-md border border-border/70 bg-muted/40 px-2.5 font-mono text-xs text-foreground/90 transition-colors hover:border-border hover:bg-muted/80 hover:text-foreground"
-                      >
-                        <span
-                          className="flex size-4 shrink-0 items-center justify-center text-foreground/80 transition-colors group-hover:text-foreground [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
-                          style={brandColor ? { color: brandColor } : undefined}
-                        >
-                          {item.icon}
-                        </span>
-                        <span>{item.title}</span>
-                      </a>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )
-        })}
+                  {item.icon}
+                </div>
+              </a>
+            )
+          })}
+        </div>
       </div>
     </Panel>
   )
-}
-
-function groupByCategory(
-  items: TechStackType[]
-): Record<string, TechStackType[]> {
-  return items.reduce<Record<string, TechStackType[]>>((acc, item) => {
-    for (const category of item.categories) {
-      ;(acc[category] ??= []).push(item)
-    }
-    return acc
-  }, {})
 }

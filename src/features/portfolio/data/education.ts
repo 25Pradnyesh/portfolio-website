@@ -10,18 +10,31 @@ export const EDUCATION: Education[] = [
       start: "2023",
       end: "2027",
     },
-    description: `- Undergraduate engineering student in Electronics & Computer Engineering.
-- Primary technical focus on Machine Learning, Generative AI, autonomous agents, and full-stack systems.
-- Active in technical hackathons, open-source building, and rapid software prototyping.`,
-    skills: [
-      "Python",
-      "C++",
-      "Machine Learning",
-      "Generative AI",
-      "AI Agents",
-      "Next.js",
-      "TypeScript",
-      "FastAPI",
-    ],
+    description:
+      "Undergraduate engineering student in Electronics & Computer Engineering with HONORS in Artificial Intelligence and Machine Learning.",
+    isExpanded: true,
+  },
+  {
+    id: "bk-birla-college",
+    school: "B.K. Birla College of Arts, Science & Commerce",
+    degree: "12th Grade",
+    fieldOfStudy: "Science",
+    period: {
+      start: "2022",
+      end: "2023",
+    },
+    description: "Completed 12th grade in science stream.",
+    isExpanded: true,
+  },
+  {
+    id: "skc-gandhi-school",
+    school: "Smt. Kantaben Chandulal Gandhi English School",
+    degree: "10th Grade",
+    period: {
+      start: "2020",
+      end: "2021",
+    },
+    description: "Completed 10th grade.",
+    isExpanded: true,
   },
 ]
