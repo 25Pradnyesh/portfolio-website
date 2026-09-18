@@ -10,7 +10,7 @@ import { PROJECTS } from "@/features/portfolio/data/projects"
 
 import { ProjectItem } from "./project-item"
 
-const ID = "work"
+const ID = "Projects"
 
 export function Projects() {
   return (
@@ -21,7 +21,7 @@ export function Projects() {
       />
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Work</a>
+          <a href={`#${ID}`}>Projects</a>
           <PanelTitleSup>({PROJECTS.length})</PanelTitleSup>
           <PanelTitleCopy id={ID} />
         </PanelTitle>
@@ -29,7 +29,7 @@ export function Projects() {
 
       <CollapsibleList
         items={PROJECTS}
-        max={4}
+        max={3}
         renderItem={(item) => <ProjectItem project={item} />}
       />
     </Panel>

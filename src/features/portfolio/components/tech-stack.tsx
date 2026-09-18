@@ -17,9 +17,9 @@ export function TechStack() {
         id="tech-stack"
         className="scroll-mt-[calc(var(--header-height)+var(--separator-height))]"
       />
-      <PanelHeader className="flex h-10 items-center justify-between px-4 sm:h-11 sm:px-5">
+      <PanelHeader className="flex h-11 items-center justify-between px-4 sm:h-12 sm:px-5">
         <div className="flex items-baseline gap-2">
-          <PanelTitle className="font-heading text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+          <PanelTitle className="font-heading text-[22px] font-semibold tracking-tight text-foreground sm:text-2xl">
             <a href={`#${ID}`}>Stack</a>
             <PanelTitleCopy id={ID} />
           </PanelTitle>
@@ -62,14 +62,14 @@ export function TechStack() {
                 onMouseLeave={() => setActiveItem(null)}
                 onFocus={() => setActiveItem(item)}
                 onBlur={() => setActiveItem(null)}
-                className={`flex size-8.5 cursor-pointer items-center justify-center rounded transition-all duration-150 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none sm:size-9 md:size-9.5 ${
+                className={`flex size-9.5 cursor-pointer items-center justify-center rounded transition-all duration-150 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none sm:size-10 md:size-10.5 ${
                   isHovered ? "bg-muted/50" : "hover:bg-muted/50"
                 }`}
               >
                 <div
-                  className={`flex size-5 items-center justify-center transition-all duration-150 sm:size-5.5 md:size-6 [&_span]:size-full [&_svg]:size-full [&_svg]:max-h-full [&_svg]:max-w-full ${
+                  className={`flex size-6.5 items-center justify-center transition-all duration-150 sm:size-7 md:size-7.5 [&_span]:size-full [&_svg]:size-full [&_svg]:max-h-full [&_svg]:max-w-full ${
                     isHovered
-                      ? "scale-115 opacity-100"
+                      ? "scale-110 opacity-100"
                       : activeItem
                         ? "opacity-40"
                         : "opacity-80 hover:opacity-100"

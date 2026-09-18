@@ -61,11 +61,11 @@ export function CollapsibleList<T>({
                 size="sm"
               >
                 <span className="hidden group-data-closed/collapsible:block">
-                  Show more
+                  SHOW MORE
                 </span>
 
                 <span className="hidden group-data-open/collapsible:block">
-                  Show less
+                  SHOW LESS
                 </span>
 
                 <ChevronDownIcon className="group-data-open/collapsible:rotate-180" />

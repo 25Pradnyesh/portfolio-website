@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons"
+import { VerticalGridRails } from "@/components/vertical-grid-rails"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 import { USER } from "@/features/portfolio/data/user"
 
@@ -11,7 +12,8 @@ import { USER } from "@/features/portfolio/data/user"
 export function SiteFooterCad() {
   return (
     <footer className="max-w-screen overflow-x-clip px-4 sm:px-6">
-      <div className="mx-auto border-x border-line md:max-w-3xl">
+      <div className="relative isolate mx-auto border-x border-line md:max-w-3xl">
+        <VerticalGridRails />
         {/* Top diagonal/hatched separator */}
         <div className="screen-line-top screen-line-bottom">
           <div className="stripe-divider h-8 sm:h-10" />

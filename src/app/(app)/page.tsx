@@ -5,6 +5,7 @@ import { JSON_LD_ID } from "@/config/json-ld"
 import { JsonLdScript } from "@/lib/json-ld"
 import { absoluteUrl } from "@/lib/utils"
 import { SectionDivider } from "@/components/section-divider"
+import { VerticalGridRails } from "@/components/vertical-grid-rails"
 import { Awards } from "@/features/portfolio/components/awards"
 import { Blog } from "@/features/portfolio/components/blog"
 import { Contact } from "@/features/portfolio/components/contact"
@@ -31,7 +32,8 @@ export default function HomePage() {
       <JsonLdScript data={getProfilePageJsonLd()} />
 
       <div className="[--separator-height:--spacing(6)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
-        <div className="mx-auto md:max-w-3xl">
+        <div className="relative isolate mx-auto md:max-w-3xl">
+          <VerticalGridRails />
           <ProfileHeader />
           <SectionDivider />
 

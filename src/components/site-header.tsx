@@ -4,6 +4,7 @@ import { Separator } from "@/components/base/ui/separator"
 import { NavItem } from "@/components/nav"
 import { NavItemGitHub } from "@/components/nav-item-github"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { VerticalGridRails } from "@/components/vertical-grid-rails"
 import blocks from "@/registry/__blocks__.json"
 import { BOOKMARKS } from "@/features/bookmark/data"
 import { sortBookmarksNewestFirst } from "@/features/bookmark/lib/sort"
@@ -32,7 +33,8 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 max-w-screen overflow-x-clip bg-background px-4 sm:px-6">
-      <div className="screen-line-top screen-line-bottom mx-auto flex h-(--header-height) items-center border-x screen-line-bottom-border screen-line-top-border px-4 group-has-data-[slot=layout-wide]/layout:container after:z-1 sm:px-5 md:max-w-3xl">
+      <div className="screen-line-top screen-line-bottom relative mx-auto flex h-(--header-height) items-center border-x screen-line-bottom-border screen-line-top-border px-4 group-has-data-[slot=layout-wide]/layout:container after:z-1 sm:px-5 md:max-w-3xl">
+        <VerticalGridRails />
         <div className="flex-1" />
 
         <div className="flex items-center gap-3 sm:gap-4">

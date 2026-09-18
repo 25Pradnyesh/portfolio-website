@@ -83,7 +83,7 @@ export function ProjectItem({
               render={
                 <a
                   className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                  href={addQueryParams(project.link, UTM_PARAMS)}
+                  href={addQueryParams(project.link!, UTM_PARAMS)}
                   target="_blank"
                   rel="noopener"
                   aria-label="Open project"

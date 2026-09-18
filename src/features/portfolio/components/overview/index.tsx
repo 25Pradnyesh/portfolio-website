@@ -81,6 +81,8 @@ export function Overview() {
           </IntroItemContent>
         </IntroItem>
       </PanelContent>
+
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-1 w-px -translate-x-1/2 border-r border-dashed border-line max-sm:hidden" />
     </Panel>
   )
 }
