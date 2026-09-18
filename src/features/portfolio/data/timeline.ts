@@ -10,6 +10,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
   },
   {
     year: 2024,
-    content: "Building Travel AI, VertiFarm, and participating in hackathons.",
+    content:
+      "Building Travel AI, Penguin Protocol, and participating in hackathons.",
   },
 ]

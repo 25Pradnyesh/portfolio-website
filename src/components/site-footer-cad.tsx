@@ -31,15 +31,6 @@ export function SiteFooterCad() {
             >
               {USER.displayName}
             </a>
-            . Inspired by / forked from{" "}
-            <a
-              href="https://github.com/ncdai/chanhdai.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground link-underline"
-            >
-              ncdai/chanhdai.com
-            </a>
             .
           </p>
         </div>
