@@ -3,7 +3,6 @@ import Link from "next/link"
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons"
 import { VerticalGridRails } from "@/components/vertical-grid-rails"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
-import { USER } from "@/features/portfolio/data/user"
 
 /**
  * Editorial technical footer matching Reference Image 2.
@@ -24,12 +23,21 @@ export function SiteFooterCad() {
           <p className="font-mono text-sm text-muted-foreground">
             Built by{" "}
             <a
-              href={SOCIAL.github.href}
+              href="https://github.com/25Pradnyesh"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground link-underline"
             >
-              {USER.displayName}
+              Pradnyesh
+            </a>
+            . Inspired by / forked from{" "}
+            <a
+              href="https://github.com/ncdai/chanhdai.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground link-underline"
+            >
+              ncdai/chanhdai.com
             </a>
             .
           </p>
