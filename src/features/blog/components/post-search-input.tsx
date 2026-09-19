@@ -39,7 +39,7 @@ export function PostSearchInput() {
   return (
     <InputGroup className="rounded-lg shadow-none">
       <InputGroupInput
-        placeholder="Search blog…"
+        placeholder="Search Blog..."
         value={query}
         onChange={(e) => {
           setQuery(e.target.value)
