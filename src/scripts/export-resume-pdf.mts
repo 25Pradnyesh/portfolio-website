@@ -72,6 +72,9 @@ async function main() {
         "https://x.com/Pradnyesh_25",
         "https://pradnyesh.vercel.app",
         "https://cal.com/pradnyesh",
+        "https://github.com/25Pradnyesh/vertifarm-app",
+        "https://voiceads.vercel.app",
+        "https://design-resource-vault.vercel.app",
       ]
 
       console.log("\n--- Checking PDF Hyperlinks ---")

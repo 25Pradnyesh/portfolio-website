@@ -3,9 +3,9 @@ import type { Metadata } from "next"
 import { ResumeActions } from "./resume-actions"
 
 export const metadata: Metadata = {
-  title: "Resume — Pradnyesh | AI Product Engineer",
+  title: "Resume — Pradnyesh Shejwal | AI Product Engineer",
   description:
-    "Engineering resume of Pradnyesh — AI Product Engineer based in Mumbai & Pune, India.",
+    "Engineering resume of Pradnyesh Shejwal — AI Product Engineer based in Mumbai & Pune, India.",
   alternates: {
     canonical: "/resume",
   },
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 function SectionHeading({ title }: { title: string }) {
   return (
-    <div className="mb-2 border-b border-black pb-1">
-      <h2 className="font-heading text-[10pt] font-bold tracking-wider text-black uppercase print:text-[9.5pt]">
+    <div className="mb-2 border-b border-[#13315b] pb-1 print:mb-1.5 print:pb-0.5">
+      <h2 className="font-heading text-[10pt] font-bold tracking-wider text-[#13315b] uppercase print:text-[10pt]">
         {title}
       </h2>
     </div>
@@ -23,7 +23,7 @@ function SectionHeading({ title }: { title: string }) {
 
 export default function ResumePage() {
   return (
-    <div className="mx-auto my-6 max-w-3xl overflow-hidden rounded-xl border border-neutral-300 bg-neutral-100 text-[#1f2937] shadow-sm sm:my-10 print:m-0 print:max-w-none print:overflow-visible print:rounded-none print:border-none print:bg-white print:p-0 print:shadow-none">
+    <div className="mx-auto my-6 max-w-3xl overflow-hidden rounded-xl border border-neutral-300 bg-neutral-100 text-[#1a1a1a] shadow-sm sm:my-10 print:m-0 print:max-w-none print:overflow-visible print:rounded-none print:border-none print:bg-white print:p-0 print:shadow-none">
       <style>{`
         @media print {
           @page {
@@ -32,7 +32,7 @@ export default function ResumePage() {
           }
           html, body {
             background: white !important;
-            color: #1f2937 !important;
+            color: #1a1a1a !important;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
           }
@@ -56,9 +56,8 @@ export default function ResumePage() {
             overflow: visible !important;
           }
           a {
-            color: #1a56db !important;
-            text-decoration: underline !important;
-            text-underline-offset: 2px !important;
+            color: #1f6eb5 !important;
+            text-decoration: none !important;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
           }
@@ -79,82 +78,83 @@ export default function ResumePage() {
       <ResumeActions />
 
       {/* Resume Document Sheet */}
-      <article className="bg-white px-8 py-8 text-[9pt] leading-[1.4] text-[#1f2937] shadow-xs sm:px-10 sm:py-9 print:px-0 print:py-0 print:text-[8.8pt] print:leading-[1.38] print:shadow-none">
+      <article className="bg-white px-8 py-8 text-[9pt] leading-[1.4] text-[#1a1a1a] shadow-xs sm:px-10 sm:py-9 print:px-0 print:py-0 print:text-[8.8pt] print:leading-[1.38] print:shadow-none">
         {/* ——— HEADER ——— */}
         <header className="resume-header text-center">
-          <h1 className="font-heading text-2xl font-bold tracking-tight text-black sm:text-[22pt] print:text-[20pt] print:leading-none">
-            PRADNYESH
+          <h1 className="font-heading text-2xl font-bold tracking-tight text-[#13315b] sm:text-[22pt] print:text-[22pt] print:leading-none">
+            PRADNYESH SHEJWAL
           </h1>
-          <p className="mt-1 text-[9.5pt] font-medium text-black print:text-[9.2pt]">
-            AI Product Engineer &middot; Mumbai &middot; Pune, India
+          <p className="mt-1 text-[10.5pt] font-semibold text-[#1f6eb5] print:text-[10.5pt]">
+            AI Product Engineer
           </p>
 
-          <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[8.5pt] text-[#1f2937] print:mt-1 print:gap-x-1.5 print:text-[8pt]">
-            <span>Mumbai &middot; Pune, India</span>
-            <span aria-hidden className="text-neutral-400">
-              |
-            </span>
-            <a
-              href="mailto:workspace.pradnyesh@gmail.com"
-              className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
-            >
-              workspace.pradnyesh@gmail.com
-            </a>
-            <span aria-hidden className="text-neutral-400">
-              |
-            </span>
-            <a
-              href="https://pradnyesh.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
-            >
-              pradnyesh.vercel.app
-            </a>
-            <span aria-hidden className="text-neutral-400">
-              |
-            </span>
-            <a
-              href="https://github.com/25Pradnyesh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
-            >
-              github.com/25Pradnyesh
-            </a>
-            <span aria-hidden className="text-neutral-400">
-              |
-            </span>
-            <a
-              href="https://x.com/Pradnyesh_25"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
-            >
-              x.com/Pradnyesh_25
-            </a>
-            <span aria-hidden className="text-neutral-400">
-              |
-            </span>
-            <a
-              href="https://www.linkedin.com/in/pradnyesh-s/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
-            >
-              linkedin.com/in/pradnyesh-s/
-            </a>
-            <span aria-hidden className="text-neutral-400">
-              |
-            </span>
-            <a
-              href="https://cal.com/pradnyesh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
-            >
-              cal.com/pradnyesh
-            </a>
+          <div className="mt-2 space-y-1 text-[8.4pt] text-[#545454] print:mt-1.5 print:space-y-0.5 print:text-[8.4pt]">
+            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
+              <span>Mumbai &middot; Pune, India</span>
+              <span aria-hidden className="text-neutral-400">
+                |
+              </span>
+              <a
+                href="mailto:workspace.pradnyesh@gmail.com"
+                className="text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+              >
+                workspace.pradnyesh@gmail.com
+              </a>
+              <span aria-hidden className="text-neutral-400">
+                |
+              </span>
+              <a
+                href="https://pradnyesh.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+              >
+                pradnyesh.vercel.app
+              </a>
+              <span aria-hidden className="text-neutral-400">
+                |
+              </span>
+              <a
+                href="https://github.com/25Pradnyesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+              >
+                github.com/25Pradnyesh
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
+              <a
+                href="https://www.linkedin.com/in/pradnyesh-s/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+              >
+                linkedin.com/in/pradnyesh-s
+              </a>
+              <span aria-hidden className="text-neutral-400">
+                |
+              </span>
+              <a
+                href="https://x.com/Pradnyesh_25"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+              >
+                x.com/Pradnyesh_25
+              </a>
+              <span aria-hidden className="text-neutral-400">
+                |
+              </span>
+              <a
+                href="https://cal.com/pradnyesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+              >
+                cal.com/pradnyesh
+              </a>
+            </div>
           </div>
         </header>
 
@@ -162,7 +162,7 @@ export default function ResumePage() {
           {/* ——— SUMMARY ——— */}
           <section className="print-break-inside-avoid">
             <SectionHeading title="SUMMARY" />
-            <p className="text-justify text-[#1f2937] print:text-left">
+            <p className="text-justify text-[#1a1a1a] print:text-left">
               AI Product Engineer specializing in end-to-end product engineering
               across modern web applications, scalable backend APIs, and
               intelligent AI systems. Experienced in architecting and shipping
@@ -185,15 +185,15 @@ export default function ResumePage() {
                   <span className="font-bold text-black">
                     Savitribai Phule Pune University (SPPU)
                   </span>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
-                    2023 — 2027
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                    2023 – 2027
                   </span>
                 </div>
-                <div className="text-[#374151]">
+                <div className="text-[#545454]">
                   Bachelor of Engineering (B.E.) in Electronics &amp; Computer
                   Engineering
                 </div>
-                <div className="text-[#374151]">
+                <div className="text-[#545454]">
                   Honors: Artificial Intelligence and Machine Learning
                 </div>
               </div>
@@ -203,11 +203,11 @@ export default function ResumePage() {
                   <span className="font-bold text-black">
                     B.K. Birla College of Arts, Science &amp; Commerce
                   </span>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
-                    2022 — 2023
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                    2022 – 2023
                   </span>
                 </div>
-                <div className="text-[#374151]">
+                <div className="text-[#545454]">
                   12th Grade &middot; Science Stream
                 </div>
               </div>
@@ -217,11 +217,11 @@ export default function ResumePage() {
                   <span className="font-bold text-black">
                     Smt. Kantaben Chandulal Gandhi English School
                   </span>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
-                    2020 — 2021
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                    2020 – 2021
                   </span>
                 </div>
-                <div className="text-[#374151]">10th Grade</div>
+                <div className="text-[#545454]">10th Grade</div>
               </div>
             </div>
           </section>
@@ -229,7 +229,7 @@ export default function ResumePage() {
           {/* ——— SKILLS ——— */}
           <section className="print-break-inside-avoid">
             <SectionHeading title="SKILLS" />
-            <div className="space-y-1 text-[#1f2937] print:space-y-0.5">
+            <div className="space-y-1 text-[#1a1a1a] print:space-y-0.5">
               <p>
                 <strong className="font-bold text-black">Languages:</strong>{" "}
                 Python, TypeScript, JavaScript, C++, Java, SQL
@@ -277,11 +277,11 @@ export default function ResumePage() {
                     Full-Stack Developer | Independent Builder &amp; Product
                     Development
                   </span>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
-                    03.2025 — Present
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                    03.2025 – Present
                   </span>
                 </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f2937] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Architected and shipped end-to-end applications from zero to
                     working product across Next.js, FastAPI, Python, APIs, and
@@ -292,12 +292,12 @@ export default function ResumePage() {
                     and multimodal extraction pipelines; owned projects from
                     concept through implementation and iteration.
                   </li>
-                  <li>
-                    <strong className="font-bold text-black">Skills:</strong>{" "}
-                    Product Engineering, Rapid Prototyping, Full-Stack
-                    Development, System Architecture
-                  </li>
                 </ul>
+                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  Product Engineering, Rapid Prototyping, Full-Stack
+                  Development, System Architecture
+                </p>
               </div>
 
               {/* Block 2 */}
@@ -306,11 +306,11 @@ export default function ResumePage() {
                   <span className="font-bold text-black">
                     AI Developer | AI Engineering — Projects &amp; Research
                   </span>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
-                    06.2025 — Present
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                    06.2025 – Present
                   </span>
                 </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f2937] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Built intelligent systems using LLMs, computer vision, NLP,
                     multimodal processing, and AI agents; developed Travel
@@ -322,12 +322,12 @@ export default function ResumePage() {
                     strengthening ML fundamentals via Andrew Ng&apos;s Machine
                     Learning Specialization.
                   </li>
-                  <li>
-                    <strong className="font-bold text-black">Skills:</strong>{" "}
-                    Generative AI, LLMs, AI Agents, Computer Vision, NLP,
-                    Python, FastAPI, PyTorch, Machine Learning
-                  </li>
                 </ul>
+                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  Generative AI, LLMs, AI Agents, Computer Vision, NLP, Python,
+                  FastAPI, PyTorch, Machine Learning
+                </p>
               </div>
 
               {/* Block 3 */}
@@ -337,11 +337,11 @@ export default function ResumePage() {
                     Design Engineer | Design Engineering — Projects &amp;
                     Product Development
                   </span>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
-                    07.2025 — Present
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                    07.2025 – Present
                   </span>
                 </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f2937] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Architected production-grade interfaces, interaction
                     patterns, and component-driven design systems for responsive
@@ -352,12 +352,12 @@ export default function ResumePage() {
                     high-fidelity implementation, responsive architecture,
                     accessibility, motion, and visual hierarchy.
                   </li>
-                  <li>
-                    <strong className="font-bold text-black">Skills:</strong>{" "}
-                    UI/UX Design, Design Systems, Figma, Interaction Design,
-                    Motion Design, Frontend Engineering
-                  </li>
                 </ul>
+                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  UI/UX Design, Design Systems, Figma, Interaction Design,
+                  Motion Design, Frontend Engineering
+                </p>
               </div>
             </div>
           </section>
@@ -373,21 +373,21 @@ export default function ResumePage() {
                     <span className="font-bold text-black">
                       Travel AI — AI Location Extraction &amp; Mapping System
                     </span>
-                    <span className="text-[#374151]"> &middot; </span>
+                    <span className="text-[#545454]"> &middot; </span>
                     <a
-                      href="https://github.com/25Pradnyesh/Travel-AI-/"
+                      href="https://github.com/25Pradnyesh/Travel-AI-"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af]"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
                     >
                       GitHub
                     </a>
                   </div>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
-                    07.2026 — Present
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                    07.2026 – Present
                   </span>
                 </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f2937] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Built a multimodal extraction pipeline combining computer
                     vision, NLP, contextual language models, semantic parsing,
@@ -406,12 +406,12 @@ export default function ResumePage() {
                     extracted locations, establish spatial relationships, and
                     generate interactive routes and travel representations.
                   </li>
-                  <li>
-                    <strong className="font-bold text-black">Skills:</strong>{" "}
-                    Python, FastAPI, Next.js, TypeScript, Computer Vision, NLP,
-                    LLMs, Google Maps API, REST APIs
-                  </li>
                 </ul>
+                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  Python, FastAPI, Next.js, TypeScript, Computer Vision, NLP,
+                  LLMs, Google Maps API, REST APIs
+                </p>
               </div>
 
               {/* 2. Penguin Protocol */}
@@ -421,24 +421,24 @@ export default function ResumePage() {
                     <span className="font-bold text-black">
                       Penguin Protocol — Decentralized AI Investment Syndicate
                     </span>
-                    <span className="text-[#374151]"> &middot; </span>
+                    <span className="text-[#545454]"> &middot; </span>
                     <a
                       href="https://github.com/Shrysxs/monad-blitz-pune"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af]"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
                     >
                       GitHub
                     </a>
                   </div>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
                     07.2026
                   </span>
                 </div>
-                <div className="text-[8.3pt] font-semibold text-black print:text-[8.1pt]">
+                <div className="text-[8.4pt] font-semibold text-[#545454] print:text-[8.4pt]">
                   WINNER — Monad Blitz Pune &middot; Built in under 8 hours
                 </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f2937] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Built the frontend and core product logic for the
                     decentralized AI investment platform.
@@ -452,12 +452,12 @@ export default function ResumePage() {
                     Took the project from concept to functional prototype in
                     under 8 hours and won Monad Blitz Pune.
                   </li>
-                  <li>
-                    <strong className="font-bold text-black">Skills:</strong>{" "}
-                    React, Next.js, TypeScript, Web3, Blockchain, Smart
-                    Contracts, AI/LLMs, Wallet Integration, API Integration
-                  </li>
                 </ul>
+                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  React, Next.js, TypeScript, Web3, Blockchain, Smart Contracts,
+                  AI/LLMs, Wallet Integration, API Integration
+                </p>
               </div>
 
               {/* 3. Reclaim */}
@@ -467,25 +467,25 @@ export default function ResumePage() {
                     <span className="font-bold text-black">
                       Reclaim — AI-Powered Phone-Use Management App
                     </span>
-                    <span className="text-[#374151]"> &middot; </span>
+                    <span className="text-[#545454]"> &middot; </span>
                     <a
                       href="https://github.com/Shrysxs/wemakedevs"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af]"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
                     >
                       GitHub
                     </a>
                   </div>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
                     10.2025
                   </span>
                 </div>
-                <div className="text-[8.3pt] font-medium text-[#374151] print:text-[8.1pt]">
+                <div className="text-[8.4pt] font-medium text-[#545454] print:text-[8.4pt]">
                   WeMakeDevs FutureStack GenAI Hackathon &middot; Shipped in 6
                   days
                 </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f2937] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Built a full-stack application designed to transform
                     phone-usage data into contextual behavioral insights and
@@ -496,29 +496,40 @@ export default function ResumePage() {
                     application and data layer; built and shipped the working
                     prototype in 6 days.
                   </li>
-                  <li>
-                    <strong className="font-bold text-black">Skills:</strong>{" "}
-                    Next.js 14, React, TypeScript, Tailwind CSS, Supabase,
-                    PostgreSQL, Cerebras API, Llama, Generative AI, REST APIs
-                  </li>
                 </ul>
+                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  Next.js 14, React, TypeScript, Tailwind CSS, Supabase,
+                  PostgreSQL, Cerebras API, Llama, Generative AI, REST APIs
+                </p>
               </div>
 
               {/* 4. AI + IoT Vertical Farming System */}
               <div className="print-break-inside-avoid">
                 <div className="flex items-baseline justify-between gap-x-2">
-                  <span className="font-bold text-black">
-                    AI + IoT Vertical Farming System — Final Year Project
-                  </span>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
+                  <div>
+                    <span className="font-bold text-black">
+                      AI + IoT Vertical Farming System — Final Year Project
+                    </span>
+                    <span className="text-[#545454]"> &middot; </span>
+                    <a
+                      href="https://github.com/25Pradnyesh/vertifarm-app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
                     2026
                   </span>
                 </div>
-                <div className="text-[8.3pt] font-medium text-[#374151] print:text-[8.1pt]">
+                <div className="text-[8.4pt] font-medium text-[#545454] print:text-[8.4pt]">
                   Environmental monitoring, automation, and plant-disease
                   detection
                 </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f2937] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Built and trained a six-class plant disease
                     image-classification model using MobileNetV3 transfer
@@ -536,14 +547,14 @@ export default function ResumePage() {
                     temperature, humidity, soil moisture, and light-intensity
                     sensing with the application layer.
                   </li>
-                  <li>
-                    <strong className="font-bold text-black">Hardware:</strong>{" "}
-                    STM32, ESP32-CAM, environmental sensors &middot;{" "}
-                    <strong className="font-bold text-black">Software:</strong>{" "}
-                    Python, FastAPI, React Native / Expo, MQTT, PostgreSQL /
-                    Supabase, PyTorch / MobileNetV3
-                  </li>
                 </ul>
+                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Hardware:</strong>{" "}
+                  STM32, ESP32-CAM, environmental sensors &middot;{" "}
+                  <strong className="font-bold text-black">Software:</strong>{" "}
+                  Python, FastAPI, React Native / Expo, MQTT, PostgreSQL /
+                  Supabase, PyTorch / MobileNetV3
+                </p>
               </div>
 
               {/* 5. VoiceAds */}
@@ -553,21 +564,24 @@ export default function ResumePage() {
                     <span className="font-bold text-black">
                       VoiceAds — AI Customer Feedback to Ad Intelligence
                     </span>
-                    <span className="text-[#374151]"> &middot; </span>
+                    <span className="text-[#545454]"> &middot; </span>
                     <a
-                      href="https://voiceads.vercel.app/"
+                      href="https://voiceads.vercel.app"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af]"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
                     >
                       Live
                     </a>
                   </div>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
                     2026
                   </span>
                 </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f2937] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                <div className="text-[8.4pt] font-medium text-[#545454] print:text-[8.4pt]">
+                  AIBoomi Startup Weekend Pune
+                </div>
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Built and shipped working prototype in under 24 hours at
                     AIBoomi Startup Weekend Pune. Developed an LLM-driven
@@ -575,12 +589,12 @@ export default function ResumePage() {
                     recurring language, pain points, and product themes into
                     structured advertising content.
                   </li>
-                  <li>
-                    <strong className="font-bold text-black">Skills:</strong>{" "}
-                    Next.js, React, TypeScript, LLMs, NLP, Semantic Analysis,
-                    Prompt Engineering, Generative AI
-                  </li>
                 </ul>
+                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  Next.js, React, TypeScript, LLMs, NLP, Semantic Analysis,
+                  Prompt Engineering, Generative AI
+                </p>
               </div>
 
               {/* 6. Design Resource Vault */}
@@ -591,33 +605,33 @@ export default function ResumePage() {
                       Design Resource Vault — Curated Design &amp; UI Discovery
                       Platform
                     </span>
-                    <span className="text-[#374151]"> &middot; </span>
+                    <span className="text-[#545454]"> &middot; </span>
                     <a
-                      href="https://design-resource-vault.vercel.app/"
+                      href="https://design-resource-vault.vercel.app"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af]"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
                     >
                       Live
                     </a>
                   </div>
-                  <span className="shrink-0 font-medium text-[#374151] tabular-nums">
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
                     08.2026
                   </span>
                 </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f2937] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Built a centralized discovery platform for design systems,
                     component patterns, design tokens, typography references,
                     and UI tooling with structured categorization and
                     client-side filtering.
                   </li>
-                  <li>
-                    <strong className="font-bold text-black">Skills:</strong>{" "}
-                    Next.js, TypeScript, Tailwind CSS, Framer Motion, Design
-                    Systems, UI/UX
-                  </li>
                 </ul>
+                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  Next.js, TypeScript, Tailwind CSS, Framer Motion, Design
+                  Systems, UI/UX
+                </p>
               </div>
             </div>
           </section>
@@ -625,7 +639,7 @@ export default function ResumePage() {
           {/* ——— AWARDS & RECOGNITION ——— */}
           <section className="print-break-inside-avoid pt-1">
             <SectionHeading title="AWARDS & RECOGNITION" />
-            <ul className="list-disc space-y-1.5 pl-4 text-[#1f2937] print:space-y-1 print:pl-3.5">
+            <ul className="list-disc space-y-1.5 pl-4 text-[#1a1a1a] print:space-y-1 print:pl-3.5">
               <li>
                 <strong className="font-bold text-black">
                   Monad Blitz Pune — Winner:
