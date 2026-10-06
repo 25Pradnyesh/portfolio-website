@@ -14,14 +14,25 @@ export function ResumeActions() {
         <span>Back to Portfolio</span>
       </Link>
 
-      <button
-        type="button"
-        onClick={() => window.print()}
-        className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-border/80 bg-background px-3 py-1.5 font-mono text-xs font-medium text-foreground shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground"
-      >
-        <PrinterIcon className="size-3.5" />
-        <span>Print / Save as PDF</span>
-      </button>
+      <div className="flex items-center gap-2">
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-border/80 bg-background px-3 py-1.5 font-mono text-xs font-medium text-foreground shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          <span>Open PDF</span>
+        </a>
+
+        <button
+          type="button"
+          onClick={() => window.print()}
+          className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-border/80 bg-background px-3 py-1.5 font-mono text-xs font-medium text-foreground shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          <PrinterIcon className="size-3.5" />
+          <span>Print</span>
+        </button>
+      </div>
     </div>
   )
 }

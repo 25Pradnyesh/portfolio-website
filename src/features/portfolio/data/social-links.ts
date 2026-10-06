@@ -51,7 +51,7 @@ export const SOCIAL = {
   resume: {
     title: "Resume",
     handle: "Resume",
-    href: "/resume",
+    href: "/resume.pdf",
     sameAs: false,
   },
 } satisfies Record<string, SocialProfile>

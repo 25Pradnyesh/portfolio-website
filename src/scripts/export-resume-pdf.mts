@@ -61,7 +61,10 @@ async function main() {
 
       console.log(`PDF saved successfully to ${outputPath}`)
       fs.copyFileSync(outputPath, path.resolve(process.cwd(), "resume-prad.pdf"))
-      console.log(`Synced to resume-prad.pdf`)
+      fs.copyFileSync(outputPath, path.resolve(process.cwd(), "Pradnyesh_Resume_v3.pdf"))
+      fs.copyFileSync(outputPath, path.resolve(process.cwd(), "public", "resume.pdf"))
+      fs.copyFileSync(outputPath, path.resolve(process.cwd(), "public", "Pradnyesh_Resume_v3.pdf"))
+      console.log(`Synced to resume-prad.pdf, Pradnyesh_Resume_v3.pdf, and public/resume.pdf`)
 
       // Verify PDF contents for hyperlinks
       const pdfBuffer = fs.readFileSync(outputPath)
