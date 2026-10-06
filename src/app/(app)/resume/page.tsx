@@ -81,10 +81,10 @@ export default function ResumePage() {
       <article className="bg-white px-8 py-8 text-[9pt] leading-[1.4] text-[#1a1a1a] shadow-xs sm:px-10 sm:py-9 print:px-0 print:py-0 print:text-[8.8pt] print:leading-[1.38] print:shadow-none">
         {/* ——— HEADER ——— */}
         <header className="resume-header text-center">
-          <h1 className="font-heading text-2xl font-bold tracking-tight text-[#13315b] sm:text-[22pt] print:text-[22pt] print:leading-none">
+          <h1 className="font-heading text-2xl font-bold tracking-tight text-black sm:text-[22pt] print:text-[22pt] print:leading-none">
             PRADNYESH SHEJWAL
           </h1>
-          <p className="mt-1 text-[10.5pt] font-semibold text-[#1f6eb5] print:text-[10.5pt]">
+          <p className="mt-1 text-[10.5pt] font-semibold text-black print:text-[10.5pt]">
             AI Product Engineer
           </p>
 
