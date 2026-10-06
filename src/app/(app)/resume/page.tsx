@@ -89,7 +89,7 @@ export default function ResumePage() {
             AI Product Engineer &middot; Mumbai &middot; Pune, India
           </p>
 
-          <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[8.5pt] text-[#1f2937] print:mt-1 print:gap-x-1.5 print:text-[8.2pt]">
+          <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[8.5pt] text-[#1f2937] print:mt-1 print:gap-x-1.5 print:text-[8pt]">
             <span>Mumbai &middot; Pune, India</span>
             <span aria-hidden className="text-neutral-400">
               |
@@ -109,7 +109,7 @@ export default function ResumePage() {
               rel="noopener noreferrer"
               className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
             >
-              Portfolio
+              pradnyesh.vercel.app
             </a>
             <span aria-hidden className="text-neutral-400">
               |
@@ -120,7 +120,7 @@ export default function ResumePage() {
               rel="noopener noreferrer"
               className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
             >
-              GitHub
+              github.com/25Pradnyesh
             </a>
             <span aria-hidden className="text-neutral-400">
               |
@@ -131,7 +131,7 @@ export default function ResumePage() {
               rel="noopener noreferrer"
               className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
             >
-              X
+              x.com/Pradnyesh_25
             </a>
             <span aria-hidden className="text-neutral-400">
               |
@@ -142,7 +142,7 @@ export default function ResumePage() {
               rel="noopener noreferrer"
               className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
             >
-              LinkedIn
+              linkedin.com/in/pradnyesh-s/
             </a>
             <span aria-hidden className="text-neutral-400">
               |
@@ -153,15 +153,7 @@ export default function ResumePage() {
               rel="noopener noreferrer"
               className="text-[#1a56db] underline decoration-[#1a56db]/50 underline-offset-2 transition-colors hover:text-[#1e40af] hover:decoration-[#1e40af]"
             >
-              cal.com
-            </a>
-            <a
-              href="https://t.me/Pradnyesh_25"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sr-only"
-            >
-              Telegram
+              cal.com/pradnyesh
             </a>
           </div>
         </header>
