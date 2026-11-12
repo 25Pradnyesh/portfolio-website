@@ -73,6 +73,7 @@ function subscribeNetworkChange(callback: () => void) {
  * - Dynamic Day / Night theme-adaptive pixel-art developer workspace
  * - Ultra-crisp pixel-art rendering with preloaded alternate assets to prevent theme-switch flash
  * - Live synchronized desk-mounted digital clock tracking real browser system time (HH:MM:SS AM/PM / 24h)
+ * - Calibrated compact vertical height: ~310px desktop, ~260px tablet, ~195px mobile
  * - Future-proof media architecture: supports dropping in video loops without redesign
  * - Respects prefers-reduced-motion and saves bandwidth on low-speed connections
  * - CAD-aligned grid rails and responsive composition across mobile, tablet, laptop, and desktop
@@ -112,7 +113,11 @@ export function HeroMediaBanner({
       <div
         className={cn(
           "screen-line-bottom relative mx-auto w-full overflow-hidden border-x border-line screen-line-bottom-border md:max-w-3xl",
-          "aspect-1670/942 select-none",
+          // Height constraints tuned to keep profile above fold:
+          // Desktop: 310px (target 300-320px)
+          // Tablet:  260px (target 240-280px)
+          // Mobile:  195px (target 170-220px)
+          "h-[195px] select-none sm:h-[260px] md:h-[310px]",
           className
         )}
       >
@@ -124,76 +129,79 @@ export function HeroMediaBanner({
           aria-hidden
         />
 
-        {/* Media Layer: Video (Future Animation) or Crisp Pixel-Art Image (Day/Night) */}
-        {canPlayVideo ? (
-          <div className="pointer-events-none absolute inset-0 h-full w-full">
-            {media.video?.day && (
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={dayImg}
-                className="absolute inset-0 h-full w-full object-cover object-[35%_center] opacity-100 transition-opacity duration-700 ease-in-out sm:object-center dark:opacity-0"
-              >
-                <source src={media.video.day} type="video/mp4" />
-              </video>
-            )}
-            {media.video?.night && (
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={nightImg}
-                className="absolute inset-0 h-full w-full object-cover object-[35%_center] opacity-0 transition-opacity duration-700 ease-in-out sm:object-center dark:opacity-100"
-              >
-                <source src={media.video.night} type="video/mp4" />
-              </video>
-            )}
-          </div>
-        ) : (
-          <div className="pointer-events-none absolute inset-0 h-full w-full">
-            {/* Daytime Workspace (Light Mode) */}
-            {!dayError && (
-              <Image
-                src={dayImg}
-                alt={`${altText} (Day mode)`}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 768px"
-                onError={() => setDayError(true)}
-                className={cn(
-                  "object-cover object-[35%_center] select-none sm:object-center",
-                  "transition-opacity duration-700 ease-in-out",
-                  "[image-rendering:pixelated]",
-                  "opacity-100 dark:opacity-0"
-                )}
-              />
-            )}
+        {/* Media Frame: retains 1670:942 aspect ratio and frames focal workspace (developer, monitors, clock) */}
+        <div className="absolute inset-x-0 top-[-2px] aspect-1670/942 w-full sm:top-[-36px] md:top-[-44px]">
+          {/* Media Layer: Video (Future Animation) or Crisp Pixel-Art Image (Day/Night) */}
+          {canPlayVideo ? (
+            <div className="pointer-events-none absolute inset-0 h-full w-full">
+              {media.video?.day && (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={dayImg}
+                  className="absolute inset-0 h-full w-full object-cover object-[35%_36%] opacity-100 transition-opacity duration-700 ease-in-out sm:object-[center_36%] dark:opacity-0"
+                >
+                  <source src={media.video.day} type="video/mp4" />
+                </video>
+              )}
+              {media.video?.night && (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={nightImg}
+                  className="absolute inset-0 h-full w-full object-cover object-[35%_36%] opacity-0 transition-opacity duration-700 ease-in-out sm:object-[center_36%] dark:opacity-100"
+                >
+                  <source src={media.video.night} type="video/mp4" />
+                </video>
+              )}
+            </div>
+          ) : (
+            <div className="pointer-events-none absolute inset-0 h-full w-full">
+              {/* Daytime Workspace (Light Mode) */}
+              {!dayError && (
+                <Image
+                  src={dayImg}
+                  alt={`${altText} (Day mode)`}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  onError={() => setDayError(true)}
+                  className={cn(
+                    "object-cover object-[35%_36%] select-none sm:object-[center_36%]",
+                    "transition-opacity duration-700 ease-in-out",
+                    "[image-rendering:pixelated]",
+                    "opacity-100 dark:opacity-0"
+                  )}
+                />
+              )}
 
-            {/* Nighttime Workspace (Dark Mode) */}
-            {!nightError && (
-              <Image
-                src={nightImg}
-                alt={`${altText} (Night mode)`}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 768px"
-                onError={() => setNightError(true)}
-                className={cn(
-                  "object-cover object-[35%_center] select-none sm:object-center",
-                  "transition-opacity duration-700 ease-in-out",
-                  "[image-rendering:pixelated]",
-                  "opacity-0 dark:opacity-100"
-                )}
-              />
-            )}
-          </div>
-        )}
+              {/* Nighttime Workspace (Dark Mode) */}
+              {!nightError && (
+                <Image
+                  src={nightImg}
+                  alt={`${altText} (Night mode)`}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  onError={() => setNightError(true)}
+                  className={cn(
+                    "object-cover object-[35%_36%] select-none sm:object-[center_36%]",
+                    "transition-opacity duration-700 ease-in-out",
+                    "[image-rendering:pixelated]",
+                    "opacity-0 dark:opacity-100"
+                  )}
+                />
+              )}
+            </div>
+          )}
 
-        {/* Live Desk Clock Overlay — Aligned directly over the desk digital clock */}
-        <HeroDeskClock />
+          {/* Live Desk Clock Overlay — Aligned directly over the desk digital clock */}
+          <HeroDeskClock />
+        </div>
 
         {/* Subtle edge readability gradients: preserve crisp art while harmonizing with header and profile borders */}
         <div
