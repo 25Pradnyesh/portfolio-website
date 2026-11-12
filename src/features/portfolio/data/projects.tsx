@@ -1,14 +1,44 @@
 import {
   BotIcon,
   CompassIcon,
+  FileCheckIcon,
   FolderCodeIcon,
   Mic2Icon,
+  ShieldCheckIcon,
   SproutIcon,
 } from "lucide-react"
 
 import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
+  {
+    id: "ethglobal-mumbai",
+    title: "ETHGlobal Mumbai",
+    period: {
+      start: "11.2026",
+      end: "11.2026",
+    },
+    link: "https://nony.money",
+    repository: "https://github.com/Apurvborhade/nony-money",
+    skills: ["EIP-712", "Fastify", "TEE", "Uniswap", "Ethereum"],
+    description: `Built Cloakroom (now Nony.money) with a team of four: private swaps and withdrawals on Ethereum, with custody keys and the ledger held inside a TEE. I owned the API and accounting layer — EIP-712 signed requests, the journal and ledger, balance reservations, and the intent lifecycle.`,
+    icon: <ShieldCheckIcon />,
+    isExpanded: true,
+  },
+  {
+    id: "monad-blitz-pune-v3",
+    title: "Monad Blitz Pune V3",
+    period: {
+      start: "10.2026",
+      end: "10.2026",
+    },
+    link: "https://monad-v3-six.vercel.app",
+    repository: "https://github.com/Shrysxs/monad-v3",
+    skills: ["Monad Testnet", "Solidity", "Foundry", "SHA-256", "Ed25519"],
+    description: `Built Penguin Trace, a tool for verifying that a downloaded file matches its publisher's release. Files are hashed in the browser, manifests are Ed25519-signed, and publisher keys and releases are committed to a registry contract on Monad Testnet.`,
+    icon: <FileCheckIcon />,
+    isExpanded: false,
+  },
   {
     id: "travel-ai",
     title: "Travel AI",

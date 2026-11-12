@@ -14,6 +14,8 @@ export type Project = {
   }
   /** Public URL (site, repository, demo, or video). */
   link?: string
+  /** Source code repository URL (e.g. GitHub). */
+  repository?: string
   /** Tags/technologies for chips or filtering. */
   skills: string[]
   /** Optional rich description; Markdown and line breaks supported. */
