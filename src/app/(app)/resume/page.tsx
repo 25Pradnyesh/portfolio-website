@@ -365,8 +365,107 @@ export default function ResumePage() {
           {/* ——— PROJECTS (Starts Page 2 naturally in print) ——— */}
           <section className="print-break-before-page pt-2 print:pt-0">
             <SectionHeading title="PROJECTS" />
-            <div className="space-y-3.5 print:space-y-3">
-              {/* 1. Travel AI */}
+            <div className="space-y-3 print:space-y-1.5">
+              {/* 1. ETHGlobal Mumbai — NONY.money */}
+              <div className="print-break-inside-avoid">
+                <div className="flex items-baseline justify-between gap-x-2">
+                  <div>
+                    <span className="font-bold text-black">
+                      ETHGlobal Mumbai — NONY.money
+                    </span>
+                    <span className="text-[#545454]"> &middot; </span>
+                    <a
+                      href="https://nony.money"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+                    >
+                      nony.money
+                    </a>
+                    <span className="text-[#545454]"> &middot; </span>
+                    <a
+                      href="https://github.com/Apurvborhade/nony-money"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                    11.2026
+                  </span>
+                </div>
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                  <li>
+                    Built NONY.money with a team of four: private swaps and
+                    withdrawals on Ethereum, with custody keys and ledger state
+                    isolated inside a Trusted Execution Environment (TEE).
+                  </li>
+                  <li>
+                    Owned the API and accounting layer using Fastify:
+                    implemented EIP-712 signed requests, transaction journaling,
+                    double-entry ledger management, balance reservations, and
+                    intent lifecycle states.
+                  </li>
+                </ul>
+                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  Fastify, EIP-712, TEE, Uniswap, Ethereum, TypeScript, REST
+                  APIs
+                </p>
+              </div>
+
+              {/* 2. Monad Blitz Pune V3 — Penguin Trace */}
+              <div className="print-break-inside-avoid">
+                <div className="flex items-baseline justify-between gap-x-2">
+                  <div>
+                    <span className="font-bold text-black">
+                      Monad Blitz Pune V3 — Penguin Trace
+                    </span>
+                    <span className="text-[#545454]"> &middot; </span>
+                    <a
+                      href="https://monad-v3-six.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+                    >
+                      Live
+                    </a>
+                    <span className="text-[#545454]"> &middot; </span>
+                    <a
+                      href="https://github.com/Shrysxs/monad-v3"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                    10.2026
+                  </span>
+                </div>
+                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
+                  <li>
+                    Built Penguin Trace, a browser verification tool validating
+                    downloaded assets against publisher releases via client-side
+                    SHA-256 hashing and Ed25519-signed manifests.
+                  </li>
+                  <li>
+                    Engineered an on-chain verification workflow backed by a
+                    registry smart contract on Monad Testnet using Foundry and
+                    Solidity, committing publisher keys and release records.
+                  </li>
+                </ul>
+                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
+                  <strong className="font-bold text-black">Skills:</strong>{" "}
+                  Solidity, Foundry, SHA-256, Ed25519, Monad Testnet, Smart
+                  Contracts, Web3
+                </p>
+              </div>
+
+              {/* 3. Travel AI */}
               <div className="print-break-inside-avoid">
                 <div className="flex items-baseline justify-between gap-x-2">
                   <div>
@@ -390,31 +489,23 @@ export default function ResumePage() {
                 <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Built a multimodal extraction pipeline combining computer
-                    vision, NLP, contextual language models, semantic parsing,
-                    and geographic reasoning to identify destinations,
-                    landmarks, and geographic context from social-media reels
-                    and captions.
+                    vision, NLP, and LLMs to identify destinations, landmarks,
+                    and geographic context from social reels and captions.
                   </li>
                   <li>
-                    Developed location extraction, candidate resolution,
-                    verification, and structured transformation workflows
-                    converting unstructured travel content into usable
-                    geographic data; processed 100+ reels during testing.
-                  </li>
-                  <li>
-                    Integrated Google Maps and geospatial services to cluster
-                    extracted locations, establish spatial relationships, and
-                    generate interactive routes and travel representations.
+                    Developed location resolution, verification, and structured
+                    transformation workflows; integrated Google Maps APIs to
+                    cluster locations and generate interactive routes.
                   </li>
                 </ul>
-                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
                   <strong className="font-bold text-black">Skills:</strong>{" "}
                   Python, FastAPI, Next.js, TypeScript, Computer Vision, NLP,
                   LLMs, Google Maps API, REST APIs
                 </p>
               </div>
 
-              {/* 2. Penguin Protocol */}
+              {/* 4. Penguin Protocol */}
               <div className="print-break-inside-avoid">
                 <div className="flex items-baseline justify-between gap-x-2">
                   <div>
@@ -440,27 +531,23 @@ export default function ResumePage() {
                 </div>
                 <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
-                    Built the frontend and core product logic for the
-                    decentralized AI investment platform.
+                    Built frontend architecture and core product logic for the
+                    decentralized AI investment syndicate.
                   </li>
                   <li>
-                    Implemented AI-assisted investment workflows around agent
-                    analysis, market context, confidence voting, and on-chain
-                    interactions.
-                  </li>
-                  <li>
-                    Took the project from concept to functional prototype in
-                    under 8 hours and won Monad Blitz Pune.
+                    Implemented workflows around AI-assisted investment
+                    intelligence, decentralized coordination, confidence voting,
+                    and on-chain interactions.
                   </li>
                 </ul>
-                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
                   <strong className="font-bold text-black">Skills:</strong>{" "}
                   React, Next.js, TypeScript, Web3, Blockchain, Smart Contracts,
                   AI/LLMs, Wallet Integration, API Integration
                 </p>
               </div>
 
-              {/* 3. Reclaim */}
+              {/* 5. Reclaim */}
               <div className="print-break-inside-avoid">
                 <div className="flex items-baseline justify-between gap-x-2">
                   <div>
@@ -487,24 +574,23 @@ export default function ResumePage() {
                 </div>
                 <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
-                    Built a full-stack application designed to transform
-                    phone-usage data into contextual behavioral insights and
-                    personalized interventions.
+                    Built full-stack application transforming smartphone usage
+                    data into contextual behavioral insights and personalized
+                    focus interventions.
                   </li>
                   <li>
-                    Integrated Llama through Cerebras API with a Supabase-backed
-                    application and data layer; built and shipped the working
-                    prototype in 6 days.
+                    Integrated Llama via Cerebras API with Supabase backend and
+                    data layer; shipped functional prototype within 6 days.
                   </li>
                 </ul>
-                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
                   <strong className="font-bold text-black">Skills:</strong>{" "}
                   Next.js 14, React, TypeScript, Tailwind CSS, Supabase,
                   PostgreSQL, Cerebras API, Llama, Generative AI, REST APIs
                 </p>
               </div>
 
-              {/* 4. AI + IoT Vertical Farming System */}
+              {/* 6. AI + IoT Vertical Farming System */}
               <div className="print-break-inside-avoid">
                 <div className="flex items-baseline justify-between gap-x-2">
                   <div>
@@ -525,39 +611,28 @@ export default function ResumePage() {
                     2026
                   </span>
                 </div>
-                <div className="text-[8.4pt] font-medium text-[#545454] print:text-[8.4pt]">
-                  Environmental monitoring, automation, and plant-disease
-                  detection
-                </div>
                 <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
-                    Built and trained a six-class plant disease
-                    image-classification model using MobileNetV3 transfer
-                    learning. Prepared and standardized a 600-image dataset into
-                    six plant-health classes at 224&times;224 resolution, split
-                    into 420 training, 90 validation, and 90 test images.
+                    Trained a six-class plant disease classification model using
+                    MobileNetV3 transfer learning on a 600-image dataset;
+                    integrated inference into a FastAPI backend.
                   </li>
                   <li>
-                    Trained and evaluated the model, then integrated inference
-                    into a FastAPI backend and application workflow; processed
-                    500+ images during testing.
-                  </li>
-                  <li>
-                    Integrated environmental monitoring and automation using
-                    temperature, humidity, soil moisture, and light-intensity
-                    sensing with the application layer.
+                    Integrated environmental telemetry (temperature, humidity,
+                    soil moisture, light) via STM32 and ESP32 with real-time
+                    application monitoring.
                   </li>
                 </ul>
-                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
                   <strong className="font-bold text-black">Hardware:</strong>{" "}
-                  STM32, ESP32-CAM, environmental sensors &middot;{" "}
+                  STM32, ESP32-CAM, sensors &middot;{" "}
                   <strong className="font-bold text-black">Software:</strong>{" "}
                   Python, FastAPI, React Native / Expo, MQTT, PostgreSQL /
-                  Supabase, PyTorch / MobileNetV3
+                  Supabase, PyTorch
                 </p>
               </div>
 
-              {/* 5. VoiceAds */}
+              {/* 7. VoiceAds */}
               <div className="print-break-inside-avoid">
                 <div className="flex items-baseline justify-between gap-x-2">
                   <div>
@@ -579,25 +654,25 @@ export default function ResumePage() {
                   </span>
                 </div>
                 <div className="text-[8.4pt] font-medium text-[#545454] print:text-[8.4pt]">
-                  AIBoomi Startup Weekend Pune
+                  AIBoomi Startup Weekend Pune &middot; Shipped in under 24
+                  hours
                 </div>
                 <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
-                    Built and shipped working prototype in under 24 hours at
-                    AIBoomi Startup Weekend Pune. Developed an LLM-driven
-                    semantic-analysis workflow extracting customer sentiment,
-                    recurring language, pain points, and product themes into
-                    structured advertising content.
+                    Built and shipped prototype in under 24 hours at AIBoomi
+                    Startup Weekend. Developed LLM-driven semantic analysis
+                    extracting sentiment, recurring pain points, and themes into
+                    structured ad creative.
                   </li>
                 </ul>
-                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
                   <strong className="font-bold text-black">Skills:</strong>{" "}
                   Next.js, React, TypeScript, LLMs, NLP, Semantic Analysis,
                   Prompt Engineering, Generative AI
                 </p>
               </div>
 
-              {/* 6. Design Resource Vault */}
+              {/* 8. Design Resource Vault */}
               <div className="print-break-inside-avoid">
                 <div className="flex items-baseline justify-between gap-x-2">
                   <div>
@@ -622,12 +697,11 @@ export default function ResumePage() {
                 <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
                     Built a centralized discovery platform for design systems,
-                    component patterns, design tokens, typography references,
-                    and UI tooling with structured categorization and
-                    client-side filtering.
+                    component patterns, tokens, and UI tooling with category
+                    indexing and client-side filtering.
                   </li>
                 </ul>
-                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
+                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
                   <strong className="font-bold text-black">Skills:</strong>{" "}
                   Next.js, TypeScript, Tailwind CSS, Framer Motion, Design
                   Systems, UI/UX

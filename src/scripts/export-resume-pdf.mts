@@ -64,6 +64,7 @@ async function main() {
       fs.copyFileSync(outputPath, path.resolve(process.cwd(), "Pradnyesh_Resume_v3.pdf"))
       fs.copyFileSync(outputPath, path.resolve(process.cwd(), "public", "resume.pdf"))
       fs.copyFileSync(outputPath, path.resolve(process.cwd(), "public", "Pradnyesh_Resume_v3.pdf"))
+      fs.copyFileSync(outputPath, path.resolve(process.cwd(), "public", "resume-pradnyesh.pdf"))
       console.log(`Synced to resume-prad.pdf, Pradnyesh_Resume_v3.pdf, and public/resume.pdf`)
 
       // Verify PDF contents for hyperlinks
@@ -75,6 +76,10 @@ async function main() {
         "https://x.com/Pradnyesh_25",
         "https://pradnyesh.vercel.app",
         "https://cal.com/pradnyesh",
+        "https://nony.money",
+        "https://github.com/Apurvborhade/nony-money",
+        "https://monad-v3-six.vercel.app",
+        "https://github.com/Shrysxs/monad-v3",
         "https://github.com/25Pradnyesh/vertifarm-app",
         "https://voiceads.vercel.app",
         "https://design-resource-vault.vercel.app",
