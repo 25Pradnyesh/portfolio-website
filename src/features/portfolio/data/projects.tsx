@@ -19,9 +19,35 @@ export const PROJECTS: Project[] = [
       end: "11.2026",
     },
     link: "https://nony.money",
-    repository: "https://github.com/Apurvborhade/nony-money",
-    skills: ["EIP-712", "Fastify", "TEE", "Uniswap", "Ethereum"],
-    description: `Built Cloakroom (now Nony.money) with a team of four: private swaps and withdrawals on Ethereum, with custody keys and the ledger held inside a TEE. I owned the API and accounting layer — EIP-712 signed requests, the journal and ledger, balance reservations, and the intent lifecycle.`,
+    repository: "https://ethglobal.com/showcase/nony-m  oney-rmbfi",
+    skills: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Ethereum",
+      "AWS Nitro Enclaves",
+      "TEE",
+      "Wallet Integration",
+      "Cryptography",
+    ],
+
+    description: `**Privacy-preserving transaction infrastructure powered by Trusted Execution Environments.**
+
+ NONY enables private asset swaps and withdrawals without directly exposing the relationship between deposit and destination wallets on-chain. It uses a shared transaction pool and TEE-based confidential execution.
+
+ - **Private transaction flows:** Deposit, private execution, swaps, and withdrawals.
+ - **TEE integration:** Attestation interfaces and confidential balance handling.
+ - **Wallet connectivity:** Wallet interactions and asset selection across transaction workflows.
+ - **Protocol architecture:** Separation of publicly observable blockchain activity from confidential execution data.
+
+ **My contribution**
+ 
+ - Built **16 Next.js application routes** covering deposits, private execution, pools, transfers, wallet management, and withdrawals.
+ - Developed reusable components including \`AssetSelector\`, \`WalletModal\`, \`ExecutionModeCard\`, and \`AttestationBadge\`.
+ - Designed the landing page, application UI/UX, navigation, and transaction journeys.
+ - Integrated \`useAttestation\`, \`useConfidentialBalance\`, wallet functionality, and frontend API and cryptographic utilities.
+ - Contributed to system architecture, transaction-flow design, and technical documentation.
+ - Validated the frontend through TypeScript, lint, and production builds, generating **19 static pages**.`,
     icon: <ShieldCheckIcon />,
     isExpanded: true,
   },
@@ -40,11 +66,14 @@ export const PROJECTS: Project[] = [
     isExpanded: false,
   },
   {
-    id: "travel-ai",
-    title: "Travel AI",
+    id: "vamo",
+    title: "Vamo",
     period: {
       start: "06.2026",
+      end: "12.2026",
     },
+    link: "https://vamo-xi.vercel.app/",
+    repository: "https://github.com/25Pradnyesh/Travel-AI-",
     skills: [
       "Python",
       "FastAPI",
@@ -59,13 +88,13 @@ export const PROJECTS: Project[] = [
       "Google Maps API",
       "REST APIs",
     ],
-    description: `**Independent Project · 06.2026—Present**
+    description: `**Independent Project · 06.2026—12.2026**
 
-AI-powered travel intelligence system for extracting, structuring, and mapping geographic information from social media content.
+  A travel intelligence system for extracting, structuring, and mapping geographic information from social media content.
 
-- Architecting a **multimodal information-extraction pipeline** combining computer vision, NLP, and contextual language models to identify destinations, landmarks, and geographic signals from Instagram reels and captions.
-- Developing **entity extraction, semantic parsing, location resolution, and structured data transformation** workflows to convert unstructured social content into structured geographic intelligence.
-- Integrating **Google Maps APIs and geospatial services** to cluster extracted locations, establish spatial relationships, and generate interactive routes and itinerary representations.`,
+  - Architecting a **multimodal information-extraction pipeline** combining computer vision, NLP, and contextual language models to identify destinations, landmarks, and geographic signals from Instagram reels and captions.
+  - Developing **entity extraction, semantic parsing, location resolution, and structured data transformation** workflows to convert unstructured social content into structured geographic intelligence.
+  - Integrating **Google Maps APIs and geospatial services** to cluster extracted locations, establish spatial relationships, and generate interactive routes and itinerary representations.`,
     icon: <CompassIcon />,
     isExpanded: true,
   },

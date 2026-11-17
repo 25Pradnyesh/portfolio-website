@@ -384,7 +384,7 @@ export default function ResumePage() {
                     </a>
                     <span className="text-[#545454]"> &middot; </span>
                     <a
-                      href="https://github.com/Apurvborhade/nony-money"
+                      href="https://ethglobal.com/showcase/nony-money-rmbfi"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
