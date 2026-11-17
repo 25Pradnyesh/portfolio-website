@@ -3,18 +3,177 @@ import type { Metadata } from "next"
 import { ResumeActions } from "./resume-actions"
 
 export const metadata: Metadata = {
-  title: "Resume — Pradnyesh Shejwal | AI Product Engineer",
+  title: "Resume — Pradnyesh Shejwal | Product Engineer",
   description:
-    "Engineering resume of Pradnyesh Shejwal — AI Product Engineer based in Mumbai & Pune, India.",
+    "Resume of Pradnyesh Shejwal — Product Engineer focused on frontend engineering, applied AI, and Web3 applications, based in Mumbai and Pune, India.",
   alternates: {
     canonical: "/resume",
   },
 }
 
+interface SkillGroup {
+  category: string
+  items: string
+}
+
+interface ProjectLink {
+  label: string
+  href: string
+}
+
+interface ResumeProject {
+  title: string
+  subtitle?: string
+  period: string
+  links: ProjectLink[]
+  bullets: string[]
+  tech: string
+}
+
+const SKILL_GROUPS: SkillGroup[] = [
+  {
+    category: "Programming Languages",
+    items: "TypeScript, JavaScript, Python, Solidity, SQL, C++, Java",
+  },
+  {
+    category: "Frontend Engineering",
+    items:
+      "React, Next.js, Tailwind CSS, React Native (Expo), Framer Motion, Design Systems, Responsive UI, Figma",
+  },
+  {
+    category: "Backend & APIs",
+    items: "FastAPI, Node.js, REST APIs, Google Maps API, MQTT",
+  },
+  {
+    category: "AI / Machine Learning",
+    items:
+      "PyTorch, Computer Vision, NLP, LLMs, Multimodal Pipelines, Prompt Engineering, Transfer Learning (MobileNetV3), AI Agents",
+  },
+  {
+    category: "Databases",
+    items: "PostgreSQL, Supabase, MongoDB",
+  },
+  {
+    category: "Web3 / Blockchain",
+    items:
+      "Ethereum, Solidity, Foundry, Wallet Integration, Smart Contract Integration, Monad Testnet, SHA-256, Ed25519",
+  },
+  {
+    category: "Developer Tools",
+    items: "Git, GitHub, Docker, Vercel",
+  },
+]
+
+const RESUME_PROJECTS: ResumeProject[] = [
+  {
+    title: "VAMO (Travel AI) — Multimodal Location Extraction & Mapping",
+    period: "07.2026 – Present",
+    links: [
+      { label: "Live", href: "https://vamo-xi.vercel.app" },
+      { label: "GitHub", href: "https://github.com/25Pradnyesh/Travel-AI-" },
+    ],
+    bullets: [
+      "Built an end-to-end travel intelligence web application that transforms unstructured social media reels and captions into structured, mappable trip plans.",
+      "Architected a multimodal extraction pipeline in Python and FastAPI combining computer vision, NLP, and LLMs to extract destinations and landmarks, then resolved, verified, and clustered places via Google Maps API for interactive route generation in Next.js.",
+    ],
+    tech: "Next.js, TypeScript, Python, FastAPI, Computer Vision, NLP, LLMs, Google Maps API, REST APIs",
+  },
+  {
+    title: "ETHGlobal Mumbai — NONY.money",
+    subtitle: "Product Architecture · System Design · Frontend Engineering",
+    period: "11.2026",
+    links: [
+      { label: "Live", href: "https://nony.money" },
+      {
+        label: "Showcase",
+        href: "https://ethglobal.com/showcase/nony-money-rmbfi",
+      },
+    ],
+    bullets: [
+      "Contributed to the TEE Private Intent Network architecture for NONY, a TEE-powered confidential Ethereum execution and settlement protocol—mapping interactions across Next.js, AWS Nitro Enclaves, smart contracts, wallet auth, private pools, and on-chain settlement, defining public chain visibility vs. confidential TEE state, and documenting deposit → private execution → swap → withdrawal flows across the Technical Specification, Implementation Plan, DECISIONS, and FLOW docs.",
+      "Translated protocol architecture into a working product by designing the landing page, visual identity, navigation, and execution/review journeys, and implementing approximately 16 Next.js routes spanning deposit, private execution, pool/mix, transfer, wallet, and withdrawal interfaces with reusable components (AssetSelector, AttestationBadge, ExecutionModeCard, WalletModal).",
+      "Integrated wallet hooks, useAttestation, useConfidentialBalance, and frontend lib/api and lib/crypto utilities into attestation and confidential-balance workflows; validated TypeScript, linting, and production builds generating 19 static pages.",
+    ],
+    tech: "Next.js, React, TypeScript, Ethereum, TEE Attestation UI, Wallet Integration, Client Cryptography, System Architecture",
+  },
+  {
+    title: "Penguin Trace — Cryptographic File Verification Tool",
+    subtitle: "Monad Blitz Pune V3",
+    period: "10.2026",
+    links: [
+      { label: "Live", href: "https://monad-v3-six.vercel.app" },
+      { label: "GitHub", href: "https://github.com/Shrysxs/monad-v3" },
+    ],
+    bullets: [
+      "Built a browser-based file-verification tool that confirms downloaded files match publisher-signed release manifests without server uploads, using client-side SHA-256 hashing and Ed25519 signature verification.",
+      "Implemented and tested a Solidity registry contract using Foundry and deployed it to Monad Testnet to anchor publisher public keys and immutable release records for client-side verification.",
+    ],
+    tech: "TypeScript, Solidity, Foundry, SHA-256, Ed25519, Monad Testnet, Smart Contracts",
+  },
+  {
+    title: "Penguin Protocol — Decentralized AI Investment Syndicate",
+    subtitle: "Winner, Monad Blitz Pune · Built in under 8 hours",
+    period: "07.2026",
+    links: [
+      { label: "GitHub", href: "https://github.com/Shrysxs/monad-blitz-pune" },
+    ],
+    bullets: [
+      "Won Monad Blitz Pune by building the frontend architecture and core product logic for a decentralized AI investment syndicate from concept to working prototype in under 8 hours.",
+      "Implemented interactive React and Next.js workflows connecting wallet interactions, AI-assisted investment intelligence views, confidence voting, and on-chain coordination logic.",
+    ],
+    tech: "Next.js, React, TypeScript, Wallet Integration, Smart Contract Integration, LLMs, REST APIs",
+  },
+  {
+    title: "VertiFarm — AI + IoT Vertical Farming System",
+    subtitle: "Final Year Engineering Project",
+    period: "2026",
+    links: [
+      { label: "GitHub", href: "https://github.com/25Pradnyesh/vertifarm-app" },
+    ],
+    bullets: [
+      "Trained a six-class plant disease classification model in PyTorch using MobileNetV3 transfer learning on a 600-image dataset, and integrated real-time image inference into a FastAPI service.",
+      "Connected STM32 and ESP32-CAM sensor nodes over MQTT to stream temperature, humidity, soil moisture, and light telemetry into a PostgreSQL/Supabase backend and React Native (Expo) monitoring app.",
+    ],
+    tech: "Python, FastAPI, PyTorch, MobileNetV3, React Native (Expo), MQTT, PostgreSQL, Supabase, STM32, ESP32-CAM",
+  },
+  {
+    title: "Reclaim — AI Digital Wellbeing Application",
+    subtitle: "WeMakeDevs FutureStack GenAI Hackathon · Built in 6 days",
+    period: "10.2025",
+    links: [{ label: "GitHub", href: "https://github.com/Shrysxs/wemakedevs" }],
+    bullets: [
+      "Built a full-stack digital wellbeing prototype in 6 days that turns smartphone usage data into contextual behavioral insights and personalized focus interventions.",
+      "Integrated Llama inference via the Cerebras API with a Next.js, TypeScript, and Supabase/PostgreSQL application layer for structured prompt orchestration and user telemetry storage.",
+    ],
+    tech: "Next.js, React, TypeScript, Tailwind CSS, Supabase, PostgreSQL, Cerebras API, Llama",
+  },
+  {
+    title: "VoiceAds — Customer Feedback to Ad Intelligence",
+    subtitle: "AIBoomi Startup Weekend Pune · Built in under 24 hours",
+    period: "02.2026",
+    links: [{ label: "Live", href: "https://voiceads.vercel.app" }],
+    bullets: [
+      "Designed and shipped an LLM-powered prototype in under 24 hours that runs semantic analysis over unstructured customer reviews to extract sentiment, recurring pain points, and themes into structured ad creative.",
+    ],
+    tech: "Next.js, React, TypeScript, LLMs, NLP, Prompt Engineering, REST APIs",
+  },
+  {
+    title: "Design Resource Vault — Curated UI & Design Systems Directory",
+    period: "08.2026",
+    links: [
+      { label: "Live", href: "https://design-resource-vault.vercel.app" },
+    ],
+    bullets: [
+      "Built a responsive discovery directory for design systems, component patterns, design tokens, and UI tooling, featuring structured category taxonomy, instant client-side filtering, and motion transitions.",
+    ],
+    tech: "Next.js, React, TypeScript, Tailwind CSS, Framer Motion, Design Systems",
+  },
+]
+
 function SectionHeading({ title }: { title: string }) {
   return (
-    <div className="mb-2 border-b border-[#13315b] pb-1 print:mb-1.5 print:pb-0.5">
-      <h2 className="font-heading text-[10pt] font-bold tracking-wider text-[#13315b] uppercase print:text-[10pt]">
+    <div className="mb-2 border-b border-[#13315b]/85 pb-0.5 print:mb-1.5">
+      <h2 className="text-[9.5pt] font-bold tracking-[0.09em] text-[#13315b] uppercase print:text-[9.2pt]">
         {title}
       </h2>
     </div>
@@ -23,12 +182,12 @@ function SectionHeading({ title }: { title: string }) {
 
 export default function ResumePage() {
   return (
-    <div className="mx-auto my-6 max-w-3xl overflow-hidden rounded-xl border border-neutral-300 bg-neutral-100 text-[#1a1a1a] shadow-sm sm:my-10 print:m-0 print:max-w-none print:overflow-visible print:rounded-none print:border-none print:bg-white print:p-0 print:shadow-none">
+    <div className="mx-auto my-6 max-w-3xl overflow-hidden rounded-xl border border-neutral-300 bg-white text-[#1a1a1a] shadow-sm sm:my-10 print:m-0 print:max-w-none print:overflow-visible print:rounded-none print:border-none print:bg-white print:p-0 print:shadow-none">
       <style>{`
         @media print {
           @page {
             size: A4 portrait;
-            margin: 10mm 12mm 10mm 12mm;
+            margin: 9.5mm 12mm 9.5mm 12mm;
           }
           html, body {
             background: white !important;
@@ -36,7 +195,8 @@ export default function ResumePage() {
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
           }
-          body > div > *:not(main) {
+          body > div > *:not(main),
+          .group\\/layout > *:not(main) {
             display: none !important;
           }
           header:not(.resume-header),
@@ -75,20 +235,24 @@ export default function ResumePage() {
           }
         }
       `}</style>
+
       <ResumeActions />
 
       {/* Resume Document Sheet */}
-      <article className="bg-white px-8 py-8 text-[9pt] leading-[1.4] text-[#1a1a1a] shadow-xs sm:px-10 sm:py-9 print:px-0 print:py-0 print:text-[8.8pt] print:leading-[1.38] print:shadow-none">
-        {/* ——— HEADER ——— */}
-        <header className="resume-header text-center">
-          <p className="mt-1 text-[10.5pt] font-semibold text-black print:text-[10.5pt]">
+      <article className="bg-white px-5 py-7 text-[9pt] leading-[1.42] text-[#1a1a1a] sm:px-10 sm:py-9 print:px-0 print:py-0 print:text-[8.55pt] print:leading-[1.35]">
+        {/* Header */}
+        <header className="resume-header border-b border-neutral-200 pb-3.5 text-center print:border-none print:pb-0">
+          <h1 className="text-[18pt] leading-tight font-bold tracking-[0.06em] text-[#0f172a] uppercase sm:text-[20pt] print:text-[18pt]">
+            PRADNYESH SHEJWAL
+          </h1>
+          <p className="mt-1 text-[10pt] font-semibold tracking-[0.01em] text-[#13315b] sm:text-[10.5pt] print:mt-0.5 print:text-[10pt]">
             Product Engineer | Frontend, AI &amp; Web3
           </p>
 
-          <div className="mt-2 space-y-1 text-[8.4pt] text-[#545454] print:mt-1.5 print:space-y-0.5 print:text-[8.4pt]">
+          <div className="mt-2 space-y-1 text-[8.3pt] text-[#525252] print:mt-1.5 print:space-y-0.5 print:text-[8.2pt]">
             <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
-              <span>Mumbai &middot; Pune, India</span>
-              <span aria-hidden className="text-neutral-400">
+              <span>Mumbai / Pune, India</span>
+              <span aria-hidden className="text-neutral-300">
                 |
               </span>
               <a
@@ -97,7 +261,7 @@ export default function ResumePage() {
               >
                 workspace.pradnyesh@gmail.com
               </a>
-              <span aria-hidden className="text-neutral-400">
+              <span aria-hidden className="text-neutral-300">
                 |
               </span>
               <a
@@ -108,7 +272,7 @@ export default function ResumePage() {
               >
                 pradnyesh.vercel.app
               </a>
-              <span aria-hidden className="text-neutral-400">
+              <span aria-hidden className="text-neutral-300">
                 |
               </span>
               <a
@@ -129,7 +293,7 @@ export default function ResumePage() {
               >
                 linkedin.com/in/pradnyesh-s
               </a>
-              <span aria-hidden className="text-neutral-400">
+              <span aria-hidden className="text-neutral-300">
                 |
               </span>
               <a
@@ -140,7 +304,7 @@ export default function ResumePage() {
               >
                 x.com/Pradnyesh_25
               </a>
-              <span aria-hidden className="text-neutral-400">
+              <span aria-hidden className="text-neutral-300">
                 |
               </span>
               <a
@@ -155,596 +319,237 @@ export default function ResumePage() {
           </div>
         </header>
 
-        <div className="mt-4 space-y-4 print:mt-3 print:space-y-3.5">
-          {/* ——— SUMMARY ——— */}
+        <div className="mt-4 space-y-4 print:mt-3 print:space-y-3">
+          {/* Professional Summary */}
           <section className="print-break-inside-avoid">
-            <SectionHeading title="SUMMARY" />
-            <p className="text-justify text-[#1a1a1a] print:text-left">
-              Product-focused engineer experienced in designing, building, and
-              shipping web applications across frontend engineering, AI, and
-              Web3. Strong foundation in React, Next.js, TypeScript, and Python,
-              with hands-on experience developing multimodal AI pipelines,
-              integrating LLM-powered workflows, and building blockchain-enabled
-              applications. Contributed to system architecture and frontend
-              development at ETHGlobal Mumbai and built Penguin Trace, a
-              file-verification tool using cryptographic signatures and on-chain
-              registries. Winner of Monad Blitz Pune, with a focus on turning
-              complex technical concepts into functional, user-centered
-              products.
+            <SectionHeading title="PROFESSIONAL SUMMARY" />
+            <p className="text-[#1f1f1f]">
+              Product engineer building end-to-end web applications across
+              frontend engineering, applied AI, and Web3. Works primarily with
+              React, Next.js, TypeScript, and Python to take ideas from concept
+              to working software through modular UI architecture, API
+              integration, and system design contributions. Built multimodal AI
+              extraction pipelines, wallet-connected Ethereum interfaces, and
+              cryptographic file-verification tools, with rapid prototyping
+              demonstrated across hackathons including a win at Monad Blitz Pune
+              and frontend engineering at ETHGlobal Mumbai.
             </p>
           </section>
 
-          {/* ——— EDUCATION ——— */}
+          {/* Education */}
           <section className="print-break-inside-avoid">
             <SectionHeading title="EDUCATION" />
             <div className="space-y-2 print:space-y-1.5">
               <div>
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <span className="font-bold text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+                  <span className="font-semibold text-[#0f172a]">
                     Savitribai Phule Pune University (SPPU)
                   </span>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                  <span className="shrink-0 text-[8.4pt] font-medium text-[#525252] tabular-nums">
                     2023 – 2027
                   </span>
                 </div>
-                <div className="text-[#545454]">
+                <div className="text-[#404040]">
                   Bachelor of Engineering (B.E.) in Electronics &amp; Computer
-                  Engineering
-                </div>
-                <div className="text-[#545454]">
-                  Honors: Artificial Intelligence and Machine Learning
+                  Engineering &middot; Honors: Artificial Intelligence and
+                  Machine Learning
                 </div>
               </div>
 
               <div>
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <span className="font-bold text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+                  <span className="font-semibold text-[#0f172a]">
                     B.K. Birla College of Arts, Science &amp; Commerce
                   </span>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                  <span className="shrink-0 text-[8.4pt] font-medium text-[#525252] tabular-nums">
                     2022 – 2023
                   </span>
                 </div>
-                <div className="text-[#545454]">
+                <div className="text-[#404040]">
                   12th Grade &middot; Science Stream
                 </div>
               </div>
 
               <div>
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <span className="font-bold text-black">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+                  <span className="font-semibold text-[#0f172a]">
                     Smt. Kantaben Chandulal Gandhi English School
                   </span>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
+                  <span className="shrink-0 text-[8.4pt] font-medium text-[#525252] tabular-nums">
                     2020 – 2021
                   </span>
                 </div>
-                <div className="text-[#545454]">10th Grade</div>
+                <div className="text-[#404040]">10th Grade</div>
               </div>
             </div>
           </section>
 
-          {/* ——— SKILLS ——— */}
+          {/* Technical Skills */}
           <section className="print-break-inside-avoid">
-            <SectionHeading title="SKILLS" />
-            <div className="space-y-1 text-[#1a1a1a] print:space-y-0.5">
-              <p>
-                <strong className="font-bold text-black">Languages:</strong>{" "}
-                Python, TypeScript, JavaScript, C++, Java, SQL
-              </p>
-              <p>
-                <strong className="font-bold text-black">Frontend:</strong>{" "}
-                React, Next.js, Tailwind CSS, Figma
-              </p>
-              <p>
-                <strong className="font-bold text-black">Backend:</strong>{" "}
-                Node.js, FastAPI, REST APIs
-              </p>
-              <p>
-                <strong className="font-bold text-black">AI / ML:</strong>{" "}
-                PyTorch, Machine Learning, Computer Vision, NLP, LLMs,
-                Generative AI, AI Agents
-              </p>
-              <p>
-                <strong className="font-bold text-black">Databases:</strong>{" "}
-                PostgreSQL, Supabase, MongoDB
-              </p>
-              <p>
-                <strong className="font-bold text-black">Web3:</strong>{" "}
-                Solidity, Ethereum
-              </p>
-              <p>
-                <strong className="font-bold text-black">Tools:</strong> Git,
-                Docker
-              </p>
-              <p>
-                <strong className="font-bold text-black">Learning:</strong>{" "}
-                Andrew Ng — Machine Learning Specialization (in progress)
-              </p>
-            </div>
+            <SectionHeading title="TECHNICAL SKILLS" />
+            <dl className="space-y-1.5 print:space-y-1">
+              {SKILL_GROUPS.map((group) => (
+                <div
+                  key={group.category}
+                  className="grid grid-cols-1 gap-x-3 sm:grid-cols-[152px_1fr] print:grid-cols-[138px_1fr]"
+                >
+                  <dt className="font-semibold text-[#0f172a]">
+                    {group.category}
+                  </dt>
+                  <dd className="text-[#262626]">{group.items}</dd>
+                </div>
+              ))}
+            </dl>
           </section>
 
-          {/* ——— EXPERIENCE ——— */}
+          {/* Experience */}
           <section className="print-break-inside-avoid">
             <SectionHeading title="EXPERIENCE" />
-            <div className="space-y-3 print:space-y-2.5">
-              {/* Block 1 */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <span className="font-bold text-black">
-                    Full-Stack Developer | Independent Builder &amp; Product
-                    Development
-                  </span>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    03.2025 – Present
-                  </span>
-                </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Architected and shipped end-to-end applications from zero to
-                    working product across Next.js, FastAPI, Python, APIs, and
-                    databases.
-                  </li>
-                  <li>
-                    Built intelligent systems with autonomous agent workflows
-                    and multimodal extraction pipelines; owned projects from
-                    concept through implementation and iteration.
-                  </li>
-                </ul>
-                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  Product Engineering, Rapid Prototyping, Full-Stack
-                  Development, System Architecture
-                </p>
+            <div>
+              <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+                <h3 className="font-semibold text-[#0f172a]">
+                  Product Engineer{" "}
+                  <span className="font-normal text-neutral-400">|</span>{" "}
+                  Independent Product Development
+                </h3>
+                <span className="shrink-0 text-[8.4pt] font-medium text-[#525252] tabular-nums">
+                  03.2025 – Present
+                </span>
               </div>
-
-              {/* Block 2 */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <span className="font-bold text-black">
-                    AI Developer | AI Engineering — Projects &amp; Research
-                  </span>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    06.2025 – Present
-                  </span>
-                </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Built intelligent systems using LLMs, computer vision, NLP,
-                    multimodal processing, and AI agents; developed Travel
-                    AI&apos;s extraction pipelines.
-                  </li>
-                  <li>
-                    Engineered prompt-engineering workflows and integrated
-                    machine-learning inference into production applications;
-                    strengthening ML fundamentals via Andrew Ng&apos;s Machine
-                    Learning Specialization.
-                  </li>
-                </ul>
-                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  Generative AI, LLMs, AI Agents, Computer Vision, NLP, Python,
-                  FastAPI, PyTorch, Machine Learning
-                </p>
-              </div>
-
-              {/* Block 3 */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <span className="font-bold text-black">
-                    Design Engineer | Design Engineering — Projects &amp;
-                    Product Development
-                  </span>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    07.2025 – Present
-                  </span>
-                </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Architected production-grade interfaces, interaction
-                    patterns, and component-driven design systems for responsive
-                    applications.
-                  </li>
-                  <li>
-                    Bridged design and frontend engineering through
-                    high-fidelity implementation, responsive architecture,
-                    accessibility, motion, and visual hierarchy.
-                  </li>
-                </ul>
-                <p className="mt-1 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  UI/UX Design, Design Systems, Figma, Interaction Design,
-                  Motion Design, Frontend Engineering
-                </p>
-              </div>
+              <ul className="mt-1.5 list-disc space-y-1 pl-4 text-[#1f1f1f] print:mt-1 print:space-y-0.5 print:pl-3.5">
+                <li>
+                  Build end-to-end web applications from concept to deployed
+                  prototype using React, Next.js, TypeScript, Python, and
+                  FastAPI, owning frontend implementation, client state, and
+                  backend API integration.
+                </li>
+                <li>
+                  Design reusable frontend component architectures, responsive
+                  layouts, and interactive user journeys using Tailwind CSS,
+                  Framer Motion, and Figma-driven design systems.
+                </li>
+                <li>
+                  Integrate external APIs, Ethereum wallet connectivity,
+                  client-side cryptographic utilities, and LLM-powered workflows
+                  into coherent user-facing products.
+                </li>
+                <li>
+                  Develop multimodal AI pipelines and application-level ML
+                  integrations combining computer vision, NLP, LLMs, and PyTorch
+                  inference behind FastAPI endpoints.
+                </li>
+                <li>
+                  Contribute to product architecture, transaction-flow design,
+                  and rapid prototyping across independent builds and
+                  time-constrained hackathons ranging from 8-hour sprints to
+                  6-day delivery cycles.
+                </li>
+              </ul>
             </div>
           </section>
 
-          {/* ——— PROJECTS (Starts Page 2 naturally in print) ——— */}
-          <section className="print-break-before-page pt-2 print:pt-0">
+          {/* Projects (Page 2 in Print) */}
+          <section className="print-break-before-page pt-1 print:pt-0">
             <SectionHeading title="PROJECTS" />
-            <div className="space-y-3 print:space-y-1.5">
-              {/* 1. ETHGlobal Mumbai — NONY.money */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <div>
-                    <span className="font-bold text-black">
-                      ETHGlobal Mumbai — NONY.money
+            <div className="space-y-3 print:space-y-2">
+              {RESUME_PROJECTS.map((project) => (
+                <div key={project.title} className="print-break-inside-avoid">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+                    <div className="flex flex-wrap items-baseline gap-x-1.5">
+                      <h3 className="font-semibold text-[#0f172a]">
+                        {project.title}
+                      </h3>
+                      {project.links.map((link) => (
+                        <span
+                          key={link.href}
+                          className="inline-flex items-baseline gap-x-1.5"
+                        >
+                          <span aria-hidden className="text-neutral-400">
+                            &middot;
+                          </span>
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[8.4pt] font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
+                          >
+                            {link.label}
+                          </a>
+                        </span>
+                      ))}
+                    </div>
+                    <span className="shrink-0 text-[8.4pt] font-medium text-[#525252] tabular-nums">
+                      {project.period}
                     </span>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://nony.money"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      Live
-                    </a>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://ethglobal.com/showcase/nony-money-rmbfi"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      Showcase
-                    </a>
                   </div>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    11.2026
-                  </span>
-                </div>
 
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Architected and implemented approximately 16 Next.js
-                    application routes covering deposits, private execution,
-                    transaction pools, transfers, wallet management, and
-                    withdrawals.
-                  </li>
-                  <li>
-                    Developed reusable UI components and integrated wallet
-                    functionality, TEE attestation interfaces, confidential
-                    balance hooks, and frontend API and cryptographic utilities;
-                    contributed to protocol architecture and transaction-flow
-                    documentation.
-                  </li>
-                </ul>
+                  {project.subtitle && (
+                    <div className="text-[8.2pt] font-medium text-[#525252]">
+                      {project.subtitle}
+                    </div>
+                  )}
 
-                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  Next.js, React, TypeScript, Ethereum, TEE, AWS Nitro Enclaves,
-                  Wallet Integration, Cryptographic Utilities
-                </p>
-              </div>
+                  <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1f1f1f] print:mt-0.5 print:space-y-0.5 print:pl-3.5">
+                    {project.bullets.map((bullet, index) => (
+                      <li key={index}>{bullet}</li>
+                    ))}
+                  </ul>
 
-              {/* 2. Monad Blitz Pune V3 — Penguin Trace */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <div>
-                    <span className="font-bold text-black">
-                      Monad Blitz Pune V3 — Penguin Trace
-                    </span>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://monad-v3-six.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      Live
-                    </a>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://github.com/Shrysxs/monad-v3"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    10.2026
-                  </span>
+                  <p className="mt-0.5 text-[8.2pt] text-[#525252]">
+                    <span className="font-semibold text-[#262626]">Stack:</span>{" "}
+                    {project.tech}
+                  </p>
                 </div>
-
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Built Penguin Trace, a file-verification application using
-                    client-side SHA-256 hashing to verify downloaded files
-                    against publisher-signed release manifests.
-                  </li>
-                  <li>
-                    Implemented Ed25519 signature verification and integrated a
-                    Solidity registry contract on Monad Testnet to register
-                    publisher public keys and release records; developed and
-                    tested the contract using Foundry.
-                  </li>
-                </ul>
-
-                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  TypeScript, Solidity, Foundry, SHA-256, Ed25519, Monad
-                  Testnet, Smart Contracts, Web3
-                </p>
-              </div>
-
-              {/* 3. VAMO */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <div>
-                    <span className="font-bold text-black">
-                      VAMO — A Location Extraction &amp; Mapping System
-                    </span>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://github.com/25Pradnyesh/Travel-AI-"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    07.2026 – Present
-                  </span>
-                </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Built a multimodal extraction pipeline combining computer
-                    vision, NLP, and LLMs to identify destinations, landmarks,
-                    and geographic context from social reels and captions.
-                  </li>
-                  <li>
-                    Developed location resolution, verification, and structured
-                    transformation workflows; integrated Google Maps APIs to
-                    cluster locations and generate interactive routes.
-                  </li>
-                </ul>
-                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  Python, FastAPI, Next.js, TypeScript, Computer Vision, NLP,
-                  LLMs, Google Maps API, REST APIs
-                </p>
-              </div>
-
-              {/* 4. Penguin Protocol */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <div>
-                    <span className="font-bold text-black">
-                      Penguin Protocol — Decentralized AI Investment Syndicate
-                    </span>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://github.com/Shrysxs/monad-blitz-pune"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    07.2026
-                  </span>
-                </div>
-                <div className="text-[8.4pt] font-semibold text-[#545454] print:text-[8.4pt]">
-                  WINNER — Monad Blitz Pune &middot; Built in under 8 hours
-                </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Built frontend architecture and core product logic for the
-                    decentralized AI investment syndicate.
-                  </li>
-                  <li>
-                    Implemented workflows around AI-assisted investment
-                    intelligence, decentralized coordination, confidence voting,
-                    and on-chain interactions.
-                  </li>
-                </ul>
-                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  React, Next.js, TypeScript, Web3, Blockchain, Smart Contracts,
-                  AI/LLMs, Wallet Integration, API Integration
-                </p>
-              </div>
-
-              {/* 5. Reclaim */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <div>
-                    <span className="font-bold text-black">
-                      Reclaim — AI-Powered Phone-Use Management App
-                    </span>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://github.com/Shrysxs/wemakedevs"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    10.2025
-                  </span>
-                </div>
-                <div className="text-[8.4pt] font-medium text-[#545454] print:text-[8.4pt]">
-                  WeMakeDevs FutureStack GenAI Hackathon &middot; Shipped in 6
-                  days
-                </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Built full-stack application transforming smartphone usage
-                    data into contextual behavioral insights and personalized
-                    focus interventions.
-                  </li>
-                  <li>
-                    Integrated Llama via Cerebras API with Supabase backend and
-                    data layer; shipped functional prototype within 6 days.
-                  </li>
-                </ul>
-                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  Next.js 14, React, TypeScript, Tailwind CSS, Supabase,
-                  PostgreSQL, Cerebras API, Llama, Generative AI, REST APIs
-                </p>
-              </div>
-
-              {/* 6. AI + IoT Vertical Farming System */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <div>
-                    <span className="font-bold text-black">
-                      AI + IoT Vertical Farming System — Final Year Project
-                    </span>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://github.com/25Pradnyesh/vertifarm-app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    2026
-                  </span>
-                </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Trained a six-class plant disease classification model using
-                    MobileNetV3 transfer learning on a 600-image dataset;
-                    integrated inference into a FastAPI backend.
-                  </li>
-                  <li>
-                    Integrated environmental telemetry (temperature, humidity,
-                    soil moisture, light) via STM32 and ESP32 with real-time
-                    application monitoring.
-                  </li>
-                </ul>
-                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Hardware:</strong>{" "}
-                  STM32, ESP32-CAM, sensors &middot;{" "}
-                  <strong className="font-bold text-black">Software:</strong>{" "}
-                  Python, FastAPI, React Native / Expo, MQTT, PostgreSQL /
-                  Supabase, PyTorch
-                </p>
-              </div>
-
-              {/* 7. VoiceAds */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <div>
-                    <span className="font-bold text-black">
-                      VoiceAds — AI Customer Feedback to Ad Intelligence
-                    </span>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://voiceads.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      Live
-                    </a>
-                  </div>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    2026
-                  </span>
-                </div>
-                <div className="text-[8.4pt] font-medium text-[#545454] print:text-[8.4pt]">
-                  AIBoomi Startup Weekend Pune &middot; Shipped in under 24
-                  hours
-                </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Built and shipped prototype in under 24 hours at AIBoomi
-                    Startup Weekend. Developed LLM-driven semantic analysis
-                    extracting sentiment, recurring pain points, and themes into
-                    structured ad creative.
-                  </li>
-                </ul>
-                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  Next.js, React, TypeScript, LLMs, NLP, Semantic Analysis,
-                  Prompt Engineering, Generative AI
-                </p>
-              </div>
-
-              {/* 8. Design Resource Vault */}
-              <div className="print-break-inside-avoid">
-                <div className="flex items-baseline justify-between gap-x-2">
-                  <div>
-                    <span className="font-bold text-black">
-                      Design Resource Vault — Curated Design &amp; UI Discovery
-                      Platform
-                    </span>
-                    <span className="text-[#545454]"> &middot; </span>
-                    <a
-                      href="https://design-resource-vault.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
-                    >
-                      Live
-                    </a>
-                  </div>
-                  <span className="shrink-0 font-medium text-[#545454] tabular-nums">
-                    08.2026
-                  </span>
-                </div>
-                <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
-                  <li>
-                    Built a centralized discovery platform for design systems,
-                    component patterns, tokens, and UI tooling with category
-                    indexing and client-side filtering.
-                  </li>
-                </ul>
-                <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
-                  <strong className="font-bold text-black">Skills:</strong>{" "}
-                  Next.js, TypeScript, Tailwind CSS, Framer Motion, Design
-                  Systems, UI/UX
-                </p>
-              </div>
+              ))}
             </div>
           </section>
 
-          {/* ——— AWARDS & RECOGNITION ——— */}
-          <section className="print-break-inside-avoid pt-1">
-            <SectionHeading title="AWARDS & RECOGNITION" />
-            <ul className="list-disc space-y-1.5 pl-4 text-[#1a1a1a] print:space-y-1 print:pl-3.5">
-              <li>
-                <strong className="font-bold text-black">
-                  Monad Blitz Pune — Winner:
-                </strong>{" "}
-                Penguin Protocol &middot; Built in under 8 hours (07.2026)
-              </li>
-              <li>
-                <strong className="font-bold text-black">
-                  WeMakeDevs FutureStack GenAI Hackathon:
-                </strong>{" "}
-                Reclaim &middot; Working prototype built in 6 days (10.2025)
-              </li>
-              <li>
-                <strong className="font-bold text-black">
-                  AIBoomi Startup Weekend — Pune:
-                </strong>{" "}
-                VoiceAds &middot; Working prototype built in under 24 hours
-                (2026)
-              </li>
-              <li>
-                <strong className="font-bold text-black">
-                  Andrew Ng — Machine Learning Specialization:
-                </strong>{" "}
-                Currently pursuing
-              </li>
-            </ul>
+          {/* Awards & Coursework */}
+          <section className="print-break-inside-avoid pt-1 print:pt-0.5">
+            <SectionHeading title="AWARDS, RECOGNITION & COURSEWORK" />
+            <div className="space-y-2.5 print:space-y-1.5">
+              <div>
+                <h3 className="text-[8.3pt] font-semibold tracking-wide text-[#525252] uppercase">
+                  Awards &amp; Hackathons
+                </h3>
+                <ul className="mt-1 list-disc space-y-1 pl-4 text-[#1f1f1f] print:mt-0.5 print:space-y-0.5 print:pl-3.5">
+                  <li>
+                    <strong className="font-semibold text-[#0f172a]">
+                      Monad Blitz Pune — Winner:
+                    </strong>{" "}
+                    Penguin Protocol, built from concept to working prototype in
+                    under 8 hours (07.2026).
+                  </li>
+                  <li>
+                    <strong className="font-semibold text-[#0f172a]">
+                      WeMakeDevs FutureStack GenAI Hackathon:
+                    </strong>{" "}
+                    Reclaim, end-to-end prototype shipped in 6 days (10.2025).
+                  </li>
+                  <li>
+                    <strong className="font-semibold text-[#0f172a]">
+                      AIBoomi Startup Weekend Pune:
+                    </strong>{" "}
+                    VoiceAds, functional prototype shipped in under 24 hours
+                    (02.2026).
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-[8.3pt] font-semibold tracking-wide text-[#525252] uppercase">
+                  Coursework
+                </h3>
+                <ul className="mt-1 list-disc pl-4 text-[#1f1f1f] print:mt-0.5 print:pl-3.5">
+                  <li>
+                    <strong className="font-semibold text-[#0f172a]">
+                      Machine Learning Specialization (Andrew Ng):
+                    </strong>{" "}
+                    In progress.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </section>
         </div>
       </article>

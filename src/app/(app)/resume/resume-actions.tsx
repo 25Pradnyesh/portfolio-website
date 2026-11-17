@@ -5,10 +5,10 @@ import { ArrowLeftIcon, PrinterIcon } from "lucide-react"
 
 export function ResumeActions() {
   return (
-    <div className="flex items-center justify-between gap-3 border-b border-border/60 bg-muted/20 px-4 py-3 sm:px-6 print:hidden">
+    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-200 bg-neutral-50 px-4 py-3 sm:px-6 print:hidden">
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
+        className="inline-flex items-center gap-1.5 font-mono text-xs text-neutral-600 transition-colors hover:text-neutral-900"
       >
         <ArrowLeftIcon className="size-3.5" />
         <span>Back to Portfolio</span>
@@ -19,7 +19,7 @@ export function ResumeActions() {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-border/80 bg-background px-3 py-1.5 font-mono text-xs font-medium text-foreground shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground"
+          className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-neutral-300 bg-white px-3 py-1.5 font-mono text-xs font-medium text-neutral-900 shadow-xs transition-colors hover:bg-neutral-100"
         >
           <span>Open PDF</span>
         </a>
@@ -27,7 +27,7 @@ export function ResumeActions() {
         <button
           type="button"
           onClick={() => window.print()}
-          className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-border/80 bg-background px-3 py-1.5 font-mono text-xs font-medium text-foreground shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground"
+          className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-neutral-300 bg-white px-3 py-1.5 font-mono text-xs font-medium text-neutral-900 shadow-xs transition-colors hover:bg-neutral-100"
         >
           <PrinterIcon className="size-3.5" />
           <span>Print</span>
