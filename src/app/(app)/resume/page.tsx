@@ -380,7 +380,7 @@ export default function ResumePage() {
                       rel="noopener noreferrer"
                       className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
                     >
-                      nony.money
+                      Live
                     </a>
                     <span className="text-[#545454]"> &middot; </span>
                     <a
@@ -389,30 +389,34 @@ export default function ResumePage() {
                       rel="noopener noreferrer"
                       className="font-medium text-[#1f6eb5] transition-colors hover:text-[#13315b] hover:underline"
                     >
-                      GitHub
+                      Showcase
                     </a>
                   </div>
                   <span className="shrink-0 font-medium text-[#545454] tabular-nums">
                     11.2026
                   </span>
                 </div>
+
                 <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
-                    Built NONY.money with a team of four: private swaps and
-                    withdrawals on Ethereum, with custody keys and ledger state
-                    isolated inside a Trusted Execution Environment (TEE).
+                    Architected and implemented approximately 16 Next.js
+                    application routes covering deposits, private execution,
+                    transaction pools, transfers, wallet management, and
+                    withdrawals.
                   </li>
                   <li>
-                    Owned the API and accounting layer using Fastify:
-                    implemented EIP-712 signed requests, transaction journaling,
-                    double-entry ledger management, balance reservations, and
-                    intent lifecycle states.
+                    Developed reusable UI components and integrated wallet
+                    functionality, TEE attestation interfaces, confidential
+                    balance hooks, and frontend API and cryptographic utilities;
+                    contributed to protocol architecture and transaction-flow
+                    documentation.
                   </li>
                 </ul>
+
                 <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
                   <strong className="font-bold text-black">Skills:</strong>{" "}
-                  Fastify, EIP-712, TEE, Uniswap, Ethereum, TypeScript, REST
-                  APIs
+                  Next.js, React, TypeScript, Ethereum, TEE, AWS Nitro Enclaves,
+                  Wallet Integration, Cryptographic Utilities
                 </p>
               </div>
 
@@ -446,31 +450,34 @@ export default function ResumePage() {
                     10.2026
                   </span>
                 </div>
+
                 <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[#1a1a1a] print:mt-0.5 print:space-y-0 print:pl-3.5">
                   <li>
-                    Built Penguin Trace, a browser verification tool validating
-                    downloaded assets against publisher releases via client-side
-                    SHA-256 hashing and Ed25519-signed manifests.
+                    Built Penguin Trace, a file-verification application using
+                    client-side SHA-256 hashing to verify downloaded files
+                    against publisher-signed release manifests.
                   </li>
                   <li>
-                    Engineered an on-chain verification workflow backed by a
-                    registry smart contract on Monad Testnet using Foundry and
-                    Solidity, committing publisher keys and release records.
+                    Implemented Ed25519 signature verification and integrated a
+                    Solidity registry contract on Monad Testnet to register
+                    publisher public keys and release records; developed and
+                    tested the contract using Foundry.
                   </li>
                 </ul>
+
                 <p className="mt-0.5 text-[#1a1a1a] print:mt-0.5">
                   <strong className="font-bold text-black">Skills:</strong>{" "}
-                  Solidity, Foundry, SHA-256, Ed25519, Monad Testnet, Smart
-                  Contracts, Web3
+                  TypeScript, Solidity, Foundry, SHA-256, Ed25519, Monad
+                  Testnet, Smart Contracts, Web3
                 </p>
               </div>
 
-              {/* 3. Travel AI */}
+              {/* 3. VAMO */}
               <div className="print-break-inside-avoid">
                 <div className="flex items-baseline justify-between gap-x-2">
                   <div>
                     <span className="font-bold text-black">
-                      Travel AI — AI Location Extraction &amp; Mapping System
+                      VAMO — A Location Extraction &amp; Mapping System
                     </span>
                     <span className="text-[#545454]"> &middot; </span>
                     <a
