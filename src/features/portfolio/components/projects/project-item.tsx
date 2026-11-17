@@ -3,6 +3,7 @@ import { addQueryParams } from "@/utils/url"
 import { BoxIcon, ExternalLinkIcon, InfinityIcon } from "lucide-react"
 
 import { UTM_PARAMS } from "@/config/site"
+import { cn } from "@/lib/utils"
 import { IconTile } from "@/components/ui/icon-tile"
 import { Tag } from "@/components/ui/tag"
 import {
@@ -43,16 +44,24 @@ export function ProjectItem({
     <Collapsible className={className} defaultOpen={project.isExpanded}>
       <CollapsibleTrigger className="group/project flex w-full items-center text-left hover:bg-accent-muted">
         {project.logo ? (
-          <Image
-            src={project.logo}
-            alt={project.title}
-            width={32}
-            height={32}
-            quality={100}
-            className="mx-4 flex size-6 shrink-0 grayscale select-none group-hover/project:grayscale-0"
-            unoptimized
-            aria-hidden
-          />
+          <div className="relative mx-3 flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border/70 bg-black select-none">
+            <Image
+              src={project.logo}
+              alt={`${project.title} logo`}
+              fill
+              sizes="32px"
+              quality={100}
+              className={cn(
+                "pointer-events-none select-none",
+                project.logoClassName ?? "object-contain p-1"
+              )}
+              unoptimized={
+                typeof project.logo === "string" &&
+                project.logo.startsWith("http")
+              }
+              aria-hidden
+            />
+          </div>
         ) : (
           <IconTile className="mx-4">{project.icon ?? <BoxIcon />}</IconTile>
         )}

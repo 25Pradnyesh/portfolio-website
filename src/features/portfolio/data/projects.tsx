@@ -8,6 +8,8 @@ import {
   SproutIcon,
 } from "lucide-react"
 
+import nonyLogo from "../../../../assets/nonymoney Logo.png"
+import vamoLogo from "../../../../assets/vamo Logo.png"
 import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
@@ -48,6 +50,8 @@ export const PROJECTS: Project[] = [
  - Integrated \`useAttestation\`, \`useConfidentialBalance\`, wallet functionality, and frontend API and cryptographic utilities.
  - Contributed to system architecture, transaction-flow design, and technical documentation.
  - Validated the frontend through TypeScript, lint, and production builds, generating **19 static pages**.`,
+    logo: nonyLogo,
+    logoClassName: "object-cover scale-[1.25]",
     icon: <ShieldCheckIcon />,
     isExpanded: true,
   },
@@ -95,6 +99,8 @@ export const PROJECTS: Project[] = [
   - Architecting a **multimodal information-extraction pipeline** combining computer vision, NLP, and contextual language models to identify destinations, landmarks, and geographic signals from Instagram reels and captions.
   - Developing **entity extraction, semantic parsing, location resolution, and structured data transformation** workflows to convert unstructured social content into structured geographic intelligence.
   - Integrating **Google Maps APIs and geospatial services** to cluster extracted locations, establish spatial relationships, and generate interactive routes and itinerary representations.`,
+    logo: vamoLogo,
+    logoClassName: "object-contain scale-[1.4]",
     icon: <CompassIcon />,
     isExpanded: true,
   },
