@@ -42,7 +42,7 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Projects & Research",
         icon: <BrainIcon />,
         description: `- Building intelligent systems using LLMs, computer vision, and NLP extraction pipelines.
-- Developing multimodal content extraction tools from social media reels and posts for Travel AI.
+- Developing multimodal content extraction pipelines from social media reels and captions for VAMO.
 - Designing prompt engineering and autonomous agent workflows.`,
         skills: [
           "Generative AI",

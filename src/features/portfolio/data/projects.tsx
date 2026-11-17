@@ -14,11 +14,11 @@ import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
-    id: "ethglobal-mumbai",
-    title: "ETHGlobal Mumbai",
+    id: "Nony.Money ethglobal-mumbai",
+    title: "Nony.Money ETHGlobal Mumbai",
     period: {
-      start: "11.2026",
-      end: "11.2026",
+      start: "05.11.2026",
+      end: "07.11.2026",
     },
     link: "https://nony.money",
     repository: "https://ethglobal.com/showcase/nony-m  oney-rmbfi",
@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "vamo",
-    title: "Vamo",
+    title: "VAMO — AI-Powered Travel Discovery & Location Intelligence",
     period: {
       start: "06.2026",
       end: "12.2026",
@@ -94,11 +94,11 @@ export const PROJECTS: Project[] = [
     ],
     description: `**Independent Project · 06.2026—12.2026**
 
-  A travel intelligence system for extracting, structuring, and mapping geographic information from social media content.
+VAMO is an AI-powered travel discovery and location intelligence system that extracts, resolves, and maps geographic information from social media content.
 
-  - Architecting a **multimodal information-extraction pipeline** combining computer vision, NLP, and contextual language models to identify destinations, landmarks, and geographic signals from Instagram reels and captions.
-  - Developing **entity extraction, semantic parsing, location resolution, and structured data transformation** workflows to convert unstructured social content into structured geographic intelligence.
-  - Integrating **Google Maps APIs and geospatial services** to cluster extracted locations, establish spatial relationships, and generate interactive routes and itinerary representations.`,
+- Built a **multimodal extraction pipeline** combining computer vision, NLP, and LLMs to identify destinations, landmarks, and geographic context from social media reels and captions.
+- Developed **location resolution, verification, and structured transformation** workflows to convert unstructured social media signals into verified place records.
+- Integrated **Google Maps APIs** for location clustering, spatial organization, and interactive route generation.`,
     logo: vamoLogo,
     logoClassName: "object-contain scale-[1.4]",
     icon: <CompassIcon />,

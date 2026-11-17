@@ -42,15 +42,15 @@ export function Hello() {
             />
             <span>
               <strong className="font-medium text-foreground">
-                Creator of Travel AI
+                Creator of VAMO
               </strong>
-              , an AI-powered system that extracts locations from Instagram
-              travel content and automatically organizes them into{" "}
+              , an AI-powered travel discovery and location intelligence system
+              that extracts destinations and landmarks from social media reels
+              and captions and organizes them into{" "}
               <strong className="font-medium text-foreground">
                 Google Maps
-              </strong>
-              , combining machine intelligence with practical product
-              engineering.
+              </strong>{" "}
+              with location clustering and interactive route generation.
             </span>
           </li>
           <li className="flex items-start gap-2.5">

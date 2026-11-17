@@ -66,15 +66,15 @@ const SKILL_GROUPS: SkillGroup[] = [
 
 const RESUME_PROJECTS: ResumeProject[] = [
   {
-    title: "VAMO (Travel AI) — Multimodal Location Extraction & Mapping",
+    title: "VAMO — AI-Powered Travel Discovery & Location Intelligence",
     period: "07.2026 – Present",
     links: [
       { label: "Live", href: "https://vamo-xi.vercel.app" },
       { label: "GitHub", href: "https://github.com/25Pradnyesh/Travel-AI-" },
     ],
     bullets: [
-      "Built an end-to-end travel intelligence web application that transforms unstructured social media reels and captions into structured, mappable trip plans.",
-      "Architected a multimodal extraction pipeline in Python and FastAPI combining computer vision, NLP, and LLMs to extract destinations and landmarks, then resolved, verified, and clustered places via Google Maps API for interactive route generation in Next.js.",
+      "Developed a multimodal extraction pipeline combining computer vision, NLP, and LLMs to identify destinations, landmarks, and geographic context from social media reels and captions.",
+      "Built location resolution, verification, and structured transformation workflows, integrating Google Maps APIs for location clustering and interactive route generation.",
     ],
     tech: "Next.js, TypeScript, Python, FastAPI, Computer Vision, NLP, LLMs, Google Maps API, REST APIs",
   },
@@ -187,7 +187,7 @@ export default function ResumePage() {
         @media print {
           @page {
             size: A4 portrait;
-            margin: 9.5mm 12mm 9.5mm 12mm;
+            margin: 8.5mm 11mm 8.5mm 11mm;
           }
           html, body {
             background: white !important;
@@ -239,7 +239,7 @@ export default function ResumePage() {
       <ResumeActions />
 
       {/* Resume Document Sheet */}
-      <article className="bg-white px-5 py-7 text-[9pt] leading-[1.42] text-[#1a1a1a] sm:px-10 sm:py-9 print:px-0 print:py-0 print:text-[8.55pt] print:leading-[1.35]">
+      <article className="bg-white px-5 py-7 text-[9pt] leading-[1.42] text-[#1a1a1a] sm:px-10 sm:py-9 print:px-0 print:py-0 print:text-[8.1pt] print:leading-[1.28]">
         {/* Header */}
         <header className="resume-header border-b border-neutral-200 pb-3.5 text-center print:border-none print:pb-0">
           <h1 className="text-[18pt] leading-tight font-bold tracking-[0.06em] text-[#0f172a] uppercase sm:text-[20pt] print:text-[18pt]">
@@ -451,7 +451,7 @@ export default function ResumePage() {
           {/* Projects (Page 2 in Print) */}
           <section className="print-break-before-page pt-1 print:pt-0">
             <SectionHeading title="PROJECTS" />
-            <div className="space-y-3 print:space-y-2">
+            <div className="space-y-3 print:space-y-1.5">
               {RESUME_PROJECTS.map((project) => (
                 <div key={project.title} className="print-break-inside-avoid">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-2">

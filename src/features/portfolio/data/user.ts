@@ -30,7 +30,7 @@ export const USER: User = {
   ],
   about: `**ML Engineer & Full-Stack Developer** building intelligent, user-centric products across **Machine Learning, AI, and modern web technologies**, with hands-on experience in **Python, Next.js, React, TypeScript, FastAPI, Node.js, and Supabase**.
 
-- **Creator of Travel AI**, an AI-powered system that extracts locations from Instagram travel content and automatically organizes them into **Google Maps**, combining machine intelligence with practical product engineering.
+- **Creator of VAMO**, an AI-powered travel discovery and location intelligence system that extracts destinations and landmarks from social media reels and captions and organizes them into **Google Maps** with location clustering and interactive route generation.
 - Deepening my expertise in **Machine Learning, Generative AI, AI Agents, LLMs, and Deep Learning**, with a focus on turning complex ideas into **practical, reliable, and useful products**.`,
   avatar: "/images/profile.jpg",
   avatarVariants: {
@@ -46,6 +46,7 @@ export const USER: User = {
     "pradnyesh",
     "pradnyesh s",
     "25pradnyesh",
+    "vamo",
     "ai engineer",
     "full-stack developer",
     "machine learning",
