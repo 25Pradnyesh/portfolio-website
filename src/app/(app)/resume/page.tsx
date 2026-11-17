@@ -81,11 +81,8 @@ export default function ResumePage() {
       <article className="bg-white px-8 py-8 text-[9pt] leading-[1.4] text-[#1a1a1a] shadow-xs sm:px-10 sm:py-9 print:px-0 print:py-0 print:text-[8.8pt] print:leading-[1.38] print:shadow-none">
         {/* ——— HEADER ——— */}
         <header className="resume-header text-center">
-          <h1 className="font-heading text-2xl font-bold tracking-tight text-black sm:text-[22pt] print:text-[22pt] print:leading-none">
-            PRADNYESH SHEJWAL
-          </h1>
           <p className="mt-1 text-[10.5pt] font-semibold text-black print:text-[10.5pt]">
-            AI Product Engineer
+            Product Engineer | Frontend, AI &amp; Web3
           </p>
 
           <div className="mt-2 space-y-1 text-[8.4pt] text-[#545454] print:mt-1.5 print:space-y-0.5 print:text-[8.4pt]">
@@ -163,16 +160,17 @@ export default function ResumePage() {
           <section className="print-break-inside-avoid">
             <SectionHeading title="SUMMARY" />
             <p className="text-justify text-[#1a1a1a] print:text-left">
-              AI Product Engineer specializing in end-to-end product engineering
-              across modern web applications, scalable backend APIs, and
-              intelligent AI systems. Experienced in architecting and shipping
-              independent products and rapid hackathon prototypes from concept
-              to production. Hands-on experience developing multimodal
-              pipelines, computer vision, NLP, LLMs, and autonomous agent
-              workflows alongside full-stack engineering. Winner of Monad Blitz
-              Pune. Currently deepening machine-learning foundations through
-              Andrew Ng&apos;s Machine Learning Specialization while expanding
-              Web3 and Ethereum application integration.
+              Product-focused engineer experienced in designing, building, and
+              shipping web applications across frontend engineering, AI, and
+              Web3. Strong foundation in React, Next.js, TypeScript, and Python,
+              with hands-on experience developing multimodal AI pipelines,
+              integrating LLM-powered workflows, and building blockchain-enabled
+              applications. Contributed to system architecture and frontend
+              development at ETHGlobal Mumbai and built Penguin Trace, a
+              file-verification tool using cryptographic signatures and on-chain
+              registries. Winner of Monad Blitz Pune, with a focus on turning
+              complex technical concepts into functional, user-centered
+              products.
             </p>
           </section>
 
